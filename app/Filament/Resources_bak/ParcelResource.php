@@ -14,11 +14,22 @@ use Filament\Tables\Table;
 class ParcelResource extends Resource
 {
     protected static ?string $model = Parcel::class;
-    protected static ?string $navigationIcon = 'heroicon-o-archive-box';
-    protected static ?string $navigationGroup = 'Operations';
+    
+    
     protected static ?int $navigationSort = 2;
 
-    public static function form(Form $form): Form
+    
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Operations';
+    }
+
+    public static function getNavigationIcon(): ?string
+    {
+        return 'heroicon-o-archive-box';
+    }
+
+public static function form(Form $form): Form
     {
         return $form->schema([
             Forms\Components\Select::make('user_id')

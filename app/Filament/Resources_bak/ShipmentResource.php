@@ -13,11 +13,22 @@ use Filament\Tables\Table;
 class ShipmentResource extends Resource
 {
     protected static ?string $model = Shipment::class;
-    protected static ?string $navigationIcon = 'heroicon-o-truck';
-    protected static ?string $navigationGroup = 'Operations';
+    
+    
     protected static ?int $navigationSort = 3;
 
-    public static function form(Form $form): Form
+    
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Operations';
+    }
+
+    public static function getNavigationIcon(): ?string
+    {
+        return 'heroicon-o-truck';
+    }
+
+public static function form(Form $form): Form
     {
         return $form->schema([
             Forms\Components\Select::make('user_id')

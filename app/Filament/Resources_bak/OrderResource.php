@@ -13,11 +13,22 @@ use Filament\Tables\Table;
 class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
-    protected static ?string $navigationIcon = 'heroicon-o-shopping-cart';
-    protected static ?string $navigationGroup = 'Operations';
+    
+    
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Operations';
+    }
+
+    public static function getNavigationIcon(): ?string
+    {
+        return 'heroicon-o-shopping-cart';
+    }
+
+public static function form(Form $form): Form
     {
         return $form->schema([
             Forms\Components\Select::make('user_id')

@@ -14,11 +14,22 @@ use Spatie\Permission\Models\Role;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
-    protected static ?string $navigationIcon = 'heroicon-o-users';
-    protected static ?string $navigationGroup = 'System';
+    
+    
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    
+    public static function getNavigationGroup(): ?string
+    {
+        return 'System';
+    }
+
+    public static function getNavigationIcon(): ?string
+    {
+        return 'heroicon-o-users';
+    }
+
+public static function form(Form $form): Form
     {
         return $form->schema([
             Forms\Components\TextInput::make('name')->required(),

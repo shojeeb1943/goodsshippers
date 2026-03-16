@@ -13,11 +13,22 @@ use Filament\Tables\Table;
 class TicketResource extends Resource
 {
     protected static ?string $model = Ticket::class;
-    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
-    protected static ?string $navigationGroup = 'Support';
+    
+    
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Support';
+    }
+
+    public static function getNavigationIcon(): ?string
+    {
+        return 'heroicon-o-chat-bubble-left-right';
+    }
+
+public static function form(Form $form): Form
     {
         return $form->schema([
             Forms\Components\Select::make('user_id')
