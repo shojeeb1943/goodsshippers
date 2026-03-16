@@ -52,7 +52,7 @@ class PaymentController extends Controller
         $response = Http::asForm()->post($url, $postData);
         $result = $response->json();
 
-        if (clone $response->successful() && isset($result['status']) && $result['status'] === 'SUCCESS') {
+        if ($response->successful() && isset($result['status']) && $result['status'] === 'SUCCESS') {
             return redirect()->away($result['GatewayPageURL']);
         }
 
