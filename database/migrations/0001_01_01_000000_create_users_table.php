@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone', 20)->nullable();
+            $table->string('warehouse_suite_id', 20)->nullable()->unique();
+            $table->enum('status', ['active', 'suspended'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });
