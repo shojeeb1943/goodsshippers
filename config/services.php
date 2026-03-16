@@ -31,4 +31,10 @@ return [
         ],
     ],
 
+    'sslcommerz' => [
+        'store_id' => env('SSLCOMMERZ_STORE_ID'),
+        'store_password' => env('SSLCOMMERZ_STORE_PASSWORD'),
+        'is_live' => env('SSLCOMMERZ_IS_LIVE', false),
+    ],
+
 ];

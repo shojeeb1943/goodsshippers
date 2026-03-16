@@ -20,7 +20,17 @@ class OrdersTable
                 TextColumn::make('user.name')
                     ->searchable(),
                 TextColumn::make('status')
-                    ->badge(),
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'pending' => 'gray',
+                        'processing' => 'info',
+                        'quote_sent' => 'warning',
+                        'approved' => 'success',
+                        'purchased' => 'indigo',
+                        'delivered' => 'success',
+                        'cancelled', 'rejected' => 'danger',
+                        default => 'gray',
+                    }),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -35,6 +45,17 @@ class OrdersTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                \Filament\Tables\Filters\SelectFilter::make('status')
+                    ->options([
+                        'pending' => 'Pending',
+                        'processing' => 'Processing',
+                        'quote_sent' => 'Quote Sent',
+                        'approved' => 'Approved',
+                        'purchased' => 'Purchased',
+                        'delivered' => 'Delivered',
+                        'cancelled' => 'Cancelled',
+                        'rejected' => 'Rejected',
+                    ]),
                 TrashedFilter::make(),
             ])
             ->recordActions([

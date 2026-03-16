@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 
+#[ObservedBy(\App\Observers\OrderObserver::class)]
 class Order extends Model
 {
     use HasFactory, SoftDeletes;
@@ -20,12 +22,14 @@ class Order extends Model
     ];
 
     public const STATUSES = [
-        'product_requested' => 'Product Requested',
-        'quote_sent'        => 'Quote Sent',
-        'quote_approved'    => 'Quote Approved',
-        'quote_rejected'    => 'Quote Rejected',
-        'order_purchased'   => 'Order Purchased',
-        'cancelled'         => 'Cancelled',
+        'pending'    => 'Pending',
+        'processing' => 'Processing',
+        'quote_sent' => 'Quote Sent',
+        'approved'   => 'Approved',
+        'purchased'  => 'Purchased',
+        'delivered'  => 'Delivered',
+        'cancelled'  => 'Cancelled',
+        'rejected'   => 'Rejected',
     ];
 
     // Relationships
