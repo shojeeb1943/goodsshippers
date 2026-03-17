@@ -4,7 +4,9 @@
       "Bash(grep:*)",
       "Bash(php artisan:*)",
       "Bash(php -l:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }

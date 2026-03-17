@@ -42,109 +42,134 @@
                     </div>
                 </div>
             </div>
-            <!-- Hero Widget (3-Tab) -->
-            <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
+            <!-- Hero Widget (3-Tab) — fixed height so all tabs are the same size -->
+            <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col" style="height:430px">
                 <!-- Tab Bar -->
-                <div class="flex border-b border-gray-100">
+                <div class="flex border-b border-gray-100 shrink-0">
                     <button data-tab="ship" class="tab-btn flex-1 py-4 font-bold text-sm text-primary border-b-2 border-primary transition-colors">Ship</button>
                     <button data-tab="shop" class="tab-btn flex-1 py-4 font-bold text-sm text-slate-400 border-b-2 border-transparent hover:text-primary transition-colors">Shop</button>
                     <button data-tab="track" class="tab-btn flex-1 py-4 font-bold text-sm text-slate-400 border-b-2 border-transparent hover:text-primary transition-colors">Track</button>
                 </div>
 
-                <!-- Ship Tab -->
-                <div id="tab-ship" class="tab-panel p-8 space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">From (Warehouse)</label>
-                        <select class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 focus:ring-primary focus:border-primary">
-                            <option>New York, USA</option>
-                            <option>London, UK</option>
-                            <option>Kuala Lumpur, Malaysia</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Destination (To)</label>
-                        <input class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 focus:ring-primary" placeholder="Enter your city/country" type="text" />
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Product Type</label>
-                        <select class="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 focus:ring-primary focus:border-primary">
-                            <option>Electronics</option>
-                            <option>Clothing &amp; Fashion</option>
-                            <option>Health &amp; Beauty</option>
-                            <option>General Goods</option>
-                        </select>
-                    </div>
-                    <a href="{{ route('calculator') }}" class="block w-full bg-accent text-white font-extrabold py-4 rounded-lg text-lg hover:brightness-110 transition-all text-center">Get Rate</a>
-                </div>
-
-                <!-- Shop Tab -->
-                <div id="tab-shop" class="tab-panel hidden p-8 space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Paste Product Link</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-                                </svg>
-                            </span>
-                            <input class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-3 focus:ring-primary focus:border-primary placeholder-slate-400 text-sm" placeholder="e.g. https://amazon.com/product-name" type="url" />
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Country to Buy From</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-lg leading-none">🌐</span>
-                            <select class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-3 focus:ring-primary focus:border-primary appearance-none">
-                                <option>United States</option>
-                                <option>United Kingdom</option>
-                                <option>Malaysia</option>
+                <!-- ── Ship Tab ── -->
+                <div id="tab-ship" class="tab-panel flex-1 flex flex-col justify-between p-7">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">From (Warehouse)</label>
+                            <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:ring-primary focus:border-primary">
+                                <option>New York, USA</option>
+                                <option>London, UK</option>
+                                <option>Kuala Lumpur, Malaysia</option>
                             </select>
-                            <span class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                            </span>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Destination (To)</label>
+                            <input class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:ring-primary focus:border-primary" placeholder="Enter your city/country" type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Product Type</label>
+                            <select class="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2.5 text-sm focus:ring-primary focus:border-primary">
+                                <option>Electronics</option>
+                                <option>Clothing &amp; Fashion</option>
+                                <option>Health &amp; Beauty</option>
+                                <option>General Goods</option>
+                            </select>
                         </div>
                     </div>
-                    <a href="{{ route('services') }}" class="flex items-center justify-center gap-2 w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold py-4 rounded-lg text-lg transition-all shadow-md shadow-yellow-200">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                        SHOP FOR ME
-                    </a>
-                    <!-- Trust Badges -->
-                    <div class="flex justify-around pt-2 border-t border-slate-100">
-                        @foreach([['🛡', 'Secure Payments'],['🌐', 'Global Delivery'],['💬', '24/7 Support']] as $badge)
-                        <div class="flex items-center gap-1.5 text-slate-500">
-                            <span class="text-sm">{{ $badge[0] }}</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider">{{ $badge[1] }}</span>
+                    <a href="{{ route('calculator') }}" class="block w-full bg-accent text-white font-extrabold py-3.5 rounded-lg hover:brightness-110 transition-all text-center text-base mt-2">Get Rate</a>
+                </div>
+
+                <!-- ── Shop Tab ── -->
+                <div id="tab-shop" class="tab-panel hidden flex-1 flex flex-col justify-between p-7">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Paste Product Link</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                                </span>
+                                <input class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary placeholder-slate-400" placeholder="e.g. https://amazon.com/product-name" type="url" />
+                            </div>
                         </div>
-                        @endforeach
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Country to Buy From</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-base">🌐</span>
+                                <select class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-8 py-2.5 text-sm focus:ring-primary focus:border-primary appearance-none">
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Malaysia</option>
+                                </select>
+                                <span class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Mini steps — fills vertical space -->
+                        <div class="flex justify-between gap-2">
+                            @foreach(['Send Link','We Buy','We Ship','Delivered'] as $i => $s)
+                            <div class="flex-1 text-center">
+                                <div class="w-7 h-7 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs flex items-center justify-center mx-auto mb-1">{{ $i+1 }}</div>
+                                <span class="text-[10px] font-semibold text-slate-500 leading-tight">{{ $s }}</span>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <a href="{{ route('services') }}" class="flex items-center justify-center gap-2 w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold py-3.5 rounded-lg transition-all shadow-sm text-base">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            SHOP FOR ME
+                        </a>
+                        <div class="flex justify-around border-t border-slate-100 pt-2.5">
+                            @foreach([['🛡','Secure Payments'],['🌐','Global Delivery'],['💬','24/7 Support']] as $b)
+                            <div class="flex items-center gap-1 text-slate-400">
+                                <span class="text-sm leading-none">{{ $b[0] }}</span>
+                                <span class="text-[9px] font-bold uppercase tracking-wide">{{ $b[1] }}</span>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
-                <!-- Track Tab -->
-                <div id="tab-track" class="tab-panel hidden p-8 space-y-5">
-                    <div class="flex gap-3">
-                        <div class="relative flex-1">
-                            <span class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                                </svg>
-                            </span>
-                            <input id="hero-track-input" class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-12 pr-4 py-4 focus:ring-primary focus:border-primary placeholder-slate-400 text-sm font-medium" placeholder="Enter Tracking Number" type="text" />
+                <!-- ── Track Tab ── -->
+                <div id="tab-track" class="tab-panel hidden flex-1 flex flex-col justify-between p-7">
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 mb-1">Enter your GoodsShippers tracking ID</p>
+                            <div class="flex gap-2">
+                                <div class="relative flex-1">
+                                    <span class="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
+                                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                    </span>
+                                    <input id="hero-track-input" class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary placeholder-slate-400 font-medium" placeholder="e.g. GS-8823-X920" type="text" />
+                                </div>
+                                <a id="hero-track-btn" href="{{ route('track-shipment') }}" class="px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold rounded-lg whitespace-nowrap transition-all text-sm">Track Now</a>
+                            </div>
                         </div>
-                        <a id="hero-track-btn" href="{{ route('track-shipment') }}" class="px-5 py-4 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold rounded-xl whitespace-nowrap transition-all shadow-md shadow-yellow-200 text-sm">Track Now</a>
+                        <!-- Example tracking IDs — fills vertical space + signals how ID looks -->
+                        <div class="bg-slate-50 rounded-xl p-4">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Recent Example IDs</p>
+                            <div class="space-y-2">
+                                @foreach(['GS-8823-X920','GS-4410-B371','GS-6601-K944'] as $ex)
+                                <button onclick="document.getElementById('hero-track-input').value='{{ $ex }}'" class="w-full flex items-center justify-between px-3 py-2 bg-white border border-slate-200 rounded-lg hover:border-primary transition-colors group">
+                                    <span class="font-mono text-xs font-semibold text-slate-700">{{ $ex }}</span>
+                                    <span class="text-[10px] text-primary opacity-0 group-hover:opacity-100 transition-opacity">Use this →</span>
+                                </button>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-                    <!-- Trust Badges -->
-                    <div class="flex justify-around pt-3 border-t border-slate-100">
-                        @foreach([['🔄', 'Real-Time Updates'],['🌍', 'Global Coverage'],['🛡', 'Secure Handling']] as $badge)
-                        <div class="flex items-center gap-1.5 text-slate-500">
-                            <span class="text-sm">{{ $badge[0] }}</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider leading-tight">{{ $badge[1] }}</span>
+                    <div class="flex justify-around border-t border-slate-100 pt-3">
+                        @foreach([['🔄','Real-Time Updates'],['🌍','Global Coverage'],['🛡','Secure Handling']] as $b)
+                        <div class="flex items-center gap-1 text-slate-400">
+                            <span class="text-sm leading-none">{{ $b[0] }}</span>
+                            <span class="text-[9px] font-bold uppercase tracking-wide">{{ $b[1] }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
+
 
         </div>
     </section>
