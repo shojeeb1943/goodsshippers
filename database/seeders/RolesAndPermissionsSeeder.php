@@ -51,6 +51,7 @@ class RolesAndPermissionsSeeder extends Seeder
                 'name'               => 'Super Admin',
                 'password'           => Hash::make('password'),
                 'warehouse_suite_id' => 'BD-0001',
+                'email_verified_at'  => now(),
                 'status'             => 'active',
             ]
         );

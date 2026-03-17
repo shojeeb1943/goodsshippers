@@ -3,7 +3,8 @@
     "allow": [
       "Bash(grep:*)",
       "Bash(php artisan:*)",
-      "Bash(php -l:*)"
+      "Bash(php -l:*)",
+      "Bash(git add:*)"
     ]
   }
 }

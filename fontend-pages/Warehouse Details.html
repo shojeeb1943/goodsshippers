@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>New York Warehouse - GoodsShippers</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a355b",
+                        "accent": "#f97316",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#13181f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-size: 20px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white dark:bg-slate-900 px-4 md:px-8 lg:px-20 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2 text-primary dark:text-slate-100">
+                    <span class="material-symbols-outlined text-primary dark:text-accent text-3xl">hub</span>
+                    <h2 class="text-xl font-bold leading-tight tracking-tight">GoodsShippers</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary"
+                        href="#">Warehouses</a>
+                    <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary"
+                        href="#">Shipments</a>
+                    <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary"
+                        href="#">Billing</a>
+                    <a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-primary"
+                        href="#">Support</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex relative items-center">
+                    <span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
+                    <input
+                        class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20"
+                        placeholder="Track shipment..." type="text" />
+                </div>
+                <div class="size-9 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">person</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 md:px-8 lg:px-20 py-6">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs font-medium text-slate-500 mb-6 uppercase tracking-wider">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Warehouses</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-primary font-bold">New York Warehouse</span>
+        </nav>
+        <!-- Header Section -->
+        <div class="flex flex-col lg:flex-row justify-between items-start gap-6 mb-8">
+            <div class="flex-1">
+                <div class="flex items-center gap-3 mb-2">
+                    <h1 class="text-3xl font-bold text-primary dark:text-slate-100">New York Warehouse</h1>
+                    <span
+                        class="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Active</span>
+                </div>
+                <p class="text-slate-600 dark:text-slate-400 max-w-xl">Dedicated logistics hub optimized for US-based
+                    online stores. We provide high-speed consolidation and weekly international departures.</p>
+            </div>
+            <div class="w-full lg:w-auto flex flex-wrap gap-4">
+                <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-4 min-w-[240px]">
+                    <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                        <span class="material-symbols-outlined text-primary dark:text-accent">public</span>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase font-semibold">Location</p>
+                        <p class="text-sm font-bold text-primary dark:text-slate-200">United States, New York</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center gap-4 min-w-[200px]">
+                    <div class="bg-slate-100 dark:bg-slate-700 p-2 rounded-lg">
+                        <span class="material-symbols-outlined text-primary dark:text-accent">calendar_today</span>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 uppercase font-semibold">Shipment Frequency</p>
+                        <p class="text-sm font-bold text-primary dark:text-slate-200">Weekly Departures</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Address & Guide -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Address Card (EMPHASIZED) -->
+                <section
+                    class="bg-white dark:bg-slate-800 rounded-xl shadow-md border-t-4 border-primary overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-xl font-bold text-primary dark:text-slate-100">Warehouse Shipping Address
+                            </h3>
+                            <button
+                                class="bg-accent hover:bg-orange-600 text-white px-5 py-2 rounded-lg font-bold text-sm flex items-center gap-2 transition-colors">
+                                <span class="material-symbols-outlined text-sm">content_copy</span> Copy Full Address
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="space-y-1">
+                                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Full
+                                    Name</label>
+                                <p
+                                    class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium">
+                                    GoodsShippers Warehouse</p>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Address
+                                    Line 1</label>
+                                <p
+                                    class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium">
+                                    123 Logistics Center</p>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Address
+                                    Line 2 (Suite ID)</label>
+                                <p
+                                    class="bg-orange-50 dark:bg-orange-900/20 p-3 rounded-lg border border-orange-200 dark:border-orange-800 text-primary dark:text-orange-400 font-bold">
+                                    Suite ID: BD-XXXX</p>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3">
+                                <div class="space-y-1">
+                                    <label
+                                        class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">City</label>
+                                    <p
+                                        class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium text-center">
+                                        New York</p>
+                                </div>
+                                <div class="space-y-1">
+                                    <label
+                                        class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">State</label>
+                                    <p
+                                        class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium text-center">
+                                        NY</p>
+                                </div>
+                                <div class="space-y-1">
+                                    <label
+                                        class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Zip</label>
+                                    <p
+                                        class="bg-slate-50 dark:bg-slate-900 p-3 rounded-lg border border-slate-100 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium text-center">
+                                        10001</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-amber-50 dark:bg-amber-900/10 border border-amber-200 dark:border-amber-800 p-4 rounded-lg flex gap-3">
+                            <span class="material-symbols-outlined text-amber-600">warning</span>
+                            <p class="text-sm text-amber-800 dark:text-amber-200">
+                                <span class="font-bold">CRITICAL:</span> Always include your unique Suite ID in the
+                                Address Line 2. Without it, we cannot identify your package and processing will be
+                                delayed.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Suite ID Example -->
+                <section>
+                    <h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">help</span> How to Use Your Suite ID
+                    </h3>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <div
+                            class="max-w-md mx-auto bg-white border-2 border-slate-300 p-6 rounded-sm shadow-sm relative">
+                            <div class="absolute top-4 right-4 text-xs font-mono text-slate-400">#LABEL-884920</div>
+                            <div class="mb-6">
+                                <div class="w-16 h-8 bg-slate-100 mb-2"></div>
+                                <p class="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Shipping To:
+                                </p>
+                            </div>
+                            <div class="space-y-1 text-slate-800 font-semibold">
+                                <p>John Doe</p>
+                                <p>123 Logistics Center</p>
+                                <div class="inline-block border-2 border-accent bg-accent/5 px-2 py-1 rounded relative">
+                                    <p class="text-accent font-bold">Suite ID: BD-2045</p>
+                                    <span
+                                        class="absolute -right-24 top-0 bg-accent text-white text-[10px] px-2 py-1 rounded whitespace-nowrap hidden sm:block">YOUR
+                                        UNIQUE ID</span>
+                                </div>
+                                <p>New York, NY 10001</p>
+                            </div>
+                            <div
+                                class="mt-8 pt-6 border-t border-dashed border-slate-200 flex justify-between items-end">
+                                <div class="h-10 w-48 bg-black"></div>
+                                <div class="text-[10px] font-bold">US-NY-WH</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Supported Stores -->
+                <section>
+                    <h3 class="text-lg font-bold text-primary mb-4">Supported Major Stores</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="Amazon logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="Amazon marketplace logo monochrome"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1RdtPutk6AaBNAPR4PU0-jV-iqqo-IKrbGVsvO_yssHsJm3ktk9fdN3geIGzVm1rKUFvDYZy2fsdrJY_sx77-9cu4BIDjP_gYjBDsxBiskJ90fuSZpOOUNLG2on2jRcMt7gLu7Th0TJKctzNSG0aTT2pQMH-jFYzRQbBG-14DWxhaiBXm0gSIxVkf2Ydvsg_Nzy2vhvf3M48sW7YvPyG3acKcjgJRCYpupSiKsN_zBaxyynWNDeSsqn5qgmMEjZou9iGJOZMJKs" />
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="eBay logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="eBay e-commerce logo monochrome"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0I5-8qlVMR0PkeKKBeXzm_6pcuQ8Lc57XsXYYFmDfhppyMgqoKfssDmAciKPAnYw93zUJTMEPF8GqnOJ_9ThFaHKjRf3VhcTvUTgm19ihsX1Pjzp8G5BQl_6iOMEunIpc34APvxae5dcYAKlbnpa9yVs0eO_oI8tyq_vre2LjSyzPALYi3tHhq3WwwvLUasXQ9aiG0I6PO6fokfhrc-4v-qJALYTxKVlPkAzMwZFngIcbJXo4dD8jkVxIUo7B4axdHIBfcyd5fiA" />
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="BestBuy logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="BestBuy electronics store logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3LU5wHysHwBS2Pgdf8tF-i21m7Fmf6M2czSPRqVDGptN20tP_3cKCNgWiegh1jN_AW9mlHLcnkvmh6DDC0-dcvVp33E4obWEmniJsWEjrN4jSzLkhKXOn3SkAo76-1_ZQsACXzTlP_LoAH3Y6I6Vt1eE6dvXYKdH1-SR5W2EiiB3KRtylcFxhRPiGI79nD_BaS6lvDaeIX2b7W3AXDdZXBN2X7okEgRYU_WM2KD7pyC7VjwnTx7i9aYCXxxyR1Ssb9yHut3O2hgw" />
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="Apple logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="Apple tech brand logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlT0RsC0wvP4O24YQyE5hPi1sk8Z_-lQIgwOONwMD2f5TbSRwl1iY0Lu5fu3HEDyW-rXHONVkqFYQh1AIHy1gTkhMKmVIhdn0PdRR8Rv6YBNL44hn4CxQAZMZBuF_1Dl_REcoedH5jJWm1nRSn02eFYgC3O1eiGBWaHLVcJsZVKWuznwgW-Su8_EYpbpny8SBKLJ50urAfaeuxD-Mo-OKDELmz4mDakkFKJN9OEUkEFbPeYQ7UCKsggm9TAi4SzeLrySvK41p5LGY" />
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="Nike logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="Nike sports brand logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrvY0vHw7JMzVUs3rLBIGwiMEJusWzDlqkx-SLdcfgZQXXPlvSJl4hnfm4XJRfMQVPj03CVSWRTueVKfNE7UxbOUZQzC4BU-dlu0VUXJA-lIkXdYlEScXM1pMMYRLArPx1QU6B16LGEbv-Q8X6V_V7tex9_XWUeayzZAeWrJP9rm_-0cF6eYw3mlOPaJgNCSakk8-6egYyRabmbzKMfGX3ERh6hulGewGoBOurgPmKA5d2QI3KcbUBvpUi_BY-Svd_ZBW2m0jK8jk" />
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-100 flex items-center justify-center h-20 shadow-sm">
+                            <img alt="Walmart logo"
+                                class="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all"
+                                data-alt="Walmart retail store logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSJRqZqZp6S6kV_BGYVZYyeflTJ3mrnj2V5oe23iVuI7NrC7gOyNTXeMYfWwZDVuvFteLFL1KGwjFvbo676kyLcsgr93zZv0JPLCr2uhFhrSEPMIojtUc0glFmlWPxcnRsQCO_EjYqT46mbV407qxfOtIF4znXV8KGNGQuBxry1YHFTbJX2g4ip5nZaFNPKbhVv5K_lTKzuZAMmcdhwdKNtFq0wVjAM-bfSQmlhkercv7Se6VYHrK5CQaqpTxAwBawIi_6sCmq-Ko" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Right Column: Sidebar -->
+            <div class="space-y-8">
+                <!-- Map Section -->
+                <section
+                    class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+                    <div class="h-48 w-full bg-slate-200 relative">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-80"
+                            data-alt="Map of New York City showing logistics center location"
+                            data-location="New York, USA"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_NVlv3-zmGfx34POGanYxHDMznqacc4Gydm65SKi57Yw8fCME0snCj_dAMtYqKy56HGad8Bv1b6OkLpvN4lYJYKJr3Z3u4nVWwFBDC7nxAUrI9XPKC7E6dEh-ZGaGGvrgwArBPCtvKO2Yo2BO9tGZiLVr8P1XHIPz8cCkXEEMxoIdcyWh-RIozNI3OEbEDCQG-MP9ODb424jhwWy0HiN9uOU1q7pknT93h6H9Cy3YQPvngb82kEknXy4rM8O8BIULAkTpbzT6_-U');">
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="size-6 bg-accent rounded-full border-4 border-white animate-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-xs text-slate-500 font-bold mb-1">STRATEGIC HUB</p>
+                        <p class="text-sm font-medium text-primary dark:text-slate-200">Located 15 mins from JFK Airport
+                            for maximum delivery efficiency.</p>
+                    </div>
+                </section>
+                <!-- Schedule Card -->
+                <section class="bg-primary text-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-lg font-bold mb-6">Dispatch Schedule</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                            <span class="material-symbols-outlined text-accent">flight_takeoff</span>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold">Method</p>
+                                <p class="font-bold">Global Air Freight</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 border-b border-white/10 pb-4">
+                            <span class="material-symbols-outlined text-accent">update</span>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold">Frequency</p>
+                                <p class="font-bold">Every Friday (Cut-off: Thursday)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-accent">pace</span>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-bold">Estimated Delivery</p>
+                                <p class="font-bold">7 - 10 Business Days</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Policies -->
+                <section class="space-y-3">
+                    <h3 class="text-lg font-bold text-primary">Warehouse Policies</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div
+                            class="flex items-center gap-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <span
+                                class="material-symbols-outlined text-primary bg-slate-100 p-2 rounded-md">inventory_2</span>
+                            <p class="text-sm font-semibold text-primary dark:text-slate-200">Storage: 30 Days Free</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <span
+                                class="material-symbols-outlined text-primary bg-slate-100 p-2 rounded-md">verified_user</span>
+                            <p class="text-sm font-semibold text-primary dark:text-slate-200">Inspection on Arrival</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <span
+                                class="material-symbols-outlined text-primary bg-slate-100 p-2 rounded-md">block</span>
+                            <p class="text-sm font-semibold text-primary dark:text-slate-200">View Restricted Items</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <span
+                                class="material-symbols-outlined text-primary bg-slate-100 p-2 rounded-md">layers</span>
+                            <p class="text-sm font-semibold text-primary dark:text-slate-200">Consolidation Available
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- Handling Process (Horizontal Timeline) -->
+        <section class="mt-16 bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+            <h3 class="text-xl font-bold text-primary dark:text-slate-100 text-center mb-10">Our Handling Process</h3>
+            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-8 px-4">
+                <!-- Line -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-slate-100 -translate-y-8 z-0"></div>
+                <div class="relative z-10 flex flex-row md:flex-col items-center gap-4 text-center">
+                    <div class="size-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined">package_2</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Parcel Arrival</p>
+                        <p class="text-[10px] text-slate-500">Reception &amp; Logging</p>
+                    </div>
+                </div>
+                <div class="relative z-10 flex flex-row md:flex-col items-center gap-4 text-center">
+                    <div
+                        class="size-12 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined">radio_button_checked</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Recording</p>
+                        <p class="text-[10px] text-slate-500">Weight &amp; Photo</p>
+                    </div>
+                </div>
+                <div class="relative z-10 flex flex-row md:flex-col items-center gap-4 text-center">
+                    <div
+                        class="size-12 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined">fact_check</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Inspection</p>
+                        <p class="text-[10px] text-slate-500">Safety Check</p>
+                    </div>
+                </div>
+                <div class="relative z-10 flex flex-row md:flex-col items-center gap-4 text-center">
+                    <div
+                        class="size-12 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center">
+                        <span class="material-symbols-outlined">shelves</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Storage</p>
+                        <p class="text-[10px] text-slate-500">Secured Area</p>
+                    </div>
+                </div>
+                <div class="relative z-10 flex flex-row md:flex-col items-center gap-4 text-center">
+                    <div class="size-12 rounded-full bg-accent text-white flex items-center justify-center shadow-lg">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                    </div>
+                    <div>
+                        <p class="font-bold text-sm">Preparation</p>
+                        <p class="text-[10px] text-slate-500">Export Packaging</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="mt-16 max-w-3xl mx-auto">
+            <h3 class="text-xl font-bold text-primary dark:text-slate-100 text-center mb-8">Frequently Asked Questions
+            </h3>
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 p-4">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <p class="font-bold text-primary dark:text-slate-200 text-sm">Where can I find my Suite ID?</p>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Your Suite ID is assigned as soon as you
+                        create your account. It is visible on your main dashboard and in your profile settings.</p>
+                </div>
+                <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 p-4">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <p class="font-bold text-primary dark:text-slate-200 text-sm">What happens if I forget to
+                            include my Suite ID?</p>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 p-4">
+                    <div class="flex justify-between items-center cursor-pointer">
+                        <p class="font-bold text-primary dark:text-slate-200 text-sm">Can I store bulky items in the NY
+                            warehouse?</p>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section
+            class="mt-20 mb-10 bg-slate-100 dark:bg-slate-900 rounded-3xl p-10 text-center border border-slate-200 dark:border-slate-800">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary dark:text-white mb-4">Ready to Ship Your Package?
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-lg mx-auto">Join thousands of shoppers using
+                GoodsShippers to get products from US stores to their doorstep anywhere in the world.</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button
+                    class="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-lg shadow-orange-500/20">
+                    Start Shipping Now
+                </button>
+                <button
+                    class="w-full sm:w-auto bg-white dark:bg-slate-800 text-primary dark:text-white border border-slate-200 dark:border-slate-700 font-bold px-8 py-3 rounded-xl hover:bg-slate-50 transition-all">
+                    Create Free Account
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-12 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 py-8 px-4 md:px-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2 text-primary dark:text-slate-500">
+                <span class="material-symbols-outlined">hub</span>
+                <span class="font-bold">GoodsShippers</span>
+            </div>
+            <div class="text-xs text-slate-500">
+                © 2024 GoodsShippers Logistics Inc. All rights reserved.
+            </div>
+            <div class="flex gap-6 text-xs font-medium text-slate-600">
+                <a class="hover:text-primary" href="#">Privacy Policy</a>
+                <a class="hover:text-primary" href="#">Terms of Service</a>
+                <a class="hover:text-primary" href="#">Help Center</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

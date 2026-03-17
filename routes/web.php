@@ -4,9 +4,29 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrackingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ─── Public Marketing Pages ───────────────────────────────────────────────────
+use App\Http\Controllers\PublicController;
+
+Route::get('/', [PublicController::class, 'home'])->name('home');
+Route::get('/about', [PublicController::class, 'about'])->name('about');
+Route::get('/services', [PublicController::class, 'services'])->name('services');
+Route::get('/how-it-works', [PublicController::class, 'howItWorks'])->name('how-it-works');
+Route::get('/faq', [PublicController::class, 'faq'])->name('faq');
+Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
+Route::get('/calculator', [PublicController::class, 'calculator'])->name('calculator');
+Route::get('/catalog', [PublicController::class, 'catalog'])->name('catalog');
+Route::get('/track-shipment', [PublicController::class, 'trackShipment'])->name('track-shipment');
+Route::get('/checkout', [PublicController::class, 'checkout'])->name('checkout');
+
+// Warehouse Pages
+Route::get('/warehouses', [PublicController::class, 'warehousesIndex'])->name('warehouses.index');
+Route::get('/warehouses/usa', [PublicController::class, 'warehouseShow'])->defaults('slug', 'usa')->name('warehouses.usa');
+Route::get('/warehouses/uk', [PublicController::class, 'warehouseShow'])->defaults('slug', 'uk')->name('warehouses.uk');
+Route::get('/warehouses/malaysia', [PublicController::class, 'warehouseShow'])->defaults('slug', 'malaysia')->name('warehouses.malaysia');
+
+// Product Pages
+Route::get('/products/{slug}', [PublicController::class, 'productShow'])->name('products.show');
+
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GoodsShippers | Shop Globally, Ship Seamlessly</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS v3 -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a355b',
+                        accent: '#f97316', // Orange for primary CTA
+                        neutral: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'custom': '8px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style data-purpose="custom-utilities">
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .process-line {
+            position: relative;
+        }
+
+        .process-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 2rem;
+            height: 2px;
+            background-color: #e5e7eb;
+            transform: translateY(-50%);
+        }
+
+        .process-line:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-900 bg-white">
+    <!-- BEGIN: Header -->
+    <header class="sticky-header border-b border-gray-100 h-20 flex items-center">
+        <nav class="max-w-[1280px] mx-auto w-full px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-custom flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">G</span>
+                </div>
+                <span class="font-bold text-2xl tracking-tight text-primary">GoodsShippers</span>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a class="hover:text-primary transition-colors" href="#">Services</a>
+                <a class="hover:text-primary transition-colors" href="#">How it Works</a>
+                <a class="hover:text-primary transition-colors" href="#">Pricing</a>
+                <a class="hover:text-primary transition-colors" href="#">Tracking</a>
+            </div>
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-4">
+                <button class="text-sm font-semibold text-primary px-4 py-2">Login</button>
+                <button
+                    class="bg-primary text-white text-sm font-semibold px-6 py-2.5 rounded-custom hover:opacity-90 transition-opacity">
+                    Get Started
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- END: Header -->
+    <main>
+        <!-- BEGIN: Hero Section -->
+        <section class="relative pt-20 pb-24 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
+            <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text content -->
+                <div data-purpose="hero-content">
+                    <h1 class="text-6xl font-extrabold text-primary leading-[1.1] mb-6">
+                        Shop Globally,<br />Ship Seamlessly
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
+                        Get your own local shipping address in the US, UK, and Malaysia. Shop from any international
+                        store and we'll deliver to your doorstep with zero hassle.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button
+                            class="bg-accent text-white font-bold px-8 py-4 rounded-custom shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all">
+                            Get a Quote
+                        </button>
+                        <button
+                            class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-custom hover:bg-primary hover:text-white transition-all">
+                            Track Shipment
+                        </button>
+                    </div>
+                    <!-- Trust Badges -->
+                    <div class="flex items-center gap-6">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Global
+                            Warehouses</span>
+                        <div class="flex gap-4">
+                            <div
+                                class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                                <img alt="USA" class="w-5 h-5 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYTPPXJDHHX7Vd4ALnigarw9yeHZzog_D-FKpqyHYnAfcQ1UGHf7gUtHYgHWWMpaVa0YFHDlBIcQ4owYEyBL4ZKT73Tvm2ggq8x2kEVXDXk8cFbcv0dq_krRHn0tmndiG0sGSi0tgR0aZC1PvUZ_-f1x1omaqfq8_SBE7LDtJm6f2XiYBxik2xzeVVU_9Jn15i8DcS5T7EIeJl9SqpX_TI8bOi0AC3gDtY1nw5pNrzn7eGxVOFAddhfHMDZPu51cz3iJ-1CgyKbvs" />
+                                <span class="text-xs font-semibold">USA</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                                <img alt="UK" class="w-5 h-5 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXO4UbxNbAmkZVM4NpdOYTTeBuqvkJSx4radJyT0O7bnyBltyD7ONQtLaKmSpPL0gU9edIUmqAU1pf5ReN9Kb6GBzwFDXTfQL-JA5jwHVT311pKnNX0p1RU0H6EbwfvBKFMI-vCUk3mlvzh_Gq5VA-SLyH0jCUtKl4GjaRSr8ocx2Ofbs8p9Q3c4jCJ-8IzWE3FWn9KvlGgHXBOsYjoJBCGONn_xzcSOcsrJtQsF9pdSt9-vKhoprmdSvBY32UL62ewb2NWCXZdnw" />
+                                <span class="text-xs font-semibold">UK</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                                <img alt="Malaysia" class="w-5 h-5 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaOWew-7JzglXxJ2HL3ws1diU0_V_cQcNGZdiHtXqXjRv1AP8qoV7mafdRQHEIxq6RUQy1YJUEJGGw7FZNHmtyADmJXgdsCnWkIthNd85AyagxlAPZVUoN8mjLFQ_e86sLZfetOuurIiaPY9AU-KY74U-5yO3_u9Ul2qSv4m2VgxgeM3Ay_0_hhL5EmT9Rw_bCvAZCII7YiiOT-qaAmsFcCFmm_NYS5Tg30anqpGVtYmg_2R1MTeo532CM2aKHxQCpM275ITtIFXI" />
+                                <span class="text-xs font-semibold">Malaysia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hero Interactive Card -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100" data-purpose="hero-widget">
+                    <div class="flex border-b border-gray-100 mb-8">
+                        <button class="px-6 py-3 font-bold text-primary border-b-2 border-primary">Ship</button>
+                        <button
+                            class="px-6 py-3 font-bold text-slate-400 hover:text-primary transition-colors">Shop</button>
+                        <button
+                            class="px-6 py-3 font-bold text-slate-400 hover:text-primary transition-colors">Track</button>
+                    </div>
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">From
+                                (Warehouse)</label>
+                            <select
+                                class="w-full bg-slate-50 border-slate-200 rounded-custom p-3 focus:ring-primary focus:border-primary">
+                                <option>New York, USA</option>
+                                <option>London, UK</option>
+                                <option>Kuala Lumpur, Malaysia</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Destination
+                                (To)</label>
+                            <input class="w-full bg-slate-50 border-slate-200 rounded-custom p-3 focus:ring-primary"
+                                placeholder="Enter your city/country" type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Product Type</label>
+                            <select
+                                class="w-full bg-slate-50 border-slate-200 rounded-custom p-3 focus:ring-primary focus:border-primary">
+                                <option>Electronics</option>
+                                <option>Clothing &amp; Fashion</option>
+                                <option>Health &amp; Beauty</option>
+                                <option>General Goods</option>
+                            </select>
+                        </div>
+                        <button
+                            class="w-full bg-accent text-white font-extrabold py-4 rounded-custom mt-4 text-lg hover:brightness-110 transition-all">
+                            Get Rate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Hero Section -->
+        <!-- BEGIN: Featured Products -->
+        <section class="py-24 bg-neutral">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary">Popular in Global Stores</h2>
+                        <p class="text-slate-500 mt-2">Recommended items from USA and UK marketplaces</p>
+                    </div>
+                    <a class="text-primary font-bold flex items-center gap-2" href="#">View All Stores <svg
+                            class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            </path>
+                        </svg></a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="h-48 rounded-lg bg-gray-50 mb-4 overflow-hidden">
+                            <img alt="Smartphone Pro X"
+                                class="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrJ4kQpD_Uc1aV2WJns2c_hvGUMxu5HfdiwauUQY_YC_-NszXosavpC-Kqhh7R6dlD6YDvPlTcMuG4t2hC8Sp9llVqv-Hf9VppuRJI6OQMB7uwtbsASN4FVHHl2nEHCztbfrQG9FJnK7Q7X0hxLWnvZBwNPbgPqJfZBGC7wbyMEx5-kC6XlxcroZRgEEkyF-g8yRcPIMN22_Qup2qlnye7Wuko5tsxs4WnATNSoMRcMjV5ckSmGTb3U5hFeoCYCKaoYt29lfjR5q8" />
+                        </div>
+                        <h3 class="font-bold text-slate-800">Smartphone Pro X</h3>
+                        <p class="text-primary font-bold text-xl mt-1">$999.00</p>
+                        <button
+                            class="w-full mt-4 py-2 border border-primary text-primary font-bold rounded-custom hover:bg-primary hover:text-white transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="h-48 rounded-lg bg-gray-50 mb-4 overflow-hidden">
+                            <img alt="Vitality Multi-Vitamins"
+                                class="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bVVrqyRUKhuRrv8FhKGy_2FgfVZJnXPleyglo4LWBVFNUhuOhKljX0MuClnMU9yzBPb777tVi6m2nR47KxWUWG0RLi_jqmdM85UI-9dOYGIPsLl9fhCwdkRdhsGKpqWxgqorxsbCiPEOEYX7tsCfs1KwFU_qPa1oSD2MkmwQfsmNAIDSrQm9HOw6dwmtBq50xwnnmN6e0xwSGi9W49aIO2pdFvD-D5Z2_Az3eAExsNB4c-B7x0DjzoEYftni-WivtygcnO9oiq0" />
+                        </div>
+                        <h3 class="font-bold text-slate-800">Vitality Multi-Vitamins</h3>
+                        <p class="text-primary font-bold text-xl mt-1">$45.50</p>
+                        <button
+                            class="w-full mt-4 py-2 border border-primary text-primary font-bold rounded-custom hover:bg-primary hover:text-white transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="h-48 rounded-lg bg-gray-50 mb-4 overflow-hidden">
+                            <img alt="SonicWave Elite"
+                                class="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0ZKoTVvlGGOY5Y5NeLREgt662mEJ4TdxkV1ydVGICGoFTcr89EJDYFOleM4n1iBWn9nOIEK3J14cyN93TgmMjtyHajuMcku-nGmGe4iKBkG61vKuEwSmefFsjjOY87M8-gFawqoaiw54rauWvrRBuCgrAtZkSgW_RG228DCS_Mta0kB3bC97jiyfYvcxSAyV2QyCBehZF3yg4QOZObyfjC5JdblJD41Q-PoATv7np2utzfyAXuWj_bZLdefYmeolJm_nK_nKEvtQ" />
+                        </div>
+                        <h3 class="font-bold text-slate-800">SonicWave Elite</h3>
+                        <p class="text-primary font-bold text-xl mt-1">$129.99</p>
+                        <button
+                            class="w-full mt-4 py-2 border border-primary text-primary font-bold rounded-custom hover:bg-primary hover:text-white transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-xl transition-shadow group">
+                        <div class="h-48 rounded-lg bg-gray-50 mb-4 overflow-hidden">
+                            <img alt="AeroRunner Max"
+                                class="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKsM0tMq4_qWif1WrKsSibjgIGBgn6Mrv0WTh4E57YcQpURv3kwnepI2axduIcdgMKp93sHLCAepGBE48An4r6CQxsnJ9aro82shDTQM0vGszn_t9aeD9MVuHcSe8QvvI3a3216q20Q7CMUrTuMC_cFjJk0AqbTEBXzJAIMqt45_LE5zNGw_X8dfO3JTlTcOYt1ge_LhR6FfwzeNIQZxe_n6f-zTFlcFHTJ34-RglME2grKN0kr-F4S0i6GziWgpobXwnccKsj2pc" />
+                        </div>
+                        <h3 class="font-bold text-slate-800">AeroRunner Max</h3>
+                        <p class="text-primary font-bold text-xl mt-1">$160.00</p>
+                        <button
+                            class="w-full mt-4 py-2 border border-primary text-primary font-bold rounded-custom hover:bg-primary hover:text-white transition-colors">Shop
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Featured Products -->
+        <!-- BEGIN: How It Works -->
+        <section class="py-24">
+            <div class="max-w-[1280px] mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-16">Shipping Made Simple</h2>
+                <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                    <!-- Step 1 -->
+                    <div class="flex-1 text-center group">
+                        <div
+                            class="w-20 h-20 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3">Shop Overseas</h4>
+                        <p class="text-slate-500 leading-relaxed">Shop your favorite brands from USA, UK or Malaysia
+                            stores.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex-1 text-center group">
+                        <div
+                            class="w-20 h-20 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3">Consolidate</h4>
+                        <p class="text-slate-500 leading-relaxed">Receive items at our hubs and combine packages to save
+                            costs.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex-1 text-center group">
+                        <div
+                            class="w-20 h-20 bg-blue-50 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3">Express Delivery</h4>
+                        <p class="text-slate-500 leading-relaxed">Fastest shipping options to your doorstep in days.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: How It Works -->
+        <!-- BEGIN: Path Selection -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <h2 class="text-3xl font-bold text-primary text-center mb-16">Choose Your Solution</h2>
+                <div class="space-y-8">
+                    <!-- Buy For Me Card -->
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col xl:flex-row gap-8 items-center">
+                        <div class="xl:w-1/4">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Buy For Me</h3>
+                            <p class="text-slate-500 text-sm">We handle the purchase and the shipping for you.</p>
+                        </div>
+                        <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 01</span>
+                                <span class="text-sm font-medium">Send Link</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 02</span>
+                                <span class="text-sm font-medium">Pay Goods</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 03</span>
+                                <span class="text-sm font-medium">We Purchase</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 04</span>
+                                <span class="text-sm font-medium">Home Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ship For Me Card -->
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col xl:flex-row gap-8 items-center">
+                        <div class="xl:w-1/4">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Ship For Me</h3>
+                            <p class="text-slate-500 text-sm">You shop, we ship from our warehouse to you.</p>
+                        </div>
+                        <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 01</span>
+                                <span class="text-sm font-medium">Get Address</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 02</span>
+                                <span class="text-sm font-medium">Shop Online</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 03</span>
+                                <span class="text-sm font-medium">Consolidate</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 04</span>
+                                <span class="text-sm font-medium">Ship Home</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bulk Shipment Card -->
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col xl:flex-row gap-8 items-center">
+                        <div class="xl:w-1/4">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Bulk Shipment</h3>
+                            <p class="text-slate-500 text-sm">Large volume logistics for businesses.</p>
+                        </div>
+                        <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 01</span>
+                                <span class="text-sm font-medium">Quote Inquiry</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 02</span>
+                                <span class="text-sm font-medium">Cargo Pickup</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center process-line">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 03</span>
+                                <span class="text-sm font-medium">Customs Clear</span>
+                            </div>
+                            <div class="bg-neutral p-4 rounded-custom text-center">
+                                <span class="text-xs font-bold text-primary block mb-1">Step 04</span>
+                                <span class="text-sm font-medium">Port to Port</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Path Selection -->
+        <!-- BEGIN: Global Hubs -->
+        <section class="py-24">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <h2 class="text-3xl font-bold text-primary mb-12">Our Strategic Hubs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Hub 1 -->
+                    <div
+                        class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <img alt="London Hub" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj_ZdpPZzsI-XzzAcckD3G3tgY91MFnsK-8oS89HY4mKmOtbcW_36wG3Q1_24-zt1O1zPdVFz7cLdcfw6aunbg_M9-rF85y_7_4u6WGlU7wuU9qSJcj3eYfDRvOsLNvXFYVXwyrw2dIVMElt1YQMVKMpvKQBJ0OLp2vqunwNvRKqR7Od5s5DJjbw6CGXDRXqWVd4Xo8e4Kvo493D0Ta5giZtc81EWPK3O7vnhIMfTdKEHXaP_b6rWPSgdxvADIAQynUvFxIXdDDwM" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-primary mb-4">London, UK</h3>
+                            <div class="space-y-3 text-sm text-slate-600 mb-6">
+                                <div class="flex justify-between"><span>Frequency:</span> <span
+                                        class="font-semibold text-slate-900">Twice Weekly</span></div>
+                                <div class="flex justify-between"><span>Air Freight:</span> <span
+                                        class="font-semibold text-slate-900">3-5 Days</span></div>
+                                <div class="flex justify-between"><span>Sea Freight:</span> <span
+                                        class="font-semibold text-slate-900">4-6 Weeks</span></div>
+                            </div>
+                            <a class="text-primary font-bold text-sm underline" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Hub 2 -->
+                    <div
+                        class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <img alt="New York Hub" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmdALwUQnN8yUFRHSDfTd3c-FZQELvZJkby8QU8e5zoxuerK5T5C95yQi-daMb3jAWeFYQqg0FJVgkHqOpABUXlAJTgLLYh7uzWOu0RAjhNbUSgC-exqAilHl_AAp1h5PvSy9fdP6U2UKfJHhTl_Kr4VG1DEo2vH-v6hJZVPYoBEyE3XQVpVHnRjGPbn8j-cOtOnfZ3_2nk_BsodU2xVtOHuH3sQqm6evca0jEdFJlyc3oM4TZhlsPRI5BzojDckErz07dI9qqB30" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-primary mb-4">New York, USA</h3>
+                            <div class="space-y-3 text-sm text-slate-600 mb-6">
+                                <div class="flex justify-between"><span>Frequency:</span> <span
+                                        class="font-semibold text-slate-900">Daily Flights</span></div>
+                                <div class="flex justify-between"><span>Air Freight:</span> <span
+                                        class="font-semibold text-slate-900">5-7 Days</span></div>
+                                <div class="flex justify-between"><span>Sea Freight:</span> <span
+                                        class="font-semibold text-slate-900">6-8 Weeks</span></div>
+                            </div>
+                            <a class="text-primary font-bold text-sm underline" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Hub 3 -->
+                    <div
+                        class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                        <img alt="KL Hub" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTteBAFqh-QyGqKHZ9dt0zMCb5QnjIKnemxMQ8xwnKdY_jZ8qnsHMosVoe-E_cF9IlWSbUTtzLlqHrUJGpXZERAdiir9tuschEPTYGzMPdZSxfamFFT_PjvuejO7_xBvNTcyecniVyJNFdeKEpZB_Wc4s0I2x66pzipxejJuNQKuXUa11wIbFMfmOm2WrPsavstS10j8j-AmpmtNvXGP7aaclG6wnPztxneN2nkrQ_qTSj8vBSyntYhoeaybaLHM96Kue15qS_N1A" />
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-primary mb-4">Kuala Lumpur, MY</h3>
+                            <div class="space-y-3 text-sm text-slate-600 mb-6">
+                                <div class="flex justify-between"><span>Frequency:</span> <span
+                                        class="font-semibold text-slate-900">Weekly</span></div>
+                                <div class="flex justify-between"><span>Air Freight:</span> <span
+                                        class="font-semibold text-slate-900">4-6 Days</span></div>
+                                <div class="flex justify-between"><span>Sea Freight:</span> <span
+                                        class="font-semibold text-slate-900">2-3 Weeks</span></div>
+                            </div>
+                            <a class="text-primary font-bold text-sm underline" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Global Hubs -->
+        <!-- BEGIN: Pricing Transparency -->
+        <section class="py-24 bg-primary text-white">
+            <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">No Hidden Fees. Ever.</h2>
+                    <p class="text-blue-100 text-lg mb-10 leading-relaxed">
+                        We believe in honest pricing. Our rates are calculated based on actual or volumetric weight,
+                        whichever is higher, following industry standards.
+                    </p>
+                    <div class="bg-blue-900/50 p-6 rounded-2xl border border-blue-800">
+                        <h4 class="font-bold mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                            Volumetric Formula
+                        </h4>
+                        <div class="text-2xl font-mono text-center bg-primary p-4 rounded-lg">
+                            (L × W × H) ÷ 5000 = KG
+                        </div>
+                        <p class="text-xs text-blue-300 mt-4 text-center">Dimensions in centimeters (cm)</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 text-slate-900 shadow-2xl">
+                    <h4 class="font-bold text-xl mb-6 border-b pb-4 border-gray-100">Sample Cost Breakdown</h4>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Shipping (2.5kg from USA)</span>
+                            <span class="font-semibold">$35.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Consolidation Fee</span>
+                            <span class="font-semibold">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Insurance (Optional)</span>
+                            <span class="font-semibold">$5.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Handling Fee</span>
+                            <span class="font-semibold">$2.50</span>
+                        </div>
+                    </div>
+                    <div class="bg-neutral p-4 rounded-lg border-2 border-dashed border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-slate-600">Total Estimate</span>
+                            <span class="text-3xl font-extrabold text-primary">$42.50</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 bg-accent text-white font-bold py-4 rounded-custom hover:brightness-110 transition-all">
+                        Calculate My Package
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- END: Pricing Transparency -->
+        <!-- BEGIN: Why Choose Us -->
+        <section class="py-24 bg-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm text-center">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-4 text-primary">Lower Cost</h3>
+                        <p class="text-slate-500 leading-relaxed">Up to 70% cheaper than direct international shipping
+                            rates through our volume discounts.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm text-center">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-4 text-primary">Faster Processing</h3>
+                        <p class="text-slate-500 leading-relaxed">Same-day package intake and rapid dispatch cycles from
+                            all our global warehouse locations.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm text-center">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-xl mb-4 text-primary">Full Transparency</h3>
+                        <p class="text-slate-500 leading-relaxed">Real-time tracking and zero hidden surcharges. What
+                            you see is exactly what you pay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Why Choose Us -->
+        <!-- BEGIN: Footer CTA -->
+        <section class="py-20 bg-neutral">
+            <div class="max-w-[1280px] mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold text-primary mb-6">Ready to Start Importing?</h2>
+                <p class="text-slate-600 text-lg mb-10 max-w-2xl mx-auto">Join 50,000+ shoppers who trust GoodsShippers
+                    for their international logistics needs.</p>
+                <button
+                    class="bg-primary text-white font-extrabold px-10 py-5 rounded-custom text-lg shadow-xl hover:scale-105 transition-all">
+                    Create Free Account Today
+                </button>
+            </div>
+        </section>
+        <!-- END: Footer CTA -->
+    </main>
+    <!-- BEGIN: Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-gray-100">
+        <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">G</span>
+                    </div>
+                    <span class="font-bold text-xl text-primary">GoodsShippers</span>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6 pr-8">
+                    Making global e-commerce accessible to everyone through smart logistics, consolidation, and express
+                    delivery solutions.
+                </p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
+                        href="#">
+                        <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+                            <path
+                                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Company</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a class="hover:text-primary" href="#">About Us</a></li>
+                    <li><a class="hover:text-primary" href="#">Careers</a></li>
+                    <li><a class="hover:text-primary" href="#">Press &amp; Media</a></li>
+                    <li><a class="hover:text-primary" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Services</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a class="hover:text-primary" href="#">Shop For Me</a></li>
+                    <li><a class="hover:text-primary" href="#">Ship For Me</a></li>
+                    <li><a class="hover:text-primary" href="#">Bulk Shipment</a></li>
+                    <li><a class="hover:text-primary" href="#">Warehousing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-primary mb-6">Support</h4>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li><a class="hover:text-primary" href="#">FAQ</a></li>
+                    <li><a class="hover:text-primary" href="#">Shipping Prohibitions</a></li>
+                    <li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+                    <li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-[1280px] mx-auto px-6 border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-slate-400">© 2023 GoodsShippers Inc. All rights reserved.</p>
+            <div class="flex gap-6">
+                <img alt="Visa" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmK0Rg5mjOl0yPxP16SZ1_NOOBIxVYUA98Vp1ztDqhQz15CQJhoTdp0e-fZYieWBuvC4LgO5Hem31vHZF0OOwnUl0hJB1V_JOkQgsMMmlW_RtzNK_jRP_3TBL4R3GgRw6UMHZDEZTFQT70klsrbM4PqtN-U5Na-ZdG7uVkAbNlGgo6PAwoGw2EfJxLLfzoIlj7Dy-lDym_tl3T7HbRouS55uelpLfiR3Bcn_3YphorL2k1enPk77HvjQ2NOxgH2-Sg3y2APkXh1XY" />
+                <img alt="Mastercard" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBc9vLc_qxgMzgo8AWbu0h43WKmDdx2yL5xw0vLSwWjpJYmV_23Wuu_gm23I49RWZ_n1eklVfk3sHJwARIxPSb-VhBvwNF9JHiM83Fw7kO80imaukhytpuAv04ue5uqBtin4Tsbtunovx8E7Hv6ywXvATdsmJzwxS8bNBZWlt5Ajhh6QgcwtakyCtCQeUWXgAwu2mQZ2g330XGlMcL1sGFYxdf7HiH8Plzva82SInXXyM9KjI1ZBqAHGrVmAe9SM9WOlJHzBggVvE" />
+                <img alt="PayPal" class="h-6 opacity-50 grayscale hover:grayscale-0 transition-all"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9QEDiRuNhibwr-ekOl3RbLAC8gBuvEWwJr1aIUEYn6MF1ChZOToPXhzsqXGDPlbJrQ62VDGUK3tVrq667jQ9Q_GnpYVkx5WAkMUom2ZAQKDztxn18tromlUK7Pyj1Lrh-WyJtJ_DOG6_iVzYEEQ0SnYPo7tH7EtSPoJ0zGtM3BoL-N7o6-pUMSloT21XVzjiB5d8R0FviDBu4OtvPMsvcufffydmEWEVrCb6PSJAZjItgHyFAj3My_HbXBVwDKnVRv_plUqevaJg" />
+            </div>
+        </div>
+    </footer>
+    <!-- END: Footer -->
+</body>
+
+</html>

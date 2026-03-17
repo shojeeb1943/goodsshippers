@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>GoodsShippers - Store Catalog</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a355b", // Navy Blue
+                        "accent": "#f97316",  // Orange
+                        "background-light": "#f9fafb",
+                        "background-dark": "#13181f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2 text-primary dark:text-white">
+                        <span class="material-symbols-outlined text-3xl font-bold">local_shipping</span>
+                        <h2 class="text-xl font-black tracking-tight">GoodsShippers</h2>
+                    </div>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a class="text-sm font-semibold text-primary border-b-2 border-accent pb-1" href="#">Store</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                            href="#">Tracking</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                            href="#">Services</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                            href="#">Support</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative hidden sm:block">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+                        <input
+                            class="h-9 w-64 rounded-lg border-slate-200 bg-slate-50 pl-10 text-sm focus:border-accent focus:ring-accent"
+                            placeholder="Search orders..." type="text" />
+                    </div>
+                    <button class="relative rounded-full p-2 hover:bg-slate-100">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                        <span
+                            class="absolute top-0 right-0 h-4 w-4 rounded-full bg-accent text-[10px] font-bold text-white flex items-center justify-center border-2 border-white">3</span>
+                    </button>
+                    <div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center" data-alt="User profile avatar"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxDdnNAFc_p-nQLj5HkxdWTkgn2FdP0-RFZLzxAGGfInpXP6qE4DNUwfCrv9Zf_5REfMrAqLy7ESDS63y2XLmD5Q2D1GQqJjg-S3PuMGOMfNROfoGLsDDzho1hu_asm_OkQs6Bya7rVnuO9P3SGxGq69FymZxZNZLrmJyQEACGyBl6NiPug74CVB-fQUnZ5YjDXb4hO80zmlTdn3IvM4aQYFGfCiWsAyEl_h9IYblU4Y0QOMnLDH0-l9gizDwaAVF8xeyVtvcGw38')">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <section class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                        <div class="max-w-2xl">
+                            <h1 class="text-4xl font-black text-primary dark:text-white mb-4">Browse Our Store</h1>
+                            <p class="text-lg text-slate-600 dark:text-slate-400">Access our global forwarding network
+                                with ease. Shop from top international brands and let us handle the logistics.</p>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                                    <span class="material-symbols-outlined text-sm">public</span> Global Store Items
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                                    <span class="material-symbols-outlined text-sm">inventory_2</span> Warehouse
+                                    Processing
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                                    <span class="material-symbols-outlined text-sm">location_on</span> Shipment Tracking
+                                    Included
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <button
+                                class="flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-bold text-white shadow-lg shadow-accent/20 hover:bg-orange-600 transition-all">
+                                Start Shopping
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-6">
+                    <div
+                        class="flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white p-4 shadow-sm border border-slate-100 dark:bg-slate-900 dark:border-slate-800">
+                        <div class="flex flex-1 min-w-[300px] relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                            <input
+                                class="w-full rounded-lg border-slate-200 bg-slate-50 pl-11 focus:border-accent focus:ring-accent"
+                                placeholder="Search products, brands, categories..." type="text" />
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <select
+                                class="rounded-lg border-slate-200 text-sm font-medium focus:border-accent focus:ring-accent">
+                                <option>Category</option>
+                                <option>Electronics</option>
+                                <option>Home</option>
+                            </select>
+                            <select
+                                class="rounded-lg border-slate-200 text-sm font-medium focus:border-accent focus:ring-accent">
+                                <option>Price Range</option>
+                                <option>$0 - $100</option>
+                                <option>$100 - $500</option>
+                            </select>
+                            <select
+                                class="rounded-lg border-slate-200 text-sm font-medium focus:border-accent focus:ring-accent">
+                                <option>Sort By: Newest</option>
+                                <option>Price: Low-High</option>
+                                <option>Price: High-Low</option>
+                            </select>
+                            <div class="flex items-center border border-slate-200 rounded-lg p-1">
+                                <button class="p-1 rounded bg-slate-100 text-primary"><span
+                                        class="material-symbols-outlined">grid_view</span></button>
+                                <button class="p-1 rounded text-slate-400 hover:text-primary"><span
+                                        class="material-symbols-outlined">view_list</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="rounded-full bg-primary px-5 py-1.5 text-sm font-semibold text-white">All
+                            Products</button>
+                        <button
+                            class="rounded-full bg-white border border-slate-200 px-5 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">Electronics</button>
+                        <button
+                            class="rounded-full bg-white border border-slate-200 px-5 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">Accessories</button>
+                        <button
+                            class="rounded-full bg-white border border-slate-200 px-5 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">Health
+                            &amp; Beauty</button>
+                        <button
+                            class="rounded-full bg-white border border-slate-200 px-5 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">Apparel</button>
+                        <button
+                            class="rounded-full bg-white border border-slate-200 px-5 py-1.5 text-sm font-semibold text-slate-600 hover:bg-slate-50">Home
+                            Decor</button>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        <div
+                            class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                            <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                                <img class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="Modern laptop product on desk"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCV2HHAFGK3DIyld4q1lmUuiEeVvR4EEPRMLZFVjvJ7f0ZXjO-zmvVwCZSakACUWegxwwFQLdaj6AuYKTqYC9s0g2Rmyu5P8v720pOEWTtENqwg3dq3QrvOSHmmFImm9XeheUWTOYdQ6ajqbcP7LAL5lWap9g49qN3sfr6ZQ1MMpOYA0CgGeKdL2wEpJAOrTfkb_DDgYlRa7dBgW92hmDijDRYnGBw8sIZetjjnTOjRFxLA4HHY02fT_KMeSnKhnZxAPX5_ZwHIpU" />
+                                <span
+                                    class="absolute left-2 top-2 rounded-full bg-accent px-2.5 py-1 text-[10px] font-bold text-white uppercase tracking-wider">New</span>
+                            </div>
+                            <h3 class="text-sm font-bold text-primary dark:text-white line-clamp-1">Smartphone Pro X
+                            </h3>
+                            <p class="mt-1 text-lg font-black text-slate-900 dark:text-slate-100">$999.00</p>
+                            <button
+                                class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-orange-600">
+                                <span class="material-symbols-outlined text-sm">shopping_bag</span> Shop Now
+                            </button>
+                        </div>
+                        <div
+                            class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                            <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                                <img class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="High-end wireless headphones"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkIjqnn0D8PGIEHdkkIw924DGMLMTIrNN8nx5_ehN9gdmGy4YYmBGQiQNUOfdVAR1MOo1jfA4wsNfh7P4VQ_zuYO8BEFM1sB8tBFaqrqOgp7hGItxfQNqQfw45PWnjyAxOHMHQv1dlp2DcAzErLRTpk0VeZEHG5jx3UEQ8_v5AwR3XtIUuRIYfl6dkZVGgqCesKU_ZxgzNkxOCaghWS2VeTa6hdFBOELx1Z8ViXYA2YMO7fT7bU4D7LZQXv8yZyQE9wt0iLpN8vck" />
+                                <span
+                                    class="absolute left-2 top-2 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-white uppercase tracking-wider">Popular</span>
+                            </div>
+                            <h3 class="text-sm font-bold text-primary dark:text-white line-clamp-1">Noise Cancelling
+                                Headphones</h3>
+                            <p class="mt-1 text-lg font-black text-slate-900 dark:text-slate-100">$249.00</p>
+                            <button
+                                class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-orange-600">
+                                <span class="material-symbols-outlined text-sm">shopping_bag</span> Shop Now
+                            </button>
+                        </div>
+                        <div
+                            class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                            <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                                <img class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="Modern white watch"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk55fnt3G8380N08OVN_q8QZcxSrgdN9MyE1maXFYKqU8uRSoorBzZEf87LUIC_PGMCgBgz892GSrA1lgbKqK_5flbFCElWdhzq_FOm8btW61x08R47YBT0ENzbiIDQh_LNXLLhvxcboK-fRJw_4BPRjuIiZ9uguiUnqGEVM_akvfyYoChJgaQEsUNGpjX4WaFHfA_B0Ck_QVHdHUYtYj_ubMJ93CiSZehgguVCtfXQdCEBQalmf4nBIOYnca1zmT4VsN6E-zblR0" />
+                            </div>
+                            <h3 class="text-sm font-bold text-primary dark:text-white line-clamp-1">Smart Watch Series 7
+                            </h3>
+                            <p class="mt-1 text-lg font-black text-slate-900 dark:text-slate-100">$399.00</p>
+                            <button
+                                class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-orange-600">
+                                <span class="material-symbols-outlined text-sm">shopping_bag</span> Shop Now
+                            </button>
+                        </div>
+                        <div
+                            class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm transition-shadow hover:shadow-md dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                            <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                                <img class="h-full w-full object-cover transition-transform group-hover:scale-105"
+                                    data-alt="Red athletic running shoes"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0-YiXnR5KnGVtUv9fKjoE0Xo0z0hNbeNw6-nTmL6ELpbXi9dpPUV8xZX0ov-H1aBI1LAbFQ0SB6BMYz1vISKkjQyGjIjat50v9tfEPWcVxOChYigVsoE1G91S9y3cdkbh0v16EBjORKCLYzItLOdEIG4-WMtkHlx9Z78LmbS8VUVxydkRdmQIUJX9rV67pVa0_phEXBUjbBNcmZ9EKeisH54U9AcmA740XeUSJ6fJroebUEOwdgjQR6jkelLEo4xBWRaoSNNIZHk" />
+                            </div>
+                            <h3 class="text-sm font-bold text-primary dark:text-white line-clamp-1">UltraBoost Running
+                                Shoes</h3>
+                            <p class="mt-1 text-lg font-black text-slate-900 dark:text-slate-100">$180.00</p>
+                            <button
+                                class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-orange-600">
+                                <span class="material-symbols-outlined text-sm">shopping_bag</span> Shop Now
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 py-6">
+                        <button
+                            class="rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50">Previous</button>
+                        <button class="h-10 w-10 rounded-lg bg-primary text-white text-sm font-bold">1</button>
+                        <button
+                            class="h-10 w-10 rounded-lg border border-slate-200 text-sm font-medium hover:bg-slate-50">2</button>
+                        <button
+                            class="h-10 w-10 rounded-lg border border-slate-200 text-sm font-medium hover:bg-slate-50">3</button>
+                        <button
+                            class="rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50">Next</button>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-slate-50 dark:bg-slate-800/50 py-16">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <h2 class="mb-8 text-2xl font-black text-primary dark:text-white">Featured Categories</h2>
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="group relative h-64 overflow-hidden rounded-2xl">
+                            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Various consumer electronics"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwW5K10VjYErHJIGSOJdiu7z_RG34pnuwDXbb6_h4u2JuvLo6ha1_2wz61G9fivDVgIL12HNhq1rJGNjoihe4HqjYlQ3XAyJ96rTY7Z8uV5VfM4nd24rOMcugVXBBQCaZZaz-cP2P-F9mq-z2bzg3znpcSKQyr1N-wuhaQVF4Et6A1T1vK-J8U6PL0apn0EPgHATSSl8dwRxe7Z-yvUFrN_Nnqdq_CBgmh9BF3PS2Hotq-OSqEGdZA2rVgikSjjMv3WMsHo7RzQEs" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                                <h3 class="text-xl font-bold text-white">Electronics</h3>
+                            </div>
+                        </div>
+                        <div class="group relative h-64 overflow-hidden rounded-2xl">
+                            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Health and beauty products"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCy1m9UTQ3cGrQ5RrpiPWrcpXwyJI_6PjmM8YCp3N71tq1RdAtetVjyf_OProElC2CWo6NimptUuIL-5VH7zan_XeqSy5hjsrPi4xcqxP-s89I9BZZCzL6eWdfm00uaSAqdOdsW1sOtiaow9im1x4sSS2X0TmkIfx1ESaD4LriUDaVZSfkDTcJecSR46EyVmS1l_H3jNLpdvfzj9Z-n3SwmrLA-0sWJcZFYZdQ-wnwDykNnQTSuNl9IfXzsV3AoUyAxvOZEjxha9Ug" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                                <h3 class="text-xl font-bold text-white">Health &amp; Beauty</h3>
+                            </div>
+                        </div>
+                        <div class="group relative h-64 overflow-hidden rounded-2xl">
+                            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Fashion accessories display"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0HK7BFq91-te2_x-L6JTrBxniQ_K2VNnryryoX0M9dziZqSqhNhqg9bGxCEr8O5KqrAGozF-jca-2u6lxmvlxrS9apjlZobEZkimsGdY9jHE_HYs4ZMc_F_jxJj4gKMMD0yPPYsrOBjvlAeA9Wz3-4E3KmF2peyMs6gmMqX1MWwuVaizRopakgHjCWS7iI1Y81KjOeimQojJ4L0DMJ_gHm4Kuk9Ym4MYv9y-U-w85PVYOT1yZKx7ADt6epaXI9I8CbKVjDL89P8Q" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                                <h3 class="text-xl font-bold text-white">Accessories</h3>
+                            </div>
+                        </div>
+                        <div class="group relative h-64 overflow-hidden rounded-2xl">
+                            <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Lifestyle and home decor"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtMXRRtBauXLInHCs4CVWxlbem_FBWQPAJzxRZ7NzpFoqC96Ki6cBmZOaj-6WA5WQJxx1kYPzWMMYN3LQs-9Lqc5daAnuo5zTITrSvVi4QYYgZefYrF3Hto100qOznSU4uR__LLWdEEykmXoO6wb2V7jHX7QQZSKp_rBLyi1KuLs9Un90U_RGSE_9vLInWQw7orUWCaLd8IV83hOnn8scWMZL36D2qg2fTP-miq6SKFvOSFsgj2lKSZ2OCkoq0TJZSWIUahUheJNA" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent flex items-end p-6">
+                                <h3 class="text-xl font-bold text-white">Lifestyle</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-primary dark:text-white mb-4">Why Shop With Us?</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">We combine global commerce with seamless logistics to
+                        provide the best international shopping experience.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <div class="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">warehouse</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Warehouse Processing</h4>
+                        <p class="text-sm text-slate-500">Every item is inspected and safely stored at our global hubs
+                            before final dispatch.</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <div class="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">shopping_cart_checkout</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Global Products</h4>
+                        <p class="text-sm text-slate-500">Exclusive access to international marketplaces and top-tier
+                            global brands.</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <div class="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">distance</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Shipment Tracking</h4>
+                        <p class="text-sm text-slate-500">Real-time tracking from the moment your order leaves the
+                            merchant until your door.</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                        <div class="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-primary text-3xl">payments</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-primary mb-2">Transparent Pricing</h4>
+                        <p class="text-sm text-slate-500">No hidden fees. Shipping, duties, and taxes are calculated
+                            upfront for your peace of mind.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-primary py-20 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+                    <svg class="h-full w-full" viewbox="0 0 100 100">
+                        <circle cx="100" cy="0" fill="white" r="80"></circle>
+                    </svg>
+                </div>
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+                    <h2 class="text-3xl font-black text-white text-center mb-16">How Product Orders Work</h2>
+                    <div class="relative flex flex-col md:flex-row justify-between gap-12 md:gap-4">
+                        <div class="absolute top-1/2 left-0 w-full h-0.5 bg-white/20 -translate-y-1/2 hidden md:block">
+                        </div>
+                        <div class="relative flex flex-col items-center text-center flex-1 z-10">
+                            <div
+                                class="h-16 w-16 rounded-full bg-accent text-white flex items-center justify-center mb-4 ring-8 ring-white/10">
+                                <span class="material-symbols-outlined">add_shopping_cart</span>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Add to Cart</h4>
+                            <p class="text-slate-300 text-sm">Select items from our global catalog.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center flex-1 z-10">
+                            <div
+                                class="h-16 w-16 rounded-full bg-accent text-white flex items-center justify-center mb-4 ring-8 ring-white/10">
+                                <span class="material-symbols-outlined">receipt_long</span>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Place Order</h4>
+                            <p class="text-slate-300 text-sm">Securely pay for your global items.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center flex-1 z-10">
+                            <div
+                                class="h-16 w-16 rounded-full bg-accent text-white flex items-center justify-center mb-4 ring-8 ring-white/10">
+                                <span class="material-symbols-outlined">description</span>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Invoice Generated</h4>
+                            <p class="text-slate-300 text-sm">Get clear breakdowns of all costs.</p>
+                        </div>
+                        <div class="relative flex flex-col items-center text-center flex-1 z-10">
+                            <div
+                                class="h-16 w-16 rounded-full bg-accent text-white flex items-center justify-center mb-4 ring-8 ring-white/10">
+                                <span class="material-symbols-outlined">verified</span>
+                            </div>
+                            <h4 class="text-white font-bold mb-2">Delivery Completed</h4>
+                            <p class="text-slate-300 text-sm">Receive your items at your doorstep.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-black text-primary dark:text-white mb-8">Recommended For You</h2>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <div
+                        class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm border border-slate-100">
+                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                            <img class="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                                data-alt="Classic style sunglasses"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC01GNu2SvIUAuRO27z27JBQ-3F4bXGhasPNwY3VcgXoBsxNFBSxWBpZCcgztw5q3e9YSQfbctMBvryW-WSHQJIayZJzHIg-kb8W3osu7RbXyphOyS-pfYGx4oGpi7BgoTI0bFqprL5J2IRPfN9yluGh0xQBdrFleY8yPmKDZ756KCpXLxEYO6BgHhekaJuCP5qTDOHLhhy1uQqAXOOixX9eDF_OxhvtSo5tz-hVDbWAyoaJhKcM83sfkF_OO1XMuEDtGdrZazM4sc" />
+                        </div>
+                        <h3 class="text-sm font-bold text-primary">Designer Sunglasses</h3>
+                        <p class="mt-1 text-lg font-black text-slate-900">$125.00</p>
+                        <button
+                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white hover:bg-orange-600 transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <div
+                        class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm border border-slate-100">
+                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                            <img class="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                                data-alt="Bottle of skin care serum"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWe7ltRJJhOp3JDSPB_uaPcBVkBMriAiSj5-c6LA87YmG0vY0r1n8WC9dZgQwCa2GG_mmpzT1YsResBxKkCu2wt4PeojRKtpWkCYwqUIGoJdDNLXBIuLFqcEcwfylKL2a22mpDrdHV4ILf_WVB6eV1MTkarHdC3ouAB5PkYHCBPJLFdcplvLOiA-F90x9yvBqudjlIuh66W50rh-I-Kii1H3Uffxgy9VjcJIoOoq_lqDja8vnrCCcxbRfl9GatPWasyGOkXQbj3V4" />
+                        </div>
+                        <h3 class="text-sm font-bold text-primary">Organic Face Serum</h3>
+                        <p class="mt-1 text-lg font-black text-slate-900">$45.00</p>
+                        <button
+                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white hover:bg-orange-600 transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <div
+                        class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm border border-slate-100">
+                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                            <img class="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                                data-alt="Silver grey tablet computer"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Btd2GUK2kSlgi2UrSHLz2t3v09SfTsquvULaLCOdbmAk4SPEa4fkmaB8Uv2_uL6IED2t3-6COBuKSW87N0e2KxldBgub5LHr81AYfhd1nM2Z3Zv4fEjleqo5mCUb6is67HdCG7zUw_Ibia2_mB5-hag1q4emO9_yj3yPp3sYnQVI3dqLIcPm1X-5ncpM6fUjkyx2vHXTSuJTxiFD-CzaXDQYyqyqRhry07_kJfau2EcvtqFwwNwU9RiUGk1VBD-ilkzL2zLsATc" />
+                        </div>
+                        <h3 class="text-sm font-bold text-primary">Pro Tablet 11"</h3>
+                        <p class="mt-1 text-lg font-black text-slate-900">$799.00</p>
+                        <button
+                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white hover:bg-orange-600 transition-colors">Shop
+                            Now</button>
+                    </div>
+                    <div
+                        class="group relative flex flex-col rounded-2xl bg-white p-4 shadow-sm border border-slate-100">
+                        <div class="relative aspect-square overflow-hidden rounded-xl bg-slate-100 mb-4">
+                            <img class="h-full w-full object-cover group-hover:scale-105 transition-transform"
+                                data-alt="Mechanical gaming keyboard"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrIoVdbkEqaI4Hg8-FWQ1SPlgz_SxadVOVDqyzs3ffLLkL13qPN2Ko8ylU2mr9W5yERt3S2WpBm9fxUMQ9uqw_hRoefrKBHxug0tUz9eB-wl2mLzOwLpDTAOjjfYPD2kCB_ga1-sBuNCDAI1-JrKCt34H1VcYgYw8CJgzAk2FehHDVmn16FkM4nwIej2joWQm4SGvE29B3kII_lygu0l-3_qL8OJwj4FPqazVZZsWNdXkaock9J_KoIchS_LCA2SsaKMGZQb1GMdw" />
+                        </div>
+                        <h3 class="text-sm font-bold text-primary">Mechanical Keyboard</h3>
+                        <p class="mt-1 text-lg font-black text-slate-900">$159.00</p>
+                        <button
+                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-bold text-white hover:bg-orange-600 transition-colors">Shop
+                            Now</button>
+                    </div>
+                </div>
+            </section>
+            <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                <div
+                    class="rounded-3xl bg-white p-8 md:p-12 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="max-w-md">
+                        <h2 class="text-2xl font-black text-primary mb-3">Stay in the Loop</h2>
+                        <p class="text-slate-600">Get notified about new arrivals, global sales events, and shipping
+                            discounts delivered straight to your inbox.</p>
+                    </div>
+                    <div class="flex-1 w-full max-w-md">
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input
+                                class="flex-1 rounded-xl border-slate-200 bg-slate-50 px-4 py-3 focus:border-accent focus:ring-accent"
+                                placeholder="Enter your email" type="email" />
+                            <button
+                                class="rounded-xl bg-primary px-8 py-3 text-sm font-bold text-white transition-all hover:bg-primary/90">Subscribe</button>
+                        </form>
+                        <p class="mt-3 text-xs text-slate-400">By subscribing, you agree to our privacy policy and terms
+                            of service.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-slate-50 py-16 text-center">
+                <div class="mx-auto max-w-3xl px-4">
+                    <h2 class="text-2xl font-black text-primary mb-4">Need Help Finding a Product?</h2>
+                    <p class="text-slate-600 mb-8">Can't find what you're looking for? Our dedicated team can help
+                        source products from almost any international merchant.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button
+                            class="flex items-center gap-2 rounded-xl bg-accent px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-accent/30 hover:bg-orange-600 transition-all">
+                            <span class="material-symbols-outlined text-sm">support_agent</span> Contact Support
+                        </button>
+                        <button
+                            class="flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-white hover:bg-primary/90 transition-all">
+                            <span class="material-symbols-outlined text-sm">explore</span> Explore Services
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-white border-t border-slate-200 py-12">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center gap-2 text-primary mb-6">
+                            <span class="material-symbols-outlined text-2xl font-bold">local_shipping</span>
+                            <h2 class="text-lg font-black">GoodsShippers</h2>
+                        </div>
+                        <p class="text-sm text-slate-500">Your gateway to the global marketplace. Seamless shipping and
+                            logistics solutions for everyone.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-4">Quick Links</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a class="hover:text-accent" href="#">Store Catalog</a></li>
+                            <li><a class="hover:text-accent" href="#">Pricing Plans</a></li>
+                            <li><a class="hover:text-accent" href="#">How it Works</a></li>
+                            <li><a class="hover:text-accent" href="#">Affiliates</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-4">Support</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a class="hover:text-accent" href="#">Help Center</a></li>
+                            <li><a class="hover:text-accent" href="#">Track Shipment</a></li>
+                            <li><a class="hover:text-accent" href="#">Customs &amp; Duties</a></li>
+                            <li><a class="hover:text-accent" href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-primary mb-4">Legal</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a class="hover:text-accent" href="#">Privacy Policy</a></li>
+                            <li><a class="hover:text-accent" href="#">Terms of Service</a></li>
+                            <li><a class="hover:text-accent" href="#">Cookie Policy</a></li>
+                            <li><a class="hover:text-accent" href="#">Safety Guidelines</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-slate-400">© 2024 GoodsShippers Inc. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="text-slate-400 hover:text-primary transition-colors" href="#"><span
+                                class="material-symbols-outlined">share</span></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>                   

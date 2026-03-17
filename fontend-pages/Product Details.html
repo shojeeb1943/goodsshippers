@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a355b",
+                        "accent": "#f97316",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#13181f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-active { border-bottom: 2px solid #f97316; color: #1a355b; font-weight: 600; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary dark:text-slate-100">
+<span class="material-symbols-outlined text-3xl font-bold">local_shipping</span>
+<h2 class="text-xl font-black tracking-tight">GoodsShippers</h2>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-sm font-medium hover:text-primary" href="#">Store</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Electronics</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Shipping</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Tracking</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:block relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="block w-64 pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm focus:ring-2 focus:ring-primary" placeholder="Search products..." type="text"/>
+</div>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-lg relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] text-white font-bold">3</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<!-- Breadcrumb -->
+<nav class="flex mb-8 text-sm text-slate-500 font-medium">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="mx-2 text-slate-300">/</span>
+<a class="hover:text-primary" href="#">Store</a>
+<span class="mx-2 text-slate-300">/</span>
+<a class="hover:text-primary" href="#">Electronics</a>
+<span class="mx-2 text-slate-300">/</span>
+<span class="text-slate-900 font-semibold">Smartphone Pro X</span>
+</nav>
+<!-- Product Hero -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+<!-- Left: Image Gallery -->
+<div class="space-y-4">
+<div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm overflow-hidden border border-slate-100 dark:border-slate-700 aspect-square flex items-center justify-center p-8">
+<img class="max-w-full h-auto object-contain rounded-lg" data-alt="Main front view of sleek flagship smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKryUcufDez6XVGu2qz_JV_Igu0hmFSdXtr5tWh6vyfSFpaCVPSFLjuWIAlA_6VeJSEunDwsOrMGZ2jBN7AJePAzYgTn5AfTXkXi1PtP4SHxFbsb_oQNFn2zCqi26W_ij0n3KjBqjvAogWXhvQrJs6yrTUiIt6KiLoHa5oyixytRdDy-a9HYZ2MQweW9QL5_UTIJl7KzdJ9WJQz2F3MWQYOqH0yn3cWcZ0dLK-N3q1-JQC8n3tCh8nADsNIA80Zj9LxG5-zihj_w0"/>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-2">
+<div class="w-20 h-20 flex-shrink-0 bg-white border-2 border-accent rounded-lg p-2 cursor-pointer">
+<img class="w-full h-full object-contain" data-alt="Thumbnail front view of smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfNjyGSf1y81sZpmRZBOgnl6_zJs7X391V80e-vydBrctxiGc3fWNeZXSffZ_5XYdtvE-K7zc1jbiH32D2EmhaHkTWLavtSRbNT9TfV60Xmsr8UyJ9bfwDokCot0pjQ6HvAo-0PBcY1VPbAq4lRcWCHJB7rGaR7dVWieKHhWOO_64JFmns-w3IWhQsHYaDF7G4MZO2BCWwbF6Ek3rnxlgY1IHvQiik5U9XXeD5aoMhlWKzJj9pxaFITgYvCvA32Bizy0lilgglCts"/>
+</div>
+<div class="w-20 h-20 flex-shrink-0 bg-white border border-slate-200 rounded-lg p-2 cursor-pointer opacity-70 hover:opacity-100">
+<img class="w-full h-full object-contain" data-alt="Thumbnail side view of smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKej_SREo2CNSiZOWovpl4G_rd1djob-wMKfMietuguL10jCU0NH6LZqPs7JXtvM-vjPof__-GQziT_YLcYGTd0oKvhqGbWjlkwl8StIljwBkVm0ySToBf2X-ox3I3BD4u7ZQF008IjwdzdTIiCfxnYcV5pE0GfmRFeMXz4iFbPT4coHkVia6eaf925e000X7iRKutB1ljfoUvOaC_LDrMh94vn0BidiJcbbKom3NxEQMBt3wcXfzfZBRk-wMQcHJmWasvnP_iLDA"/>
+</div>
+<div class="w-20 h-20 flex-shrink-0 bg-white border border-slate-200 rounded-lg p-2 cursor-pointer opacity-70 hover:opacity-100">
+<img class="w-full h-full object-contain" data-alt="Thumbnail camera module closeup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYrxFXedwJ7uh7e2ZcE1LwAoXlTFXtNuqvSzqlVAA_31tZbp2eQH9lnO5V1xx4yAdJkmdiWvQMxrF7NrLvat5TZu-h4L4c5_iXZFzval92WwOp3bugjNav7ET4zU3sVBHKpvVhHKMJvlORfyNZqhEMXhZ1MQcYv7eZWb5XDqw6SG3U-bkJZj04OikFr-9FQUgdkTLTsQkpJED2Z6r7oxugkTJI2NTLWD0TyglTFT-7lztBMjoONmRHCGCjiN8B3vJWoOlxMxDcxaA"/>
+</div>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="flex flex-col">
+<h1 class="text-4xl font-black text-primary dark:text-slate-100 mb-2">Smartphone Pro X</h1>
+<p class="text-3xl font-bold text-slate-900 mb-4">$999.00</p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full border border-primary/20">International Store Item</span>
+<span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full border border-green-200">Available for Forward Shipping</span>
+<span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full border border-slate-200">Warehouse Supported</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                    Experience the pinnacle of mobile technology. The Pro X features our most advanced titanium design, an revolutionary Pro Camera system with 5x optical zoom, and the ultra-fast A17 Pro chip. Optimized for international shipping with reinforced internal packaging.
+                </p>
+<div class="mb-8">
+<label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Quantity</label>
+<div class="flex items-center w-32 border border-slate-300 dark:border-slate-700 rounded-lg overflow-hidden">
+<button class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 border-r border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-12 h-10 text-center border-none focus:ring-0 text-sm bg-white dark:bg-slate-900 font-bold" type="text" value="1"/>
+<button class="w-10 h-10 flex items-center justify-center bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 border-l border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="bg-accent hover:bg-orange-600 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+                        Add to Cart
+                    </button>
+<button class="border-2 border-primary text-primary hover:bg-primary/5 font-bold py-4 rounded-lg">
+                        Buy Now
+                    </button>
+</div>
+<!-- Shipping Card -->
+<div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
+<h3 class="font-bold text-primary dark:text-slate-200 mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-accent">info</span>
+                        Shipping Information
+                    </h3>
+<div class="space-y-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400">inventory_2</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">Secure packaging in our international hubs ensures safe long-distance transit.</p>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-slate-400">hub</span>
+<p class="text-sm text-slate-600 dark:text-slate-400">This item is eligible for consolidated shipping with other orders to save costs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Details Tabs -->
+<div class="mb-16">
+<div class="flex border-b border-slate-200 dark:border-slate-700 mb-8 overflow-x-auto">
+<button class="px-8 py-4 text-sm font-medium tab-active">Description</button>
+<button class="px-8 py-4 text-sm font-medium text-slate-500 hover:text-primary">Specifications</button>
+<button class="px-8 py-4 text-sm font-medium text-slate-500 hover:text-primary">Shipping Info</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<div class="lg:col-span-2 space-y-6">
+<h4 class="text-xl font-bold text-primary">Powerful Performance for the Global Citizen</h4>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        The Smartphone Pro X isn't just a phone; it's a productivity powerhouse designed for travelers and remote professionals. Featuring multi-band 5G connectivity that works in over 190 countries, it keeps you connected wherever your journey takes you. The triple-lens camera system is calibrated for vibrant colors and exceptional low-light performance, perfect for capturing memories in any corner of the globe.
+                    </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-accent text-sm mt-1">check_circle</span>
+<span>6.7-inch Super Retina XDR display with ProMotion technology.</span>
+</li>
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-accent text-sm mt-1">check_circle</span>
+<span>A17 Pro chip with 6-core GPU for console-level gaming and multitasking.</span>
+</li>
+<li class="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined text-accent text-sm mt-1">check_circle</span>
+<span>Advanced Pro camera system: 48MP Main | Ultra Wide | Telephoto.</span>
+</li>
+</ul>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700">
+<h4 class="font-bold mb-4 text-primary">Technical Specs</h4>
+<div class="space-y-4">
+<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+<span class="text-sm text-slate-500">Display</span>
+<span class="text-sm font-bold">6.7" OLED 120Hz</span>
+</div>
+<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+<span class="text-sm text-slate-500">Processor</span>
+<span class="text-sm font-bold">Octa-Core Pro-X1</span>
+</div>
+<div class="flex justify-between py-2 border-b border-slate-100 dark:border-slate-700">
+<span class="text-sm text-slate-500">Storage</span>
+<span class="text-sm font-bold">256GB / 512GB</span>
+</div>
+<div class="flex justify-between py-2">
+<span class="text-sm text-slate-500">Battery</span>
+<span class="text-sm font-bold">4500 mAh</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Shipping Calculator -->
+<section class="mb-16">
+<div class="bg-primary rounded-2xl p-8 text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-accent rounded-full -mr-32 -mt-32 opacity-20"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-black mb-4">Estimated Shipping Cost</h2>
+<p class="text-primary-100 opacity-80 mb-6">Enter your location to get a real-time estimate of the forwarding shipping costs including duty and warehouse handling.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+<span class="text-xs font-bold uppercase tracking-wider opacity-60">Origin</span>
+<p class="font-bold">USA (Miami Hub)</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+<span class="text-xs font-bold uppercase tracking-wider opacity-60">Service</span>
+<p class="font-bold">Standard Forwarding</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-2xl p-6 text-slate-900 shadow-xl">
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-slate-500 mb-1 uppercase tracking-wider">Destination Country</label>
+<select class="w-full border-slate-200 rounded-lg focus:ring-accent focus:border-accent">
+<option>Select Country</option>
+<option>United Kingdom</option>
+<option>Germany</option>
+<option>Brazil</option>
+<option>Japan</option>
+</select>
+</div>
+<div>
+<label class="block text-xs font-bold text-slate-500 mb-1 uppercase tracking-wider">Product Category</label>
+<input class="w-full bg-slate-50 border-slate-200 rounded-lg" readonly="" type="text" value="Electronics (Smartphone)"/>
+</div>
+<button class="w-full bg-accent hover:bg-orange-600 text-white font-black py-4 rounded-lg shadow-lg">
+                                Calculate Shipping Cost
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Buy From Us -->
+<section class="mb-16">
+<h2 class="text-2xl font-black text-primary mb-8 text-center">Why Buy From GoodsShippers?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<h4 class="font-bold mb-2">Verified Products</h4>
+<p class="text-sm text-slate-500">Every electronic item is inspected for authenticity and quality before dispatch.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined">warehouse</span>
+</div>
+<h4 class="font-bold mb-2">Warehouse Processing</h4>
+<p class="text-sm text-slate-500">Fast consolidation and repackaging in our secure global warehouse hubs.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<h4 class="font-bold mb-2">Transparent Pricing</h4>
+<p class="text-sm text-slate-500">No hidden fees. We show all duties, taxes, and shipping costs upfront.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow text-center">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<h4 class="font-bold mb-2">Shipment Tracking</h4>
+<p class="text-sm text-slate-500">End-to-end tracking from the manufacturer to your doorstep.</p>
+</div>
+</div>
+</section>
+<!-- Store Process Timeline -->
+<section class="mb-16 bg-slate-100 dark:bg-slate-800/30 py-12 px-8 rounded-2xl">
+<h2 class="text-2xl font-black text-primary dark:text-slate-100 mb-10 text-center">How Product Orders Work</h2>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 max-w-5xl mx-auto">
+<div class="flex flex-col items-center text-center max-w-[150px]">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-slate-700 border-2 border-accent text-accent flex items-center justify-center font-bold mb-4 shadow-sm">1</div>
+<span class="font-bold text-sm">Add to Cart</span>
+<p class="text-[10px] text-slate-500 mt-1">Select your item and calculate shipping</p>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-slate-200 dark:bg-slate-700 mb-8"></div>
+<div class="flex flex-col items-center text-center max-w-[150px]">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 text-slate-400 flex items-center justify-center font-bold mb-4">2</div>
+<span class="font-bold text-sm">Place Order</span>
+<p class="text-[10px] text-slate-500 mt-1">Pay for item and initial warehouse delivery</p>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-slate-200 dark:bg-slate-700 mb-8"></div>
+<div class="flex flex-col items-center text-center max-w-[150px]">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 text-slate-400 flex items-center justify-center font-bold mb-4">3</div>
+<span class="font-bold text-sm">Warehouse</span>
+<p class="text-[10px] text-slate-500 mt-1">Item arrives and is inspected by our team</p>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-slate-200 dark:bg-slate-700 mb-8"></div>
+<div class="flex flex-col items-center text-center max-w-[150px]">
+<div class="w-12 h-12 rounded-full bg-white dark:bg-slate-700 border-2 border-slate-200 text-slate-400 flex items-center justify-center font-bold mb-4">4</div>
+<span class="font-bold text-sm">Delivered</span>
+<p class="text-[10px] text-slate-500 mt-1">Final shipping to your international address</p>
+</div>
+</div>
+</section>
+<!-- Related Products -->
+<section class="mb-16">
+<h2 class="text-2xl font-black text-primary mb-8">You May Also Like</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square p-4 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center relative">
+<img class="max-w-full h-auto object-contain group-hover:scale-105 transition-transform" data-alt="Pro Tablet Device" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlnqewlNcLwwZs7s4n-8SGh1-GLb85OjvbsduWnY0yuMlC7bMzkNgzbeXJebVKlNHCUWMUuelC0m_XOgYjOu9jQOMM-gcQxw9QXD0QHLu3VPGj4xz2Ws-hP-kDTQsB24HA5M-3g4I2HkSI4ulOVy4eVWsVh0buM1Xb3fmTcLdrBuKD7PG87C5ExDSBMfV4mbqIC7JYq5rBWouZQTvJJ3Y0AgSepUX8OFzb_7_cRTxe0sPnVRXEdlXUA6ZNn_ATw6cm2YN9KOmhuZU"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 bg-accent text-white text-[10px] font-bold rounded">SALE</span>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 mb-1">Electronics</p>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 truncate">Pro Tablet 12.9"</h4>
+<div class="flex items-center justify-between mt-3">
+<span class="text-primary font-bold">$799.00</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-accent hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square p-4 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center relative">
+<img class="max-w-full h-auto object-contain group-hover:scale-105 transition-transform" data-alt="Wireless Over-ear Headphones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuk4aJEfn4zfmmVqW6ubb9o4CM7JPgWecLZY4c1UpnMIBADy2lV6DqXmzBy56bOfee_FRXzFDgpCKg1L4mGKQy3AY-0xAsWNBwUREL1dTqbMMSpBxNCkc3A4HJuvt34JV0FKn59XvaCK28gL13xeC4x1dLByAFL3pizEbfa8fU9WEkDY8V0VNMrPH-yhdcU0OVy5o83LOCA_jebsAvSoPe9itQj7u0TMYPgqDWkkibykRnkX74NOKg5G2YsRUu731qSbM5TojWZFs"/>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 mb-1">Audio</p>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 truncate">SoundMaster Elite</h4>
+<div class="flex items-center justify-between mt-3">
+<span class="text-primary font-bold">$249.00</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-accent hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square p-4 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center relative">
+<img class="max-w-full h-auto object-contain group-hover:scale-105 transition-transform" data-alt="Smart Fitness Watch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdMz7VAeFjaUaM4sZo1iNfwQR7qS0bpS-KVML8R7zR-K6t77_9bJeM625AYQPC5bRUSxteYOc3YOlmpLgOfvNa-cp99yWKNSXJ8OASfiAx6hn093M9q3pIjV3qGj8VvDti6_KOZdN7DFvvduDHDx9Ihrqd8hQyMfz8wXset3pG_xmXDZew16dbMtisWCqeMGI3j9_lpLDyYRxhQnDvEK_6hBBuhCjFty7svrv7jyVS7yG06Suk_wU2g9WuazVynEyjUFt_cKBqDxs"/>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 mb-1">Wearables</p>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 truncate">FitTrack Watch 4</h4>
+<div class="flex items-center justify-between mt-3">
+<span class="text-primary font-bold">$199.00</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-accent hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="aspect-square p-4 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-center relative">
+<img class="max-w-full h-auto object-contain group-hover:scale-105 transition-transform" data-alt="Ultra Thin Laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyH5oMdB_VCRDllVOqwJafALfajG5OjZfWCHrPPLsRn_7IcORCNRNZDykuYOqjrHOLMpXudkcrDjlH-7VxguFojTTAnQy3EXAUJzzemADAh4a3HXmXSat6BtSFCu6vBQ6aV1WJ0iz9DPMDf7RCusX3qWxkdqxfcNcB3a6_XuP_6kamOxaSGhnXPKHLRs37u0mvPaPdkUKSntMIAHhANq__6azEFsgTm_M-3MKZDGxW5MtNVYPRBRpcwx3wG9TrfyZU18ZzlGT0Z38"/>
+</div>
+<div class="p-4">
+<p class="text-sm font-medium text-slate-500 mb-1">Computers</p>
+<h4 class="font-bold text-slate-900 dark:text-slate-100 truncate">Ultra-Book Air M2</h4>
+<div class="flex items-center justify-between mt-3">
+<span class="text-primary font-bold">$1,299.00</span>
+<button class="p-2 bg-slate-100 dark:bg-slate-700 rounded-full hover:bg-accent hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mb-16">
+<h2 class="text-2xl font-black text-primary mb-8">Frequently Asked Questions</h2>
+<div class="space-y-4 max-w-4xl">
+<div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-white dark:bg-slate-800 font-bold text-left">
+                        How long does international shipping take?
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-900/50 text-sm text-slate-600 border-t border-slate-100 dark:border-slate-800">
+                        Typical international delivery takes 7-14 business days once the item arrives at our Miami hub. Express options are available.
+                    </div>
+</div>
+<div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-white dark:bg-slate-800 font-bold text-left">
+                        Are import duties included in the price?
+                        <span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+<div class="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-white dark:bg-slate-800 font-bold text-left">
+                        What if the product arrives damaged?
+                        <span class="material-symbols-outlined text-slate-400">expand_more</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="mb-24">
+<div class="bg-gradient-to-r from-primary to-[#2a558c] rounded-3xl p-12 text-center text-white relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10">
+<h2 class="text-4xl font-black mb-6">Ready to Order Your Product?</h2>
+<p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">Join over 50,000 global customers using GoodsShippers to get authentic tech delivered anywhere in the world.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-accent hover:bg-orange-600 text-white px-10 py-4 rounded-xl font-black text-lg shadow-lg">
+                            Add to Cart Now
+                        </button>
+<button class="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md px-10 py-4 rounded-xl font-bold text-lg">
+                            Contact Sales Support
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<div class="flex items-center justify-center gap-2 text-primary dark:text-slate-100 mb-6">
+<span class="material-symbols-outlined text-3xl font-bold">local_shipping</span>
+<h2 class="text-xl font-black tracking-tight">GoodsShippers</h2>
+</div>
+<p class="text-slate-500 text-sm mb-8">© 2024 GoodsShippers International. All rights reserved. Global Logistics &amp; Forwarding.</p>
+<div class="flex justify-center space-x-6 text-slate-400">
+<a class="hover:text-primary" href="#">Terms</a>
+<a class="hover:text-primary" href="#">Privacy</a>
+<a class="hover:text-primary" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+</body></html>
