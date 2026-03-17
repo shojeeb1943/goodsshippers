@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-blue": "#1e3a5f",
+                        "brand-blue-dark": "#0f2744",
+                        "brand-orange": "#f59e0b",
+                        "brand-orange-hover": "#d97706",
+                        "brand-green": "#22c55e",
+                        "brand-navy": "#1a202c",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                    },
+                },
+            },
+        }
+    </script>
+    <title>Create Account | Goods Shippers</title>
+</head>
+
+<body class="font-sans antialiased">
+    <div class="min-h-screen flex flex-col md:flex-row">
+        <!-- Left Side: Registration Form -->
+        <div class="w-full md:w-1/2 flex items-center justify-center p-6 lg:p-12 bg-white">
+            <div class="max-w-md w-full">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-blue to-brand-blue-dark text-white shadow-lg">
+                        <span class="material-symbols-outlined text-2xl">package_2</span>
+                    </div>
+                    <h2 class="text-2xl font-black tracking-tight text-brand-navy">Goods Shippers</h2>
+                </div>
+                <!-- Welcome Text -->
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold text-brand-navy mb-2">Create your account</h1>
+                    <p class="text-slate-500">Join thousands of shoppers. Start ordering from UK, USA & Malaysia today!</p>
+                </div>
+                <!-- Registration Form -->
+                <div class="rounded-3xl bg-slate-50 p-6 border border-slate-100">
+                    <form class="space-y-4" action="#" method="POST">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2" for="fullname">Full Name</label>
+                            <input
+                                class="w-full px-4 py-3.5 rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-brand-blue text-slate-900"
+                                id="fullname" name="fullname" placeholder="Your full name" type="text" required />
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2" for="email">Email Address</label>
+                                <input
+                                    class="w-full px-4 py-3.5 rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-brand-blue text-slate-900"
+                                    id="email" name="email" placeholder="your@email.com" type="email" required />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2" for="phone">Phone (WhatsApp)</label>
+                                <input
+                                    class="w-full px-4 py-3.5 rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-brand-blue text-slate-900"
+                                    id="phone" name="phone" placeholder="+880 1XXX-XXXXXX" type="tel" />
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2" for="password">Password</label>
+                            <input
+                                class="w-full px-4 py-3.5 rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-brand-blue text-slate-900 pr-12"
+                                id="password" name="password" placeholder="Create a password" type="password" required />
+                            <button type="button"
+                                class="material-symbols-outlined absolute right-4 top-10 text-slate-400 cursor-pointer hover:text-brand-blue transition-colors">visibility</button>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2" for="confirm-password">Confirm Password</label>
+                            <input
+                                class="w-full px-4 py-3.5 rounded-xl border-0 bg-white shadow-sm ring-1 ring-inset ring-slate-200 placeholder:text-slate-400 focus:ring-2 focus:ring-brand-blue text-slate-900 pr-12"
+                                id="confirm-password" name="confirm-password" placeholder="Confirm your password" type="password" required />
+                            <button type="button"
+                                class="material-symbols-outlined absolute right-4 top-10 text-slate-400 cursor-pointer hover:text-brand-blue transition-colors">visibility</button>
+                        </div>
+                        <div class="flex items-start gap-3 py-2">
+                            <input class="mt-1 h-4 w-4 rounded-md border-slate-300 text-brand-orange focus:ring-brand-orange"
+                                id="terms" name="terms" type="checkbox" required />
+                            <label class="text-sm text-slate-500 leading-tight" for="terms">
+                                I agree to the <a class="text-brand-blue font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-brand-blue font-semibold hover:underline" href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <button
+                            class="w-full bg-brand-orange hover:bg-brand-orange-hover text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-200 hover:shadow-xl hover:-translate-y-0.5"
+                            type="submit">
+                            Create Account
+                        </button>
+                    </form>
+                </div>
+                <!-- Bottom Links -->
+                <div class="mt-6 text-center space-y-4">
+                    <p class="text-sm text-slate-500">
+                        Already have an account? <a class="text-brand-blue font-bold hover:text-brand-orange transition-colors" href="login.html">Sign In</a>
+                    </p>
+                    <a class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-brand-blue transition-colors" href="home page.html">
+                        <span class="material-symbols-outlined text-sm">arrow_back</span>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Right Side: Branded Panel -->
+        <div class="hidden md:flex md:w-1/2 relative overflow-hidden bg-gradient-to-br from-brand-blue via-brand-blue-dark to-slate-900">
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-blue/30 rounded-full blur-2xl -ml-32 -mb-32"></div>
+
+            <div class="relative z-10 flex flex-col justify-center px-12 xl:px-16 py-12">
+                <!-- Header -->
+                <div class="mb-10">
+                    <div class="inline-flex items-center gap-2 bg-brand-orange/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <span class="material-symbols-outlined text-brand-orange">rocket_launch</span>
+                        <span class="text-white/90 text-sm font-medium">Get started in minutes</span>
+                    </div>
+                    <h2 class="text-4xl xl:text-5xl font-black text-white leading-tight mb-4">
+                        Start Shopping<br/>
+                        <span class="text-brand-orange">Globally</span>
+                    </h2>
+                    <p class="text-lg text-white/70 max-w-md">
+                        Create your account and get your personal warehouse address. We'll handle the rest!
+                    </p>
+                </div>
+
+                <!-- What You Get -->
+                <div class="space-y-5 mb-10">
+                    <div class="flex items-center gap-4 group">
+                        <div class="size-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-brand-orange group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">badge</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Personal Suite ID</p>
+                            <p class="text-sm text-white/60">Your unique warehouse address</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="size-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-brand-orange group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">public</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">Global Warehouses</p>
+                            <p class="text-sm text-white/60">USA, UK & Malaysia locations</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="size-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">credit_card_off</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">No Card? No Problem!</p>
+                            <p class="text-sm text-white/60">Pay with bKash, Nagad, or bank</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="size-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
+                            <span class="material-symbols-outlined text-2xl">support_agent</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-white">WhatsApp Support</p>
+                            <p class="text-sm text-white/60">We help you shop & ship</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example Suite ID Card -->
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/10 mb-8">
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-brand-orange">info</span>
+                        <span class="text-white/60 text-xs font-bold uppercase tracking-widest">Example Suite ID</span>
+                    </div>
+                    <h3 class="text-3xl font-mono font-bold tracking-wider text-white">BD-2045</h3>
+                    <p class="text-sm mt-2 text-white/60">
+                        Your packages will be identified & processed immediately at our warehouses.
+                    </p>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="flex flex-wrap gap-6 pt-6 border-t border-white/10">
+                    <div class="flex items-center gap-2 text-white/50">
+                        <span class="material-symbols-outlined text-brand-green">verified_user</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider">Secure</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/50">
+                        <span class="material-symbols-outlined text-brand-green">lock</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider">Protected</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-white/50">
+                        <span class="material-symbols-outlined text-brand-orange">workspace_premium</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider">500+ Users</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

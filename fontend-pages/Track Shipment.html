@@ -5,435 +5,507 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Track Shipment | Goods Shippers</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#1a355b",
-                        "accent": "#f97316",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#13181f",
+                        "brand-blue": "#1e3a5f",
+                        "brand-blue-dark": "#0f2744",
+                        "brand-orange": "#f59e0b",
+                        "brand-orange-hover": "#d97706",
+                        "brand-green": "#22c55e",
+                        "brand-navy": "#1a202c",
                     },
                     fontFamily: {
-                        "display": ["Inter"]
+                        sans: ['Inter', 'sans-serif'],
                     },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+                }
+            }
         }
     </script>
-    <title>Track Shipment | GoodsShippers</title>
+    <style>
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+    </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-200">
-    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
-        <!-- Header -->
-        <header
-            class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 md:px-12 lg:px-24">
-            <div class="flex items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="flex items-center justify-center size-10 bg-primary text-white rounded-lg">
-                        <span class="material-symbols-outlined">local_shipping</span>
-                    </div>
-                    <h2 class="text-primary dark:text-white text-xl font-bold tracking-tight">GoodsShippers</h2>
+<body class="font-sans text-slate-900 bg-white antialiased">
+    <!-- Header -->
+    <header class="sticky-header border-b border-gray-100 h-20 flex items-center">
+        <nav class="max-w-[1280px] mx-auto w-full px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="home page.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-2xl flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-white text-2xl">package_2</span>
                 </div>
-                <nav class="hidden md:flex items-center gap-8">
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors"
-                        href="#">Dashboard</a>
-                    <a class="text-primary dark:text-white text-sm font-bold border-b-2 border-primary"
-                        href="#">Shipments</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors"
-                        href="#">Tracking</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-colors"
-                        href="#">Pricing</a>
-                </nav>
+                <span class="font-black text-2xl tracking-tight text-brand-navy">Goods Shippers</span>
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a class="hover:text-brand-blue transition-colors" href="Our Services.html">Services</a>
+                <a class="hover:text-brand-blue transition-colors" href="How It Works.html">How it Works</a>
+                <a class="hover:text-brand-blue transition-colors" href="Shipping Cost Calculator.html">Pricing</a>
+                <a class="text-brand-blue font-bold border-b-2 border-brand-orange pb-1" href="Track Shipment.html">Tracking</a>
+                <a class="hover:text-brand-blue transition-colors" href="Store Catalog.html">Shop</a>
             </div>
+            <!-- Auth Buttons -->
             <div class="flex items-center gap-4">
-                <button
-                    class="hidden sm:flex text-slate-600 dark:text-slate-400 text-sm font-bold px-4 py-2">Login</button>
-                <button
-                    class="bg-primary text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-all">Sign
-                    Up</button>
+                <a href="login.html" class="text-sm font-bold text-brand-blue px-4 py-2 hover:text-brand-orange transition-colors">Login</a>
+                <a href="Register.html"
+                    class="bg-brand-orange text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-brand-orange-hover transition-all shadow-lg shadow-orange-200">
+                    Get Started
+                </a>
             </div>
-        </header>
-        <main class="flex-1">
-            <!-- Hero Tracking Section -->
-            <section class="bg-white dark:bg-slate-900 px-6 py-12 md:px-12 lg:px-24">
-                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="flex flex-col gap-6">
-                        <div class="flex flex-col gap-2">
-                            <span class="text-accent font-bold tracking-widest uppercase text-xs">Tracking</span>
-                            <h1 class="text-primary dark:text-white text-4xl md:text-5xl font-black leading-tight">Track
-                                Your Shipment</h1>
-                            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-lg">
-                                Enter your shipment number, parcel tracking number, or product order number to see the
-                                latest updates.
-                            </p>
-                        </div>
-                        <div class="relative group">
-                            <div
-                                class="flex w-full items-stretch rounded-xl overflow-hidden shadow-xl shadow-primary/5 border border-slate-200 dark:border-slate-700">
-                                <div
-                                    class="flex items-center justify-center pl-5 bg-white dark:bg-slate-800 text-slate-400">
-                                    <span class="material-symbols-outlined">search</span>
-                                </div>
-                                <input
-                                    class="w-full py-5 px-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none border-none placeholder:text-slate-400"
-                                    placeholder="Example: SH-BD-000124..." />
-                                <button
-                                    class="bg-accent hover:bg-accent/90 text-white font-bold px-8 transition-colors flex items-center gap-2">
-                                    <span>Track</span>
-                                    <span class="material-symbols-outlined">arrow_forward</span>
-                                </button>
-                            </div>
-                            <p class="mt-3 text-xs text-slate-500">Popular: <span class="font-mono">TRK-23894723,
-                                    PO-BD-000041</span></p>
-                        </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Tracking Section -->
+        <section class="bg-white px-6 py-12 md:px-12 lg:px-24">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-brand-orange font-bold tracking-widest uppercase text-xs">Tracking</span>
+                        <h1 class="text-brand-navy text-4xl md:text-5xl font-black leading-tight">Track
+                            Your Shipment</h1>
+                        <p class="text-slate-600 text-lg max-w-lg">
+                            Enter your shipment number, parcel tracking number, or product order number to see the
+                            latest updates.
+                        </p>
                     </div>
-                    <div
-                        class="relative hidden lg:block h-80 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5"></div>
-                        <div class="absolute inset-0 flex items-center justify-center"
-                            data-location="Global Logistics Map" style="">
-                            <div class="relative w-full h-full bg-cover bg-center opacity-40 mix-blend-multiply"
-                                data-alt="Abstract world map with logistics nodes"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8AU0uF7hV3KEcnb_PP3PxFa-4H6YO8HZhfwhmC45dSKxmezU3Jxkk016vNvq3X5DjQRi6xD4GeaHv1nfygN-LSDjxbBoGpA6AFkh6ACFE84bvcu6tABkXRbdvuiYHKGGiFpvzlf_FKf8TC01YoWUE_rb244ImsvvHOFbKuhbGmhLb-xjint5bf1t4DCWeF2ZbR9hiSiYc5idPESvflFDeC_mCBNklFNAw0U2JcuHtxh82kCF7XsdQlgxxO89SIP322F9Cm7MptdE')">
-                            </div>
+                    <div class="relative group">
+                        <div
+                            class="flex w-full items-stretch rounded-xl overflow-hidden shadow-xl shadow-brand-blue/5 border border-slate-200">
                             <div
-                                class="absolute bg-white dark:bg-slate-900 p-6 rounded-xl shadow-2xl border border-slate-100 dark:border-slate-700 flex items-center gap-4">
-                                <div
-                                    class="size-12 bg-accent/10 rounded-full flex items-center justify-center text-accent">
-                                    <span class="material-symbols-outlined">package_2</span>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-500 font-bold uppercase">Current Status</p>
-                                    <p class="text-primary dark:text-white font-bold">Package in Transit</p>
-                                </div>
+                                class="flex items-center justify-center pl-5 bg-white text-slate-400">
+                                <span class="material-symbols-outlined">search</span>
+                            </div>
+                            <input
+                                class="w-full py-5 px-4 bg-white text-slate-900 focus:outline-none border-none placeholder:text-slate-400"
+                                placeholder="Example: SH-BD-000124..." />
+                            <button
+                                class="bg-brand-orange hover:bg-brand-orange-hover text-white font-bold px-8 transition-colors flex items-center gap-2">
+                                <span>Track</span>
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </div>
+                        <p class="mt-3 text-xs text-slate-500">Popular: <span class="font-mono">TRK-23894723,
+                                PO-BD-000041</span></p>
+                    </div>
+                </div>
+                <div
+                    class="relative hidden lg:block h-80 rounded-2xl overflow-hidden bg-slate-100">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-brand-orange/5"></div>
+                    <div class="absolute inset-0 flex items-center justify-center"
+                        data-location="Global Logistics Map" style="">
+                        <div class="relative w-full h-full bg-cover bg-center opacity-40 mix-blend-multiply"
+                            data-alt="Abstract world map with logistics nodes"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8AU0uF7hV3KEcnb_PP3PxFa-4H6YO8HZhfwhmC45dSKxmezU3Jxkk016vNvq3X5DjQRi6xD4GeaHv1nfygN-LSDjxbBoGpA6AFkh6ACFE84bvcu6tABkXRbdvuiYHKGGiFpvzlf_FKf8TC01YoWUE_rb244ImsvvHOFbKuhbGmhLb-xjint5bf1t4DCWeF2ZbR9hiSiYc5idPESvflFDeC_mCBNklFNAw0U2JcuHtxh82kCF7XsdQlgxxO89SIP322F9Cm7MptdE')">
+                        </div>
+                        <div
+                            class="absolute bg-white p-6 rounded-xl shadow-2xl border border-slate-100 flex items-center gap-4">
+                            <div
+                                class="size-12 bg-brand-orange/10 rounded-full flex items-center justify-center text-brand-orange">
+                                <span class="material-symbols-outlined">package_2</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase">Current Status</p>
+                                <p class="text-brand-navy font-bold">Package in Transit</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Tracking Result Content -->
-            <section class="px-6 py-12 md:px-12 lg:px-24 bg-background-light dark:bg-background-dark">
-                <div class="max-w-7xl mx-auto flex flex-col gap-8">
-                    <!-- Shipment Header Card -->
+            </div>
+        </section>
+
+        <!-- Tracking Result Content -->
+        <section class="px-6 py-12 md:px-12 lg:px-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto flex flex-col gap-8">
+                <!-- Shipment Header Card -->
+                <div
+                    class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
                     <div
-                        class="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
-                        <div
-                            class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-100 dark:border-slate-800">
-                            <div>
-                                <h2 class="text-2xl font-bold text-primary dark:text-white">Shipment Details</h2>
-                                <p class="text-slate-500">Reference: SH-BD-000124</p>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span
-                                    class="px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-bold flex items-center gap-2">
-                                    <span class="relative flex h-2 w-2">
-                                        <span
-                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                                    </span>
-                                    In Transit
+                        class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-100">
+                        <div>
+                            <h2 class="text-2xl font-bold text-brand-navy">Shipment Details</h2>
+                            <p class="text-slate-500">Reference: SH-BD-000124</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="px-4 py-1.5 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-bold flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
                                 </span>
-                                <button class="p-2 text-slate-400 hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined">share</span>
-                                </button>
-                                <button class="p-2 text-slate-400 hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined">print</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
-                            <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Origin
-                                    Warehouse</p>
-                                <p class="text-primary dark:text-slate-200 font-semibold">New York, USA</p>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Destination
-                                </p>
-                                <p class="text-primary dark:text-slate-200 font-semibold">Dhaka, Bangladesh</p>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Mode</p>
-                                <div class="flex items-center gap-2 text-primary dark:text-slate-200 font-semibold">
-                                    <span class="material-symbols-outlined text-sm">flight</span>
-                                    Air Freight
-                                </div>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Est. Delivery
-                                </p>
-                                <p class="text-primary dark:text-slate-200 font-semibold">5-7 Days (Aug 24-26)</p>
-                            </div>
+                                In Transit
+                            </span>
+                            <button class="p-2 text-slate-400 hover:text-brand-blue transition-colors">
+                                <span class="material-symbols-outlined">share</span>
+                            </button>
+                            <button class="p-2 text-slate-400 hover:text-brand-blue transition-colors">
+                                <span class="material-symbols-outlined">print</span>
+                            </button>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <!-- Left: Visual Timeline -->
-                        <div
-                            class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm">
-                            <h3 class="text-xl font-bold text-primary dark:text-white mb-8">Shipment Progress</h3>
-                            <div class="relative">
-                                <!-- Timeline Line -->
-                                <div class="absolute left-[19px] top-2 bottom-2 w-0.5 bg-slate-100 dark:bg-slate-800">
-                                </div>
-                                <div class="flex flex-col gap-10">
-                                    <!-- Completed Step -->
-                                    <div class="relative flex gap-6">
-                                        <div
-                                            class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                                            <span class="material-symbols-outlined text-lg">check</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-base font-bold text-primary dark:text-slate-200">Product
-                                                Requested</h4>
-                                            <p class="text-sm text-slate-500">Initial shipping request received and
-                                                confirmed.</p>
-                                            <p class="text-xs font-mono text-slate-400 mt-1">Aug 15, 2023 • 09:42 AM</p>
-                                        </div>
-                                    </div>
-                                    <!-- Completed Step -->
-                                    <div class="relative flex gap-6">
-                                        <div
-                                            class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                                            <span class="material-symbols-outlined text-lg">inventory_2</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-base font-bold text-primary dark:text-slate-200">Arrived at
-                                                Warehouse</h4>
-                                            <p class="text-sm text-slate-500">Items received at New York Export Hub.</p>
-                                            <p class="text-xs font-mono text-slate-400 mt-1">Aug 16, 2023 • 02:15 PM</p>
-                                        </div>
-                                    </div>
-                                    <!-- Current Step -->
-                                    <div class="relative flex gap-6">
-                                        <div
-                                            class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white shadow-lg shadow-accent/20">
-                                            <span class="material-symbols-outlined text-lg">local_shipping</span>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-base font-bold text-primary dark:text-slate-200">In Transit
-                                                (Active)</h4>
-                                            <p class="text-sm text-slate-500 font-medium text-accent">Shipment has
-                                                departed the origin hub and is currently on flight SQ-238.</p>
-                                            <p class="text-xs font-mono text-slate-400 mt-1">Aug 18, 2023 • 11:30 PM</p>
-                                        </div>
-                                    </div>
-                                    <!-- Future Step -->
-                                    <div class="relative flex gap-6">
-                                        <div
-                                            class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-300">
-                                            <span class="material-symbols-outlined text-lg">import_export</span>
-                                        </div>
-                                        <div class="opacity-50">
-                                            <h4 class="text-base font-bold text-primary dark:text-slate-200">Customs
-                                                Clearance</h4>
-                                            <p class="text-sm text-slate-500">Pending arrival at Dhaka Intl Airport.</p>
-                                            <p class="text-xs font-mono text-slate-400 mt-1">Estimated: Aug 21, 2023</p>
-                                        </div>
-                                    </div>
-                                    <!-- Future Step -->
-                                    <div class="relative flex gap-6">
-                                        <div
-                                            class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-300">
-                                            <span class="material-symbols-outlined text-lg">done_all</span>
-                                        </div>
-                                        <div class="opacity-50">
-                                            <h4 class="text-base font-bold text-primary dark:text-slate-200">Delivered
-                                            </h4>
-                                            <p class="text-sm text-slate-500">Package handed over to final recipient.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Origin
+                                Warehouse</p>
+                            <p class="text-brand-navy font-semibold">New York, USA</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Destination
+                            </p>
+                            <p class="text-brand-navy font-semibold">Dhaka, Bangladesh</p>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Mode</p>
+                            <div class="flex items-center gap-2 text-brand-navy font-semibold">
+                                <span class="material-symbols-outlined text-sm">flight</span>
+                                Air Freight
                             </div>
                         </div>
-                        <!-- Right: Summary & Details -->
-                        <div class="flex flex-col gap-8">
-                            <!-- Parcels Card -->
-                            <div
-                                class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
-                                <h3 class="text-lg font-bold text-primary dark:text-white mb-4">Parcels in This Shipment
-                                </h3>
-                                <div class="flex flex-col gap-4">
-                                    <div
-                                        class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <p class="font-mono text-xs font-bold text-primary dark:text-slate-300">
-                                                PK-99201-01</p>
-                                            <span
-                                                class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold uppercase">Perfect</span>
-                                        </div>
-                                        <div class="flex justify-between text-sm">
-                                            <span class="text-slate-500">Electronics Box</span>
-                                            <span class="font-bold">4.5 kg</span>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-                                        <div class="flex justify-between items-start mb-2">
-                                            <p class="font-mono text-xs font-bold text-primary dark:text-slate-300">
-                                                PK-99201-02</p>
-                                            <span
-                                                class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold uppercase">Perfect</span>
-                                        </div>
-                                        <div class="flex justify-between text-sm">
-                                            <span class="text-slate-500">Home Accessories</span>
-                                            <span class="font-bold">2.1 kg</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Shipment Summary Card -->
-                            <div
-                                class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-sm">
-                                <h3 class="text-lg font-bold text-primary dark:text-white mb-4">Shipment Summary</h3>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between text-sm">
-                                        <span class="text-slate-500">Total Parcels</span>
-                                        <span class="text-primary dark:text-white font-semibold">2 Items</span>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span class="text-slate-500">Chargeable Weight</span>
-                                        <span class="text-primary dark:text-white font-semibold">7.2 kg</span>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span class="text-slate-500">Shipping Mode</span>
-                                        <span class="text-primary dark:text-white font-semibold">Standard Air</span>
-                                    </div>
-                                    <div class="flex justify-between text-sm">
-                                        <span class="text-slate-500">Invoice Number</span>
-                                        <span class="text-primary dark:text-white font-semibold">INV-GS-2023-891</span>
-                                    </div>
-                                    <div
-                                        class="flex justify-between text-sm pt-3 border-t border-slate-100 dark:border-slate-800">
-                                        <span class="text-slate-500">Payment Status</span>
-                                        <span class="text-green-600 font-bold flex items-center gap-1">
-                                            <span class="material-symbols-outlined text-sm">check_circle</span>
-                                            Paid
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Est. Delivery
+                            </p>
+                            <p class="text-brand-navy font-semibold">5-7 Days (Aug 24-26)</p>
                         </div>
                     </div>
-                    <!-- Tracking Tips Section -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                        <div
-                            class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex gap-4">
-                            <div
-                                class="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
-                                <span class="material-symbols-outlined">tag</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary dark:text-white">Use Shipment ID</h4>
-                                <p class="text-sm text-slate-500 mt-1">Get the most accurate updates using your unique
-                                    SH-ID number found in your email.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex gap-4">
-                            <div
-                                class="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
-                                <span class="material-symbols-outlined">dashboard</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary dark:text-white">Check Dashboard</h4>
-                                <p class="text-sm text-slate-500 mt-1">Login to see your full shipment history and
-                                    manage upcoming deliveries.</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex gap-4">
-                            <div
-                                class="size-12 rounded-full bg-primary/5 flex items-center justify-center text-primary shrink-0">
-                                <span class="material-symbols-outlined">help</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary dark:text-white">Contact Support</h4>
-                                <p class="text-sm text-slate-500 mt-1">Issues with tracking? Our dedicated team is
-                                    available 24/7 to help you.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Need Help? -->
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left: Visual Timeline -->
                     <div
-                        class="bg-primary rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden mt-12">
-                        <div class="absolute inset-0 opacity-10"
-                            style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;">
+                        class="lg:col-span-2 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-brand-navy mb-8">Shipment Progress</h3>
+                        <div class="relative">
+                            <!-- Timeline Line -->
+                            <div class="absolute left-[19px] top-2 bottom-2 w-0.5 bg-slate-100">
+                            </div>
+                            <div class="flex flex-col gap-10">
+                                <!-- Completed Step -->
+                                <div class="relative flex gap-6">
+                                    <div
+                                        class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white">
+                                        <span class="material-symbols-outlined text-lg">check</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-brand-navy">Product
+                                            Requested</h4>
+                                        <p class="text-sm text-slate-500">Initial shipping request received and
+                                            confirmed.</p>
+                                        <p class="text-xs font-mono text-slate-400 mt-1">Aug 15, 2023 - 09:42 AM</p>
+                                    </div>
+                                </div>
+                                <!-- Completed Step -->
+                                <div class="relative flex gap-6">
+                                    <div
+                                        class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-blue text-white">
+                                        <span class="material-symbols-outlined text-lg">inventory_2</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-brand-navy">Arrived at
+                                            Warehouse</h4>
+                                        <p class="text-sm text-slate-500">Items received at New York Export Hub.</p>
+                                        <p class="text-xs font-mono text-slate-400 mt-1">Aug 16, 2023 - 02:15 PM</p>
+                                    </div>
+                                </div>
+                                <!-- Current Step -->
+                                <div class="relative flex gap-6">
+                                    <div
+                                        class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-orange text-white shadow-lg shadow-brand-orange/20">
+                                        <span class="material-symbols-outlined text-lg">local_shipping</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-base font-bold text-brand-navy">In Transit
+                                            (Active)</h4>
+                                        <p class="text-sm text-brand-orange font-medium">Shipment has
+                                            departed the origin hub and is currently on flight SQ-238.</p>
+                                        <p class="text-xs font-mono text-slate-400 mt-1">Aug 18, 2023 - 11:30 PM</p>
+                                    </div>
+                                </div>
+                                <!-- Future Step -->
+                                <div class="relative flex gap-6">
+                                    <div
+                                        class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-300">
+                                        <span class="material-symbols-outlined text-lg">import_export</span>
+                                    </div>
+                                    <div class="opacity-50">
+                                        <h4 class="text-base font-bold text-brand-navy">Customs
+                                            Clearance</h4>
+                                        <p class="text-sm text-slate-500">Pending arrival at Dhaka Intl Airport.</p>
+                                        <p class="text-xs font-mono text-slate-400 mt-1">Estimated: Aug 21, 2023</p>
+                                    </div>
+                                </div>
+                                <!-- Future Step -->
+                                <div class="relative flex gap-6">
+                                    <div
+                                        class="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-300">
+                                        <span class="material-symbols-outlined text-lg">done_all</span>
+                                    </div>
+                                    <div class="opacity-50">
+                                        <h4 class="text-base font-bold text-brand-navy">Delivered
+                                        </h4>
+                                        <p class="text-sm text-slate-500">Package handed over to final recipient.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="relative z-10 flex flex-col items-center gap-6">
-                            <h2 class="text-3xl font-black">Need further assistance?</h2>
-                            <p class="text-slate-300 max-w-xl">If you can't find your package or the status hasn't
-                                updated in 48 hours, please reach out to our logistics experts.</p>
-                            <div class="flex flex-wrap justify-center gap-4">
-                                <button
-                                    class="bg-accent hover:bg-accent/90 px-8 py-3 rounded-lg font-bold transition-all shadow-xl shadow-accent/20">Contact
-                                    Support</button>
-                                <button
-                                    class="bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-3 rounded-lg font-bold transition-all">View
-                                    FAQ</button>
+                    </div>
+
+                    <!-- Right: Summary & Details -->
+                    <div class="flex flex-col gap-8">
+                        <!-- Parcels Card -->
+                        <div
+                            class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-brand-navy mb-4">Parcels in This Shipment
+                            </h3>
+                            <div class="flex flex-col gap-4">
+                                <div
+                                    class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <p class="font-mono text-xs font-bold text-brand-blue">
+                                            PK-99201-01</p>
+                                        <span
+                                            class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded font-bold uppercase">Perfect</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-slate-500">Electronics Box</span>
+                                        <span class="font-bold">4.5 kg</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <p class="font-mono text-xs font-bold text-brand-blue">
+                                            PK-99201-02</p>
+                                        <span
+                                            class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded font-bold uppercase">Perfect</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-slate-500">Home Accessories</span>
+                                        <span class="font-bold">2.1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipment Summary Card -->
+                        <div
+                            class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-brand-navy mb-4">Shipment Summary</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">Total Parcels</span>
+                                    <span class="text-brand-navy font-semibold">2 Items</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">Chargeable Weight</span>
+                                    <span class="text-brand-navy font-semibold">7.2 kg</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">Shipping Mode</span>
+                                    <span class="text-brand-navy font-semibold">Standard Air</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">Invoice Number</span>
+                                    <span class="text-brand-navy font-semibold">INV-GS-2023-891</span>
+                                </div>
+                                <div
+                                    class="flex justify-between text-sm pt-3 border-t border-slate-100">
+                                    <span class="text-slate-500">Payment Status</span>
+                                    <span class="text-brand-green font-bold flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">check_circle</span>
+                                        Paid
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Final CTA -->
-            <section
-                class="px-6 py-24 md:px-12 lg:px-24 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
-                <div class="max-w-4xl mx-auto text-center flex flex-col gap-8">
-                    <h2 class="text-4xl font-black text-primary dark:text-white">Ready to Start Shipping
-                        Internationally?</h2>
-                    <p class="text-slate-500 text-lg">Join 10,000+ businesses who trust GoodsShippers for their global
-                        logistics needs. Affordable, transparent, and fast.</p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <button
-                            class="bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:-translate-y-1 transition-all">Create
-                            Account</button>
-                        <button
-                            class="bg-slate-100 text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-200 transition-all">Explore
-                            Services</button>
+
+                <!-- Tracking Tips Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-4">
+                        <div
+                            class="size-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                            <span class="material-symbols-outlined">tag</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Use Shipment ID</h4>
+                            <p class="text-sm text-slate-500 mt-1">Get the most accurate updates using your unique
+                                SH-ID number found in your email.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-4">
+                        <div
+                            class="size-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                            <span class="material-symbols-outlined">dashboard</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Check Dashboard</h4>
+                            <p class="text-sm text-slate-500 mt-1">Login to see your full shipment history and
+                                manage upcoming deliveries.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-4">
+                        <div
+                            class="size-12 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue shrink-0">
+                            <span class="material-symbols-outlined">help</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-navy">Contact Support</h4>
+                            <p class="text-sm text-slate-500 mt-1">Issues with tracking? Our dedicated team is
+                                available 24/7 to help you.</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Footer -->
-        <footer
-            class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 px-6 py-12 md:px-12 lg:px-24">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <div class="size-8 bg-primary text-white rounded flex items-center justify-center">
-                        <span class="material-symbols-outlined text-sm">local_shipping</span>
+
+                <!-- Need Help? -->
+                <div
+                    class="bg-gradient-to-r from-brand-blue to-brand-blue-dark rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden mt-12">
+                    <div class="absolute inset-0 opacity-10"
+                        style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;">
                     </div>
-                    <span class="text-primary dark:text-white font-bold text-lg">GoodsShippers</span>
+                    <div class="relative z-10 flex flex-col items-center gap-6">
+                        <h2 class="text-3xl font-black">Need further assistance?</h2>
+                        <p class="text-slate-300 max-w-xl">If you can't find your package or the status hasn't
+                            updated in 48 hours, please reach out to our logistics experts.</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="#"
+                                class="bg-brand-green hover:bg-green-600 px-8 py-3 rounded-lg font-bold transition-all shadow-xl shadow-brand-green/20 inline-flex items-center gap-2">
+                                <span class="material-symbols-outlined">chat</span>
+                                Chat on WhatsApp
+                            </a>
+                            <a href="FAQ.html"
+                                class="bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-3 rounded-lg font-bold transition-all">View
+                                FAQ</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex gap-8 text-sm text-slate-500 font-medium">
-                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-                    <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
-                    <a class="hover:text-primary transition-colors" href="#">Help Center</a>
-                </div>
-                <p class="text-xs text-slate-400">© 2023 GoodsShippers Logistics Inc. All rights reserved.</p>
             </div>
-        </footer>
-    </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section
+            class="px-6 py-24 md:px-12 lg:px-24 bg-white border-t border-slate-100">
+            <div class="max-w-4xl mx-auto text-center flex flex-col gap-8">
+                <h2 class="text-4xl font-black text-brand-navy">Ready to Start Shipping
+                    Internationally?</h2>
+                <p class="text-slate-500 text-lg">Join 500+ happy customers who trust Goods Shippers for their global
+                    logistics needs. Affordable, transparent, and fast.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="Register.html"
+                        class="bg-brand-orange text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-brand-orange-hover hover:shadow-lg hover:-translate-y-1 transition-all shadow-lg shadow-orange-200">Create
+                        Account</a>
+                    <a href="Our Services.html"
+                        class="bg-slate-100 text-brand-blue px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-200 transition-all">Explore
+                        Services</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue-dark text-white pt-20 pb-10">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-brand-orange">package_2</span>
+                        </div>
+                        <span class="font-bold text-xl">Goods Shippers</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+                        Your trusted partner for international shopping and shipping. Shop from UK, USA & Malaysia, we deliver to Bangladesh. No international card needed!
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors" href="#">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-xl bg-brand-green flex items-center justify-center hover:bg-green-600 transition-colors" href="#">
+                            <span class="material-symbols-outlined">chat</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Buy For Me</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Ship For Me</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Bulk Shipment</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Shipping Cost Calculator.html">Shipping Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Warehouses</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">USA Warehouse</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">UK Warehouse</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">Malaysia Warehouse</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="FAQ.html">FAQ</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Track Shipment.html">Track Shipment</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Contact US.html">Contact Us</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="About Us.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Payment Methods -->
+            <div class="border-t border-white/10 pt-8 mb-8">
+                <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="material-symbols-outlined text-brand-green">verified_user</span>
+                        <span>Secure Payments</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>bKash</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Nagad</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Rocket</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Bank Transfer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">© 2025 Goods Shippers. All rights reserved.</p>
+                <div class="flex gap-6 text-xs text-slate-500">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                    <a class="hover:text-white transition-colors" href="#">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

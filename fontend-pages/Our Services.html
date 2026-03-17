@@ -1,534 +1,665 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+    <title>Our Services | Goods Shippers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#ec5b13",
-                        "background-light": "#f8f6f6",
-                        "background-dark": "#221610",
-                        "navy-custom": "#1A355B",
-                        "slate-custom": "#F8FAFC"
+                        "brand-blue": "#1e3a5f",
+                        "brand-blue-dark": "#0f2744",
+                        "brand-orange": "#f59e0b",
+                        "brand-orange-hover": "#d97706",
+                        "brand-green": "#22c55e",
+                        "brand-navy": "#1a202c",
                     },
                     fontFamily: {
-                        "display": ["Public Sans", "sans-serif"]
+                        sans: ['Inter', 'sans-serif'],
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
-                },
-            },
+                }
+            }
         }
     </script>
-    <title>Services - GoodsShippers</title>
+    <style>
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+    </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
-    <header
-        class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary text-3xl">local_shipping</span>
-                    <span class="text-xl font-bold text-navy-custom dark:text-white">GoodsShippers</span>
+<body class="font-sans text-slate-900 bg-white antialiased">
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white py-2.5 text-center text-sm font-medium px-4">
+        <span class="inline-flex items-center gap-2">
+            <span class="material-symbols-outlined text-brand-orange text-lg">local_shipping</span>
+            Shop from UK, USA & Malaysia — We deliver to Bangladesh!
+            <span class="hidden sm:inline">No international card? No problem.</span>
+            <a class="underline ml-2 text-brand-orange hover:text-white transition-colors font-bold" href="Register.html">Get Started Free</a>
+        </span>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky-header border-b border-gray-100 h-20 flex items-center">
+        <nav class="max-w-[1280px] mx-auto w-full px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="home page.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-2xl flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-white text-2xl">package_2</span>
                 </div>
-                <nav class="hidden md:flex items-center gap-8">
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Tracking</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <button
-                        class="hidden sm:inline-flex text-sm font-medium px-4 py-2 text-navy-custom dark:text-white">Login</button>
-                    <button
-                        class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all">Get
-                        Started</button>
-                </div>
+                <span class="font-black text-2xl tracking-tight text-brand-navy">Goods Shippers</span>
+            </a>
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a class="text-brand-blue font-bold" href="Our Services.html">Services</a>
+                <a class="hover:text-brand-blue transition-colors" href="How It Works.html">How it Works</a>
+                <a class="hover:text-brand-blue transition-colors" href="Shipping Cost Calculator.html">Pricing</a>
+                <a class="hover:text-brand-blue transition-colors" href="Track Shipment.html">Tracking</a>
+                <a class="hover:text-brand-blue transition-colors" href="Store Catalog.html">Shop</a>
             </div>
-        </div>
+            <!-- Auth Buttons -->
+            <div class="flex items-center gap-4">
+                <a href="login.html" class="text-sm font-bold text-brand-blue px-4 py-2 hover:text-brand-orange transition-colors">Login</a>
+                <a href="Register.html"
+                    class="bg-brand-orange text-white text-sm font-bold px-6 py-3 rounded-xl hover:bg-brand-orange-hover transition-all shadow-lg shadow-orange-200">
+                    Get Started
+                </a>
+            </div>
+        </nav>
     </header>
-    <section class="relative overflow-hidden py-16 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-16 pb-24 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
+            <!-- Background Decorations -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-blue/5 rounded-full blur-2xl -ml-32 -mb-32"></div>
+
+            <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                <!-- Hero Text Content -->
                 <div class="space-y-8">
-                    <div>
-                        <span
-                            class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full mb-4">Our
-                            Services</span>
-                        <h1 class="text-4xl lg:text-6xl font-black text-navy-custom dark:text-white leading-tight">
-                            Flexible Shipping Solutions for Every Type of Customer
-                        </h1>
-                        <p class="mt-6 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                            Our Services: Shop, Ship, and Bulk solutions designed to bridge the gap between global
-                            stores and your doorstep.
-                        </p>
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold">
+                        <span class="material-symbols-outlined text-lg">verified</span>
+                        Our Services
                     </div>
+
+                    <h1 class="text-4xl lg:text-6xl font-black text-brand-navy leading-[1.1]">
+                        Flexible Shipping Solutions for Every Customer
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl leading-relaxed">
+                        Our Services: Shop, Ship, and Bulk solutions designed to bridge the gap between global
+                        stores and your doorstep in Bangladesh. <strong class="text-brand-blue">No Card? No Problem!</strong>
+                    </p>
+
                     <div class="flex flex-wrap gap-4">
-                        <button
-                            class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all">Get
-                            Started</button>
-                        <button
-                            class="border-2 border-slate-200 dark:border-slate-700 hover:border-primary px-8 py-4 rounded-xl font-bold transition-all flex items-center gap-2">
+                        <a href="Register.html"
+                            class="bg-brand-orange text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all inline-flex items-center gap-2">
+                            <span>Get Started Free</span>
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="Track Shipment.html"
+                            class="border-2 border-brand-blue text-brand-blue font-bold px-8 py-4 rounded-xl hover:bg-brand-blue hover:text-white transition-all inline-flex items-center gap-2">
                             <span class="material-symbols-outlined">track_changes</span>
                             Track Shipment
-                        </button>
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges - Countries -->
+                    <div class="flex items-center gap-6 flex-wrap">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Delivering to</span>
+                        <div class="flex gap-3">
+                            <div class="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+                                <span class="text-xl">🇧🇩</span>
+                                <span class="text-sm font-bold">Bangladesh</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Hero Image -->
                 <div class="relative group">
-                    <div
-                        class="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl group-hover:bg-primary/20 transition-all">
-                    </div>
+                    <div class="absolute -inset-4 bg-brand-orange/10 rounded-3xl blur-2xl group-hover:bg-brand-orange/20 transition-all"></div>
                     <img alt="Modern Logistics Hub"
                         class="relative rounded-3xl shadow-2xl w-full object-cover aspect-[4/3]"
-                        data-alt="A busy modern shipping warehouse with packages and automation"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOPcCY8_o7Vhiu-MLZjWOhpSDrm0QJuRajcOC1M5xIE4fmC5pGEnElyye014XNdgWQSkyW2oH3FjSSFJvV8v2hXKnBdKFnuymrlSYVC_WEyPkuUOi1ULLIDb7nXtQ9Jm2TGAGehVx4vTAN1f0cUg0KHYiEZlzVPl_5kg4poXlUTM1nyCYLljAFujjZS8DxzgC7Wbaq3CFB1lS3qLRQ6U8lc_6kprFwsyOhWd0Ym7NGnlE-nerDRum5bECnVt2r-NHXBzrDHkmJV9g" />
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20 bg-slate-custom dark:bg-background-dark/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-navy-custom dark:text-white">Choose the Right Service</h2>
-                <p class="mt-4 text-slate-600 dark:text-slate-400">Tailored solutions for individual shoppers and
-                    enterprise logistics.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col">
-                    <div class="size-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Shop For Me</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow">Can't buy from a US store? We'll handle
-                        the purchase, payment, and delivery for you.</p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Expert
-                            Procurement</span>
-                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Safe
-                            Payments</span>
-                    </div>
-                    <a class="text-primary font-bold flex items-center gap-2 group" href="#">
-                        Explore <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </a>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col">
-                    <div class="size-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">package_2</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Ship For Me</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow">Use our warehouse address for your
-                        online orders and manage your own shopping experience.</p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Virtual
-                            Address</span>
-                        <span
-                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Consolidation</span>
-                    </div>
-                    <a class="text-primary font-bold flex items-center gap-2 group" href="#">
-                        Explore <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </a>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all flex flex-col">
-                    <div class="size-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Bulk Shipment</h3>
-                    <p class="text-slate-600 dark:text-slate-400 mb-6 flex-grow">Designed for businesses needing
-                        commercial shipping, pallets, and customs handling.</p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span
-                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Wholesale
-                            Pricing</span>
-                        <span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-xs font-medium">Customs
-                            Assist</span>
-                    </div>
-                    <a class="text-primary font-bold flex items-center gap-2 group" href="#">
-                        Explore <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-navy-custom dark:text-white">Which Service Should You
-                Use?</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm">
-                    <thead>
-                        <tr class="bg-slate-100 dark:bg-slate-800 text-left">
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">Features</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">Shop For Me</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">Ship For Me</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">Bulk Shipment</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                        <tr>
-                            <td class="p-6 font-medium">Best For</td>
-                            <td class="p-6">Non-US credit cards</td>
-                            <td class="p-6">Avid online shoppers</td>
-                            <td class="p-6">Resellers &amp; Businesses</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 font-medium">Who Buys</td>
-                            <td class="p-6">GoodsShippers Team</td>
-                            <td class="p-6">You (the customer)</td>
-                            <td class="p-6">You / Suppliers</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 font-medium">Warehouse Use</td>
-                            <td class="p-6">Included</td>
-                            <td class="p-6">Personal Suite ID</td>
-                            <td class="p-6">Commercial Storage</td>
-                        </tr>
-                        <tr>
-                            <td class="p-6 font-medium">Quote Process</td>
-                            <td class="p-6">Automatic Breakdown</td>
-                            <td class="p-6">Weight-based</td>
-                            <td class="p-6">Custom Enterprise Quote</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 space-y-24 bg-slate-custom dark:bg-background-dark/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <img alt="Shopping Concierge" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
-                        data-alt="Person shopping online using a tablet with a package in the background"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNADiodRWc5r7zZuCvfvHpnQ9jzO2ck0YF5nBDuiLWobBS2jiVwE0c8iOuWaF2cmofpM5oT_zuR6zibtDsDtav2f3uJcg75KpP7uTrET7l-mTI6w_OU3AiZBobr4py0ZsLHJvBPCPjDN16RhGmp5GKrnbG5Vcgz34KoFunG5YLO72cZM3iEnXx0XgAYPfy_YyDKALyLBd-DxiqiyDkwbVTSM4R1dohw0w-jpJvwV02k1b_g3wCrDyjB3oUWcWhU67myUZIwkPMv0M" />
-                </div>
-                <div class="order-1 lg:order-2 space-y-6">
-                    <h3 class="text-3xl font-bold text-navy-custom dark:text-white">Shop For Me: We Buy, You Relax</h3>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
-                            <div>
-                                <h4 class="font-bold">Submit Links</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Share URLs of the items you want
-                                    to purchase.</p>
-                            </div>
+        </section>
+
+        <!-- "No Card? No Problem" Section -->
+        <section class="py-16 bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="flex items-center gap-6">
+                        <div class="p-4 bg-white/10 rounded-2xl">
+                            <span class="material-symbols-outlined text-5xl text-brand-orange">credit_card_off</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</span>
-                            <div>
-                                <h4 class="font-bold">Receive Quote</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Our team calculates full costs
-                                    including shipping and fees.</p>
-                            </div>
+                        <div>
+                            <h2 class="text-3xl font-black mb-2">No Card? No Problem!</h2>
+                            <p class="text-blue-100 text-lg">Pay with bKash, Nagad, Rocket, or bank transfer. We handle the international payment for you.</p>
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</span>
-                            <div>
-                                <h4 class="font-bold">Approve</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Pay securely using our various
-                                    local payment methods.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</span>
-                            <div>
-                                <h4 class="font-bold">Receive Shipment</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Track your order until it arrives
-                                    at your door.</p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="flex items-center gap-2 bg-brand-green text-white font-bold px-6 py-3 rounded-xl hover:bg-green-600 transition-all">
+                            <span class="material-symbols-outlined">chat</span>
+                            Chat on WhatsApp
+                        </a>
+                        <a href="How It Works.html" class="bg-white/10 text-white font-bold px-6 py-3 rounded-xl hover:bg-white/20 transition-all border border-white/20">
+                            Learn More
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-bold text-navy-custom dark:text-white">Ship For Me: Shop Anywhere</h3>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
-                            <div>
-                                <h4 class="font-bold">Get Suite ID</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Register to get your unique US
-                                    warehouse address.</p>
-                            </div>
+        </section>
+
+        <!-- Choose the Right Service -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-brand-navy">Choose the Right Service</h2>
+                    <p class="mt-4 text-slate-500">Tailored solutions for individual shoppers and enterprise logistics.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Shop For Me Card -->
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 bg-brand-orange/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-brand-orange text-3xl">shopping_cart</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</span>
-                            <div>
-                                <h4 class="font-bold">Shop Online</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Buy from your favorite stores
-                                    using your new address.</p>
-                            </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Shop For Me</h3>
+                        <p class="text-slate-500 mb-6 flex-grow">Can't buy from a US store? We'll handle
+                            the purchase, payment, and delivery for you.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Expert Procurement</span>
+                            <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Safe Payments</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</span>
-                            <div>
-                                <h4 class="font-bold">Send to Warehouse</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">We receive, inspect, and notify
-                                    you of the package arrival.</p>
-                            </div>
+                        <a class="text-brand-blue font-bold flex items-center gap-2 group hover:text-brand-orange transition-colors" href="#">
+                            Explore <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <!-- Ship For Me Card - Featured -->
+                    <div class="bg-gradient-to-br from-brand-blue to-brand-blue-dark p-8 rounded-3xl shadow-xl text-white relative overflow-hidden flex flex-col">
+                        <div class="absolute top-4 right-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Most Popular</div>
+                        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-3xl">package_2</span>
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</span>
-                            <div>
-                                <h4 class="font-bold">Ship Home</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Choose your shipping speed and
-                                    consolidate items to save.</p>
-                            </div>
+                        <h3 class="text-xl font-bold mb-4">Ship For Me</h3>
+                        <p class="text-blue-100 mb-6 flex-grow">Use our warehouse address for your
+                            online orders and manage your own shopping experience.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">Virtual Address</span>
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-xs font-medium">Consolidation</span>
                         </div>
+                        <a class="bg-brand-orange text-white font-bold px-6 py-3 rounded-xl inline-flex items-center gap-2 hover:bg-brand-orange-hover transition-colors" href="Register.html">
+                            Get Started <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+
+                    <!-- Bulk Shipment Card -->
+                    <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all flex flex-col">
+                        <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-brand-blue text-3xl">domain</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-navy mb-4">Bulk Shipment</h3>
+                        <p class="text-slate-500 mb-6 flex-grow">Designed for businesses needing
+                            commercial shipping, pallets, and customs handling.</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Wholesale Pricing</span>
+                            <span class="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium">Customs Assist</span>
+                        </div>
+                        <a class="text-brand-blue font-bold flex items-center gap-2 group hover:text-brand-orange transition-colors" href="#">
+                            Explore <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
-                <div class="relative">
-                    <img alt="Package Consolidation" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
-                        data-alt="Organized packages in a clean warehouse facility"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmmESDpzMVJsR6E0PzJePzRPJYSHuiqLe2LbOlpbUWbcVdiXj65R461MS4_Tb-ySz8QYuPHvfhTs9STyVeYfL1Ov2S57S4OEHTfO6LtdRdZu1eAdjiIeQeqfnR4PVJzh0CurfNXHMFd4YgD-XBztN0VPhlpRd9rIpSOiaqTrYwB6B_ydPbQwld_UuC0k8xJuCCdBwSJMcA4phcIDXHqZBKZ-ws0r0I8VbwvOdj962K81f9nAZef8lE8FBmDAykmQiMSUv9r2uApUQ" />
+            </div>
+        </section>
+
+        <!-- Service Comparison Table -->
+        <section class="py-24 bg-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-brand-navy">Which Service Should You Use?</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse bg-white rounded-3xl overflow-hidden shadow-lg">
+                        <thead>
+                            <tr class="bg-brand-blue text-white text-left">
+                                <th class="p-6 text-sm font-bold uppercase tracking-wider">Features</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-wider">Shop For Me</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-wider">Ship For Me</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-wider">Bulk Shipment</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-6 font-medium text-brand-navy">Best For</td>
+                                <td class="p-6 text-slate-600">Non-US credit cards</td>
+                                <td class="p-6 text-slate-600">Avid online shoppers</td>
+                                <td class="p-6 text-slate-600">Resellers & Businesses</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-6 font-medium text-brand-navy">Who Buys</td>
+                                <td class="p-6 text-slate-600">Goods Shippers Team</td>
+                                <td class="p-6 text-slate-600">You (the customer)</td>
+                                <td class="p-6 text-slate-600">You / Suppliers</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-6 font-medium text-brand-navy">Warehouse Use</td>
+                                <td class="p-6 text-slate-600">Included</td>
+                                <td class="p-6 text-slate-600">Personal Suite ID</td>
+                                <td class="p-6 text-slate-600">Commercial Storage</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="p-6 font-medium text-brand-navy">Quote Process</td>
+                                <td class="p-6 text-slate-600">Automatic Breakdown</td>
+                                <td class="p-6 text-slate-600">Weight-based</td>
+                                <td class="p-6 text-slate-600">Custom Enterprise Quote</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <img alt="Commercial Shipping" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
-                        data-alt="Shipping container and industrial logistics equipment"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr5CGi87vN1pVFlxy1tuzsMlw85rALGNDsDMu4qk7YQf7tyPgA9MaoFHnTfF6XMrHSppT7h8r--qjvLL5ah4FXsX9jngVvcNygLakuhXfWuQoqDc6gTITrDDkzrqqDKYUmhz8E04vUdrRDAWFHVwQVE6awL_BSWx5HN7Jl9HE2LjxoBG40w-23GGxsRr4-q_-paygtlwRJeIvm6pUU8dhhcMFY7JDeTnXXNd8dLg1Kic0mMNqEmDNBMvPkdmYtggRitIEFQQDGnNo" />
-                </div>
-                <div class="order-1 lg:order-2 space-y-6">
-                    <h3 class="text-3xl font-bold text-navy-custom dark:text-white">Bulk Shipment: Built for Business
-                    </h3>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</span>
-                            <div>
-                                <h4 class="font-bold">Submit Requirements</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Upload manifests for large volumes
-                                    or pallet shipments.</p>
-                            </div>
+        </section>
+
+        <!-- Service Details Sections -->
+        <section class="py-24 space-y-24 bg-slate-50">
+            <!-- Shop For Me -->
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img alt="Shopping Concierge" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNADiodRWc5r7zZuCvfvHpnQ9jzO2ck0YF5nBDuiLWobBS2jiVwE0c8iOuWaF2cmofpM5oT_zuR6zibtDsDtav2f3uJcg75KpP7uTrET7l-mTI6w_OU3AiZBobr4py0ZsLHJvBPCPjDN16RhGmp5GKrnbG5Vcgz34KoFunG5YLO72cZM3iEnXx0XgAYPfy_YyDKALyLBd-DxiqiyDkwbVTSM4R1dohw0w-jpJvwV02k1b_g3wCrDyjB3oUWcWhU67myUZIwkPMv0M" />
+                    </div>
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full text-sm font-bold">
+                            <span class="material-symbols-outlined text-lg">shopping_cart</span>
+                            Shop For Me
                         </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</span>
-                            <div>
-                                <h4 class="font-bold">Receive Quote</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Get discounted commercial rates
-                                    and insurance options.</p>
+                        <h3 class="text-3xl font-bold text-brand-navy">We Buy, You Relax</h3>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold">1</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Submit Links</h4>
+                                    <p class="text-sm text-slate-500">Share URLs of the items you want to purchase.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</span>
-                            <div>
-                                <h4 class="font-bold">Grouping</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Items are consolidated into
-                                    pallets for maximum efficiency.</p>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold">2</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Receive Quote</h4>
+                                    <p class="text-sm text-slate-500">Our team calculates full costs including shipping and fees.</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <span
-                                class="flex-shrink-0 size-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">4</span>
-                            <div>
-                                <h4 class="font-bold">Delivery</h4>
-                                <p class="text-sm text-slate-600 dark:text-slate-400">Last-mile delivery to your
-                                    warehouse or retail location.</p>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold">3</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Approve & Pay</h4>
+                                    <p class="text-sm text-slate-500">Pay securely using bKash, Nagad, Rocket, or bank transfer.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-bold">4</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Receive Shipment</h4>
+                                    <p class="text-sm text-slate-500">Track your order until it arrives at your door in Bangladesh.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div
-                    class="text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-4">rate_review</span>
-                    <h4 class="font-bold">Manual Quote Review</h4>
-                    <p class="text-xs text-slate-500 mt-2">Personalized accuracy for every order.</p>
-                </div>
-                <div
-                    class="text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-4">inventory_2</span>
-                    <h4 class="font-bold">Warehouse Intake</h4>
-                    <p class="text-xs text-slate-500 mt-2">Professional package handling and photo proof.</p>
-                </div>
-                <div
-                    class="text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-4">route</span>
-                    <h4 class="font-bold">Internal Tracking</h4>
-                    <p class="text-xs text-slate-500 mt-2">Monitor every step of the journey.</p>
-                </div>
-                <div
-                    class="text-center p-6 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-                    <span class="material-symbols-outlined text-4xl text-primary mb-4">receipt_long</span>
-                    <h4 class="font-bold">Invoice-Based</h4>
-                    <p class="text-xs text-slate-500 mt-2">Transparent payments with detailed billing.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-navy-custom text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold">Why Choose GoodsShippers?</h2>
-            </div>
-            <div class="grid grid-cols-2 lg:grid-cols-6 gap-8">
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">verified</span>
-                    <p class="text-sm font-medium">Insured Shipments</p>
-                </div>
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">speed</span>
-                    <p class="text-sm font-medium">Fast Turnaround</p>
-                </div>
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">support_agent</span>
-                    <p class="text-sm font-medium">24/7 Support</p>
-                </div>
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">price_check</span>
-                    <p class="text-sm font-medium">No Hidden Fees</p>
-                </div>
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">public</span>
-                    <p class="text-sm font-medium">Global Network</p>
-                </div>
-                <div class="space-y-3 text-center">
-                    <span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
-                    <p class="text-sm font-medium">App Integration</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-navy-custom dark:text-white">Ideal For...</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl">
-                    <div class="size-12 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary">person</span>
+
+            <!-- Ship For Me -->
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-blue/10 text-brand-blue px-4 py-2 rounded-full text-sm font-bold">
+                            <span class="material-symbols-outlined text-lg">package_2</span>
+                            Ship For Me
+                        </div>
+                        <h3 class="text-3xl font-bold text-brand-navy">Shop Anywhere, Ship with Us</h3>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">1</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Get Suite ID</h4>
+                                    <p class="text-sm text-slate-500">Register to get your unique US, UK, or Malaysia warehouse address.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">2</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Shop Online</h4>
+                                    <p class="text-sm text-slate-500">Buy from your favorite stores using your new address.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">3</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Send to Warehouse</h4>
+                                    <p class="text-sm text-slate-500">We receive, inspect, and notify you of the package arrival.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">4</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Ship Home</h4>
+                                    <p class="text-sm text-slate-500">Choose your shipping speed and consolidate items to save.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Casual Shopper</h4>
-                    <p class="text-slate-600 dark:text-slate-400">"I just want to buy a pair of shoes from a US-only
-                        site once or twice a year."</p>
-                </div>
-                <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl">
-                    <div class="size-12 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary">shopping_bag</span>
+                    <div class="relative">
+                        <img alt="Package Consolidation" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmmESDpzMVJsR6E0PzJePzRPJYSHuiqLe2LbOlpbUWbcVdiXj65R461MS4_Tb-ySz8QYuPHvfhTs9STyVeYfL1Ov2S57S4OEHTfO6LtdRdZu1eAdjiIeQeqfnR4PVJzh0CurfNXHMFd4YgD-XBztN0VPhlpRd9rIpSOiaqTrYwB6B_ydPbQwld_UuC0k8xJuCCdBwSJMcA4phcIDXHqZBKZ-ws0r0I8VbwvOdj962K81f9nAZef8lE8FBmDAykmQiMSUv9r2uApUQ" />
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Direct Buyer</h4>
-                    <p class="text-slate-600 dark:text-slate-400">"I shop online frequently and want to manage my own
-                        packages and shipping speeds."</p>
                 </div>
-                <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-2xl">
-                    <div class="size-12 bg-white dark:bg-slate-700 rounded-full flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary">business_center</span>
+            </div>
+
+            <!-- Bulk Shipment -->
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img alt="Commercial Shipping" class="rounded-3xl shadow-xl w-full aspect-video object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr5CGi87vN1pVFlxy1tuzsMlw85rALGNDsDMu4qk7YQf7tyPgA9MaoFHnTfF6XMrHSppT7h8r--qjvLL5ah4FXsX9jngVvcNygLakuhXfWuQoqDc6gTITrDDkzrqqDKYUmhz8E04vUdrRDAWFHVwQVE6awL_BSWx5HN7Jl9HE2LjxoBG40w-23GGxsRr4-q_-paygtlwRJeIvm6pUU8dhhcMFY7JDeTnXXNd8dLg1Kic0mMNqEmDNBMvPkdmYtggRitIEFQQDGnNo" />
                     </div>
-                    <h4 class="font-bold text-lg mb-2">Business Importer</h4>
-                    <p class="text-slate-600 dark:text-slate-400">"I need reliable freight for large stock orders and
-                        help with customs documentation."</p>
+                    <div class="order-1 lg:order-2 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-brand-green/10 text-brand-green px-4 py-2 rounded-full text-sm font-bold">
+                            <span class="material-symbols-outlined text-lg">domain</span>
+                            Bulk Shipment
+                        </div>
+                        <h3 class="text-3xl font-bold text-brand-navy">Built for Business</h3>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-green text-white rounded-full flex items-center justify-center font-bold">1</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Submit Requirements</h4>
+                                    <p class="text-sm text-slate-500">Upload manifests for large volumes or pallet shipments.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-green text-white rounded-full flex items-center justify-center font-bold">2</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Receive Quote</h4>
+                                    <p class="text-sm text-slate-500">Get discounted commercial rates and insurance options.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-green text-white rounded-full flex items-center justify-center font-bold">3</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Grouping</h4>
+                                    <p class="text-sm text-slate-500">Items are consolidated into pallets for maximum efficiency.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <span class="flex-shrink-0 w-8 h-8 bg-brand-green text-white rounded-full flex items-center justify-center font-bold">4</span>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">Delivery</h4>
+                                    <p class="text-sm text-slate-500">Last-mile delivery to your warehouse or retail location.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-20 bg-slate-custom dark:bg-background-dark/30">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-navy-custom dark:text-white">Frequently Asked Questions
-            </h2>
-            <div class="space-y-4">
-                <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-                    <button class="flex justify-between items-center w-full text-left font-bold">
-                        How much does 'Shop For Me' cost?
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-                    <button class="flex justify-between items-center w-full text-left font-bold">
-                        Can I consolidate packages?
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-                    <button class="flex justify-between items-center w-full text-left font-bold">
-                        Do you ship hazardous materials?
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-                <div
-                    class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
-                    <button class="flex justify-between items-center w-full text-left font-bold">
-                        What is the delivery timeline?
-                        <span class="material-symbols-outlined">expand_more</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 px-4">
-        <div class="max-w-5xl mx-auto bg-navy-custom rounded-[2rem] p-12 lg:p-20 text-center relative overflow-hidden">
-            <div
-                class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 size-64 bg-primary/20 blur-3xl rounded-full">
-            </div>
-            <div class="relative z-10">
-                <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">Need Help Choosing the Right Service?</h2>
-                <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">Our logistics experts are standing by to help
-                    you find the most cost-effective solution for your needs.</p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button
-                        class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-all">Get
-                        Started</button>
-                    <button
-                        class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-xl font-bold transition-all">Contact
-                        Us</button>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="py-24 bg-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-8 bg-slate-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue">rate_review</span>
+                        </div>
+                        <h4 class="font-bold text-brand-navy">Manual Quote Review</h4>
+                        <p class="text-xs text-slate-500 mt-2">Personalized accuracy for every order.</p>
+                    </div>
+                    <div class="text-center p-8 bg-slate-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-brand-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-3xl text-brand-orange">inventory_2</span>
+                        </div>
+                        <h4 class="font-bold text-brand-navy">Warehouse Intake</h4>
+                        <p class="text-xs text-slate-500 mt-2">Professional package handling and photo proof.</p>
+                    </div>
+                    <div class="text-center p-8 bg-slate-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-brand-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-3xl text-brand-green">route</span>
+                        </div>
+                        <h4 class="font-bold text-brand-navy">Internal Tracking</h4>
+                        <p class="text-xs text-slate-500 mt-2">Monitor every step of the journey.</p>
+                    </div>
+                    <div class="text-center p-8 bg-slate-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-3xl text-brand-blue">receipt_long</span>
+                        </div>
+                        <h4 class="font-bold text-brand-navy">Invoice-Based</h4>
+                        <p class="text-xs text-slate-500 mt-2">Transparent payments with detailed billing.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <footer class="bg-slate-100 dark:bg-background-dark py-12 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
-                    <span class="text-lg font-bold text-navy-custom dark:text-white">GoodsShippers</span>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-24 bg-gradient-to-r from-brand-blue to-brand-blue-dark text-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold">Why Choose Goods Shippers?</h2>
                 </div>
-                <div class="flex gap-8 text-sm text-slate-500">
-                    <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-                    <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
-                    <a class="hover:text-primary transition-colors" href="#">Cookie Policy</a>
+                <div class="grid grid-cols-2 lg:grid-cols-6 gap-8">
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-orange text-3xl">verified</span>
+                        <p class="text-sm font-medium">Insured Shipments</p>
+                    </div>
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-orange text-3xl">speed</span>
+                        <p class="text-sm font-medium">Fast Turnaround</p>
+                    </div>
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-green text-3xl">support_agent</span>
+                        <p class="text-sm font-medium">WhatsApp Support</p>
+                    </div>
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-orange text-3xl">price_check</span>
+                        <p class="text-sm font-medium">No Hidden Fees</p>
+                    </div>
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-orange text-3xl">public</span>
+                        <p class="text-sm font-medium">Global Network</p>
+                    </div>
+                    <div class="space-y-3 text-center">
+                        <span class="material-symbols-outlined text-brand-orange text-3xl">smartphone</span>
+                        <p class="text-sm font-medium">App Integration</p>
+                    </div>
                 </div>
-                <p class="text-sm text-slate-500">© 2024 GoodsShippers. All rights reserved.</p>
+            </div>
+        </section>
+
+        <!-- Ideal For Section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-[1280px] mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-brand-navy">Ideal For...</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-brand-orange text-2xl">person</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 text-brand-navy">Casual Shopper</h4>
+                        <p class="text-slate-500">"I just want to buy a pair of shoes from a US-only
+                            site once or twice a year."</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-brand-blue text-2xl">shopping_bag</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 text-brand-navy">Direct Buyer</h4>
+                        <p class="text-slate-500">"I shop online frequently and want to manage my own
+                            packages and shipping speeds."</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-shadow">
+                        <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-brand-green text-2xl">business_center</span>
+                        </div>
+                        <h4 class="font-bold text-xl mb-3 text-brand-navy">Business Importer</h4>
+                        <p class="text-slate-500">"I need reliable freight for large stock orders and
+                            help with customs documentation."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 text-brand-navy">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-brand-navy">
+                            How much does 'Shop For Me' cost?
+                            <span class="material-symbols-outlined text-brand-orange">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-brand-navy">
+                            Can I consolidate packages?
+                            <span class="material-symbols-outlined text-brand-orange">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-brand-navy">
+                            Do you ship hazardous materials?
+                            <span class="material-symbols-outlined text-brand-orange">expand_more</span>
+                        </button>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
+                        <button class="flex justify-between items-center w-full text-left font-bold text-brand-navy">
+                            What is the delivery timeline?
+                            <span class="material-symbols-outlined text-brand-orange">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 px-6">
+            <div class="max-w-5xl mx-auto bg-gradient-to-br from-brand-blue to-brand-blue-dark rounded-3xl p-12 lg:p-20 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-brand-orange/20 blur-3xl rounded-full"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">Need Help Choosing the Right Service?</h2>
+                    <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Our logistics experts are standing by to help
+                        you find the most cost-effective solution for your needs.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="Register.html"
+                            class="bg-brand-orange hover:bg-brand-orange-hover text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-orange-200 inline-flex items-center gap-2">
+                            Get Started
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="#"
+                            class="bg-brand-green hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold transition-all inline-flex items-center gap-2">
+                            <span class="material-symbols-outlined">chat</span>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue-dark text-white pt-20 pb-10">
+        <div class="max-w-[1280px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-brand-orange">package_2</span>
+                        </div>
+                        <span class="font-bold text-xl">Goods Shippers</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
+                        Your trusted partner for international shopping and shipping. Shop from UK, USA & Malaysia, we deliver to Bangladesh. No international card needed!
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-brand-orange transition-colors" href="#">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-xl bg-brand-green flex items-center justify-center hover:bg-green-600 transition-colors" href="#">
+                            <span class="material-symbols-outlined">chat</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Buy For Me</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Ship For Me</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Services.html">Bulk Shipment</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Shipping Cost Calculator.html">Shipping Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Warehouses</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">🇺🇸 USA Warehouse</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">🇬🇧 UK Warehouse</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Our Warehouses.html">🇲🇾 Malaysia Warehouse</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a class="hover:text-brand-orange transition-colors" href="FAQ.html">FAQ</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Track Shipment.html">Track Shipment</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="Contact US.html">Contact Us</a></li>
+                        <li><a class="hover:text-brand-orange transition-colors" href="About Us.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Payment Methods -->
+            <div class="border-t border-white/10 pt-8 mb-8">
+                <div class="flex flex-wrap justify-center gap-6 text-slate-400">
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="material-symbols-outlined text-brand-green">verified_user</span>
+                        <span>Secure Payments</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>bKash</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Nagad</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Rocket</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span>Bank Transfer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500">© 2025 Goods Shippers. All rights reserved.</p>
+                <div class="flex gap-6 text-xs text-slate-500">
+                    <a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+                    <a class="hover:text-white transition-colors" href="#">Refund Policy</a>
+                </div>
             </div>
         </div>
     </footer>

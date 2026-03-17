@@ -5,36 +5,27 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>GoodsShippers - Store Catalog</title>
+    <title>Goods Shippers - Store Catalog</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#1a355b", // Navy Blue
-                        "accent": "#f97316",  // Orange
-                        "background-light": "#f9fafb",
-                        "background-dark": "#13181f",
+                        "brand-blue": "#1e3a5f",
+                        "brand-blue-dark": "#0f2744",
+                        "brand-orange": "#f59e0b",
+                        "brand-orange-hover": "#d97706",
+                        "brand-green": "#22c55e",
+                        "brand-navy": "#1a202c",
                     },
                     fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "full": "9999px"
+                        sans: ['Inter', 'sans-serif'],
                     },
                 },
             },
@@ -51,24 +42,24 @@
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<body class="bg-slate-50 font-sans text-slate-900">
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
         <header
-            class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80">
+            class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 <div class="flex items-center gap-8">
-                    <div class="flex items-center gap-2 text-primary dark:text-white">
-                        <span class="material-symbols-outlined text-3xl font-bold">local_shipping</span>
-                        <h2 class="text-xl font-black tracking-tight">GoodsShippers</h2>
-                    </div>
+                    <a href="index.html" class="flex items-center gap-2 text-brand-blue">
+                        <span class="material-symbols-outlined text-3xl font-bold">package_2</span>
+                        <h2 class="text-xl font-black tracking-tight">Goods Shippers</h2>
+                    </a>
                     <nav class="hidden md:flex items-center gap-6">
-                        <a class="text-sm font-semibold text-primary border-b-2 border-accent pb-1" href="#">Store</a>
-                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-                            href="#">Tracking</a>
-                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-                            href="#">Services</a>
-                        <a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
-                            href="#">Support</a>
+                        <a class="text-sm font-semibold text-brand-blue border-b-2 border-brand-orange pb-1" href="Store Catalog.html">Store</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-brand-blue transition-colors"
+                            href="Shipment Tracking.html">Tracking</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-brand-blue transition-colors"
+                            href="Services.html">Services</a>
+                        <a class="text-sm font-medium text-slate-600 hover:text-brand-blue transition-colors"
+                            href="Support.html">Support</a>
                     </nav>
                 </div>
                 <div class="flex items-center gap-4">
@@ -76,13 +67,17 @@
                         <span
                             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
                         <input
-                            class="h-9 w-64 rounded-lg border-slate-200 bg-slate-50 pl-10 text-sm focus:border-accent focus:ring-accent"
+                            class="h-9 w-64 rounded-lg border-slate-200 bg-slate-50 pl-10 text-sm focus:border-brand-orange focus:ring-brand-orange"
                             placeholder="Search orders..." type="text" />
                     </div>
+                    <a href="https://wa.me/8801234567890" target="_blank" class="flex items-center gap-2 rounded-lg bg-brand-green px-4 py-2 text-sm font-bold text-white hover:bg-green-600 transition-colors">
+                        <span class="material-symbols-outlined text-sm">support_agent</span>
+                        <span class="hidden sm:inline">WhatsApp</span>
+                    </a>
                     <button class="relative rounded-full p-2 hover:bg-slate-100">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span
-                            class="absolute top-0 right-0 h-4 w-4 rounded-full bg-accent text-[10px] font-bold text-white flex items-center justify-center border-2 border-white">3</span>
+                            class="absolute top-0 right-0 h-4 w-4 rounded-full bg-brand-orange text-[10px] font-bold text-white flex items-center justify-center border-2 border-white">3</span>
                     </button>
                     <div class="h-8 w-8 rounded-full bg-slate-200 bg-cover bg-center" data-alt="User profile avatar"
                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxDdnNAFc_p-nQLj5HkxdWTkgn2FdP0-RFZLzxAGGfInpXP6qE4DNUwfCrv9Zf_5REfMrAqLy7ESDS63y2XLmD5Q2D1GQqJjg-S3PuMGOMfNROfoGLsDDzho1hu_asm_OkQs6Bya7rVnuO9P3SGxGq69FymZxZNZLrmJyQEACGyBl6NiPug74CVB-fQUnZ5YjDXb4hO80zmlTdn3IvM4aQYFGfCiWsAyEl_h9IYblU4Y0QOMnLDH0-l9gizDwaAVF8xeyVtvcGw38')">
