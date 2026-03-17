@@ -241,4 +241,36 @@ class PublicController extends Controller
     {
         return view('checkout');
     }
+
+    public function cart()
+    {
+        // Demo cart items — in a real app these come from session/DB
+        $cartItems = [
+            [
+                'name'   => 'Smartphone Pro X',
+                'sku'    => 'GS-SPX-2024',
+                'price'  => 999.00,
+                'qty'    => 1,
+                'image'  => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrJ4kQpD_Uc1aV2WJns2c_hvGUMxu5HfdiwauUQY_YC_-NszXosavpC-Kqhh7R6dlD6YDvPlTcMuG4t2hC8Sp9llVqv-Hf9VppuRJI6OQMB7uwtbsASN4FVHHl2nEHCztbfrQG9FJnK7Q7X0hxLWnvZBwNPbgPqJfZBGC7wbyMEx5-kC6XlxcroZRgEEkyF-g8yRcPIMN22_Qup2qlnye7Wuko5tsxs4WnATNSoMRcMjV5ckSmGTb3U5hFeoCYCKaoYt29lfjR5q8',
+            ],
+            [
+                'name'   => 'Vitality Multi-Vitamins',
+                'sku'    => 'GS-VIT-092',
+                'price'  => 45.50,
+                'qty'    => 1,
+                'image'  => 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6bVVrqyRUKhuRrv8FhKGy_2FgfVZJnXPleyglo4LWBVFNUhuOhKljX0MuClnMU9yzBPb777tVi6m2nR47KxWUWG0RLi_jqmdM85UI-9dOYGIPsLl9fhCwdkRdhsGKpqWxgqorxsbCiPEOEYX7tsCfs1KwFU_qPa1oSD2MkmwQfsmNAIDSrQm9HOw6dwmtBq50xwnnmN6e0xwSGi9W49aIO2pdFvD-D5Z2_Az3eAExsNB4c-B7x0DjzoEYftni-WivtygcnO9oiq0',
+            ],
+        ];
+
+        $subtotal  = collect($cartItems)->sum(fn($i) => $i['price'] * $i['qty']);
+        $shipping  = 15.00;
+        $total     = $subtotal + $shipping;
+
+        return view('cart', compact('cartItems', 'subtotal', 'shipping', 'total'));
+    }
+
+    public function cartEmpty()
+    {
+        return view('cart-empty');
+    }
 }

@@ -10,7 +10,7 @@
         <div class="absolute inset-0 bg-primary/60"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
             <span class="text-5xl mb-4">{{ $warehouse['flag'] }}</span>
-            <h1 class="text-4xl md:text-5xl font-black">{{ $warehouse['name'] }} Warehouse</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black">{{ $warehouse['name'] }} Warehouse</h1>
             <p class="text-slate-200 mt-2">{{ $warehouse['address_short'] }}</p>
         </div>
     </section>
@@ -18,7 +18,7 @@
     <!-- Main Content -->
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid lg:grid-cols-3 gap-12">
+            <div class="flex flex-col-reverse gap-8 lg:grid lg:grid-cols-3 lg:gap-12">
                 <!-- Left/Main -->
                 <div class="lg:col-span-2 space-y-10">
                     <!-- Shipping Address -->

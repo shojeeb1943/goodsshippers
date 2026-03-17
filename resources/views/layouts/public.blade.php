@@ -6,6 +6,7 @@
     <title>@yield('title', 'GoodsShippers') - GoodsShippers</title>
     <meta name="description" content="@yield('meta_description', 'GoodsShippers - Your trusted partner for global logistics, providing seamless shipping solutions from USA, UK, and Malaysia to Bangladesh.')">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <script id="tailwind-config">
@@ -37,14 +38,42 @@
         }
     </script>
     <style type="text/tailwindcss">
+        [x-cloak] { display: none !important; }
         body { font-family: 'Inter', sans-serif; }
         .material-symbols-outlined { font-size: 24px; vertical-align: middle; }
+
+        /* Navigation */
         .nav-link {
-            @apply text-[15px] font-semibold text-primary hover:text-accent transition-colors duration-200 flex items-center gap-1;
+            @apply text-[15px] font-semibold text-primary hover:text-accent transition-colors duration-200 flex items-center gap-1 focus:outline-none focus:text-accent rounded;
         }
-        .dropdown-item:hover .item-title {
-            @apply text-accent;
+        .dropdown-item:hover .item-title { @apply text-accent; }
+
+        /* Shared Buttons */
+        .btn-primary {
+            @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-bold rounded-lg shadow-lg shadow-accent/20 hover:bg-accent/90 hover:-translate-y-0.5 transition-all focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
         }
+        .btn-outline {
+            @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+        }
+        .btn-sm { @apply px-4 py-2 text-sm; }
+
+        /* Shared Cards */
+        .card {
+            @apply bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm;
+        }
+        .card-hover { @apply hover:shadow-xl transition-shadow; }
+
+        /* Shared Form Inputs */
+        .form-input {
+            @apply w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-colors;
+        }
+        .form-label {
+            @apply block text-xs font-bold text-slate-500 uppercase tracking-widest mb-1.5;
+        }
+
+        /* Layout helpers */
+        .section-gap   { @apply py-14 md:py-20 lg:py-24; }
+        .container-lg  { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
     </style>
     @yield('head')
 </head>
@@ -57,7 +86,7 @@
     </div>
 
     {{-- Sticky Header --}}
-    <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md">
+    <header x-data="{ mobileOpen: false }" class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0">
@@ -106,37 +135,63 @@
                 <a class="nav-link {{ request()->routeIs('contact') ? 'text-accent' : '' }}" href="{{ route('contact') }}">Contact Us</a>
             </nav>
 
-            {{-- Auth Buttons --}}
-            <div class="flex items-center gap-3">
-                <div class="hidden sm:flex items-center gap-6 mr-2">
-                    <a class="text-sm font-bold text-primary dark:text-white hover:text-accent transition-colors" href="{{ route('login') }}">Login</a>
-                </div>
-                <a href="{{ route('register') }}" class="flex items-center gap-2 px-6 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">
-                    <span class="material-symbols-outlined text-[20px]">person_add</span>
-                    Register
+            {{-- Auth Buttons + Mobile Toggle --}}
+            <div class="flex items-center gap-1 sm:gap-2">
+                {{-- Login: visible sm+ in header; always in mobile menu --}}
+                <a class="hidden sm:inline-flex items-center text-sm font-bold text-primary dark:text-white hover:text-accent transition-colors px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/30" href="{{ route('login') }}">Login</a>
+                {{-- Register: icon-only on mobile, icon+text on sm+ --}}
+                <a href="{{ route('register') }}" class="flex items-center gap-1.5 px-3 sm:px-5 py-2.5 bg-accent text-white font-bold rounded-lg hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
+                    <span class="material-symbols-outlined text-[18px]">person_add</span>
+                    <span class="hidden sm:inline">Register</span>
                 </a>
-                {{-- Mobile Hamburger --}}
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-primary dark:text-white">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
+                {{-- Hamburger: icon swaps menu ↔ close via Alpine --}}
+                <button @click="mobileOpen = !mobileOpen" :aria-expanded="mobileOpen.toString()" aria-label="Toggle navigation" class="lg:hidden p-2 ml-0.5 text-primary dark:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30">
+                    <span x-show="!mobileOpen" class="material-symbols-outlined text-[26px]">menu</span>
+                    <span x-show="mobileOpen" x-cloak class="material-symbols-outlined text-[26px]">close</span>
                 </button>
             </div>
         </div>
 
-        {{-- Mobile Menu --}}
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 py-4 space-y-3">
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('home') }}">Home</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('services') }}">Services</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('warehouses.index') }}">Warehouses</a>
-            <a class="block py-2 text-sm font-semibold pl-4 text-slate-600 hover:text-accent" href="{{ route('warehouses.usa') }}">→ USA Warehouse</a>
-            <a class="block py-2 text-sm font-semibold pl-4 text-slate-600 hover:text-accent" href="{{ route('warehouses.uk') }}">→ UK Warehouse</a>
-            <a class="block py-2 text-sm font-semibold pl-4 text-slate-600 hover:text-accent" href="{{ route('warehouses.malaysia') }}">→ Malaysia Warehouse</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('catalog') }}">Products</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('about') }}">About Us</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('contact') }}">Contact Us</a>
-            <a class="block py-2 text-sm font-semibold text-primary hover:text-accent" href="{{ route('faq') }}">FAQ</a>
-            <div class="flex gap-3 pt-2">
-                <a href="{{ route('login') }}" class="flex-1 text-center py-2 border border-primary text-primary font-bold rounded-lg text-sm">Login</a>
-                <a href="{{ route('register') }}" class="flex-1 text-center py-2 bg-accent text-white font-bold rounded-lg text-sm">Register</a>
+        {{-- Mobile Menu — Alpine-driven with smooth transition --}}
+        <div id="mobile-menu"
+             x-show="mobileOpen"
+             x-cloak
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-1"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-1"
+             class="lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 shadow-lg">
+            <nav class="px-3 py-2 space-y-0.5">
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('home') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">home</span> Home
+                </a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('services') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">inventory_2</span> Services
+                </a>
+                <div class="px-3 pt-3 pb-1">
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Warehouses</p>
+                </div>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.usa') }}">🇺🇸 USA Warehouse</a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.uk') }}">🇬🇧 UK Warehouse</a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.malaysia') }}">🇲🇾 Malaysia Warehouse</a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('catalog') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">storefront</span> Products
+                </a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('about') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">info</span> About Us
+                </a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('contact') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">mail</span> Contact Us
+                </a>
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('faq') }}">
+                    <span class="material-symbols-outlined text-[18px] shrink-0">help_outline</span> FAQ
+                </a>
+            </nav>
+            <div class="flex gap-3 px-4 py-3 border-t border-slate-100 dark:border-slate-800">
+                <a href="{{ route('login') }}" class="flex-1 text-center py-2.5 border-2 border-primary text-primary font-bold rounded-lg text-sm hover:bg-primary hover:text-white transition-colors">Login</a>
+                <a href="{{ route('register') }}" class="flex-1 text-center py-2.5 bg-accent text-white font-bold rounded-lg text-sm hover:bg-accent/90 transition-colors">Register</a>
             </div>
         </div>
     </header>
@@ -268,13 +323,7 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
+    {{-- Mobile menu is now handled by Alpine.js x-data on <header> --}}
 
     @yield('scripts')
 </body>

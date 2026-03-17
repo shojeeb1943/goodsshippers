@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a355b",
+                        "accent": "#f97316",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#13181f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Header / TopNavBar -->
+    <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center gap-8">
+                    <a class="flex items-center gap-2 group" href="#">
+                        <div class="bg-primary p-1.5 rounded-lg text-white">
+                            <span class="material-symbols-outlined text-2xl block">package_2</span>
+                        </div>
+                        <h1 class="text-primary dark:text-slate-100 text-xl font-extrabold tracking-tight">GoodsShippers
+                        </h1>
+                    </a>
+                    <nav class="hidden md:flex items-center gap-6">
+                        <div class="relative group">
+                            <button
+                                class="flex items-center gap-1 text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300">
+                                Shipping <span class="material-symbols-outlined text-sm">expand_more</span>
+                            </button>
+                        </div>
+                        <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300"
+                            href="#">Products</a>
+                        <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300"
+                            href="#">Warehouse</a>
+                        <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300"
+                            href="#">About Us</a>
+                        <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300"
+                            href="#">Contact Us</a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="hidden sm:block text-sm font-semibold text-slate-600 hover:text-primary px-4 py-2 rounded-lg dark:text-slate-300">Login</button>
+                    <button
+                        class="bg-primary text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-primary/90 transition-all shadow-sm">Register</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8">
+            <a class="hover:text-primary" href="#">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary" href="#">Products</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-slate-900 dark:text-slate-100 font-medium">Cart</span>
+        </nav>
+        <!-- Page Heading -->
+        <div class="mb-10">
+            <h2 class="text-4xl font-black text-primary dark:text-slate-100 tracking-tight">Your Cart</h2>
+            <p class="text-slate-500 mt-2 text-lg">Review your selected items before checkout.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Cart Items -->
+            <div class="lg:col-span-2 space-y-4">
+                <!-- Item 1 -->
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6">
+                    <div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover" data-alt="Modern smartphone sitting on a desk"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK18FFrpC42n3Rhpum4b9HIs4CypVMY3naVaShO-vu1kIq2QN5TJZ4BqQWWaPiAkEHIKKuRDJNeUGQwoV41hZLWJrFI89QOfiMBW3tUdhHgc4M3Z-UxW1iEWv2iP2lDq3CGXRk8tdzE7_f99TYLhyIxDN__aVH--Gtbps7sPW3LUsymFGtFnpncIh1G0JhFJI2A7Csy6ui6pdHxmH6y2vFM8qVyktJHT8aWsps-LNj7ihig84BCy3fcofRnRnowGP9KJ2ps38mF6Y" />
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-primary dark:text-slate-100">Smartphone Pro X</h3>
+                                <p class="text-slate-400 text-sm mt-1">SKU: GS-SPX-2024</p>
+                            </div>
+                            <p class="text-xl font-black text-primary dark:text-slate-100">$999.00</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div
+                                class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-800">
+                                <button
+                                    class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">remove</span>
+                                </button>
+                                <span class="px-4 font-semibold text-slate-900 dark:text-slate-100">1</span>
+                                <button
+                                    class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">add</span>
+                                </button>
+                            </div>
+                            <button
+                                class="flex items-center gap-1 text-red-500 hover:text-red-600 text-sm font-semibold transition-colors">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row items-center gap-6">
+                    <div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover" data-alt="Bottles of health vitamin supplements"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLvux_vRgMannPuK6uXime5yYzpWbiU-Z2vLVolB-UqydZbmWKEnxksspw2OYGz3ixkMspwOAr3Ze0-gJCRKwgHOf966nvbFDIbz1uphbPFmN-CoGrJBpYMYCb2nTb-HrqlxKQsXJAMhDpnEUJj5f4gqyu_5qn4d2QWSwFr2SyXpCoMKbJW892F0GHoPbzgsh9JnwnQjchxXlkbeOjpfwOkpn28FrzWHvnZ_Z6XqRtTZi_k7nH0fmCN0aeVc1kmCgjsanlTqpoGgc" />
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-lg font-bold text-primary dark:text-slate-100">Vitality Multi-Vitamins
+                                </h3>
+                                <p class="text-slate-400 text-sm mt-1">SKU: GS-VIT-092</p>
+                            </div>
+                            <p class="text-xl font-black text-primary dark:text-slate-100">$45.00</p>
+                        </div>
+                        <div class="mt-6 flex items-center justify-between">
+                            <div
+                                class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-800">
+                                <button
+                                    class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">remove</span>
+                                </button>
+                                <span class="px-4 font-semibold text-slate-900 dark:text-slate-100">1</span>
+                                <button
+                                    class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 transition-colors">
+                                    <span class="material-symbols-outlined text-sm">add</span>
+                                </button>
+                            </div>
+                            <button
+                                class="flex items-center gap-1 text-red-500 hover:text-red-600 text-sm font-semibold transition-colors">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Promo Code -->
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+                    <label
+                        class="block text-sm font-bold text-primary dark:text-slate-200 mb-3 uppercase tracking-wider">Promo
+                        Code</label>
+                    <div class="flex gap-3">
+                        <input
+                            class="flex-grow rounded-lg border-slate-200 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary"
+                            placeholder="Enter code" type="text" />
+                        <button
+                            class="px-8 py-2 bg-primary/10 text-primary dark:text-white dark:bg-slate-700 font-bold rounded-lg hover:bg-primary hover:text-white transition-all">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Order Summary -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24 space-y-6">
+                    <div
+                        class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-md border border-slate-100 dark:border-slate-800">
+                        <h3
+                            class="text-xl font-black text-primary dark:text-slate-100 mb-6 border-b border-slate-100 dark:border-slate-800 pb-4">
+                            Order Summary</h3>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex justify-between text-slate-600 dark:text-slate-400">
+                                <span>Subtotal</span>
+                                <span class="font-semibold text-primary dark:text-slate-100">$1,044.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-600 dark:text-slate-400">
+                                <span>Estimated Shipping</span>
+                                <span class="font-semibold text-primary dark:text-slate-100">$15.00</span>
+                            </div>
+                            <div
+                                class="pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-end">
+                                <span class="text-lg font-bold text-primary dark:text-slate-100">Total</span>
+                                <span class="text-3xl font-black text-accent tracking-tighter">$1,059.00</span>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800 p-4 rounded-lg mb-8">
+                            <div class="flex gap-2">
+                                <span class="material-symbols-outlined text-primary text-sm">info</span>
+                                <p class="text-xs text-slate-500 leading-relaxed">Shipping cost may be finalized after
+                                    parcel processing based on actual weight and destination.</p>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full bg-accent text-white font-black py-4 rounded-lg hover:scale-[1.02] transition-transform shadow-lg shadow-accent/20 text-lg uppercase tracking-wide">
+                            Proceed to Checkout
+                        </button>
+                    </div>
+                    <!-- Shipping Reassurance -->
+                    <div class="space-y-4 px-2">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-green-100 dark:bg-green-900/30 p-2 rounded-full text-green-600">
+                                <span class="material-symbols-outlined text-xl">shield</span>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Secure
+                                Payments</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-full text-blue-600">
+                                <span class="material-symbols-outlined text-xl">payments</span>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Transparent
+                                Pricing</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-full text-purple-600">
+                                <span class="material-symbols-outlined text-xl">location_on</span>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Shipment
+                                Tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- You May Also Like -->
+        <section class="mt-24">
+            <h3 class="text-2xl font-black text-primary dark:text-slate-100 mb-8 flex items-center gap-3">
+                <span class="material-symbols-outlined text-accent">recommend</span>
+                You May Also Like
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="aspect-square bg-slate-100 dark:bg-slate-800 relative">
+                        <img class="w-full h-full object-cover" data-alt="Premium wireless noise canceling headphones"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsqfokpkLmVkPpYkGkuM1cuSrkw29sIHFX1gFWw19zzWydWoylaS5MHEkmVhMJurFlaxRWBQuszFcvCI_bJinnF82pLg1xMpa6UBmOr0efydCjP7R3M_G5jc7tVz1BXfI9PrNyAU1BJWMvfOoAbBDVEimlc8Rt802WVzEoD7V0mcjVG4vjdNAh9lUOHK3q7WNYZWCMsKX_6CzFz_inbnXuoSw_W4mJotnMriWypf_mscaiZE17Gw2GNfMoN-mWViHDyr3kgdJFYDI" />
+                        <button
+                            class="absolute top-4 right-4 bg-white/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h4
+                            class="font-bold text-primary dark:text-slate-100 group-hover:text-accent transition-colors">
+                            SonicWave Elite</h4>
+                        <p class="text-sm text-slate-500 mt-1">Noise Cancelling Headsets</p>
+                        <p class="mt-3 font-black text-primary dark:text-slate-100">$299.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="aspect-square bg-slate-100 dark:bg-slate-800 relative">
+                        <img class="w-full h-full object-cover" data-alt="High performance red running shoes"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBArn_GtT46DF1vhT4Tipnw7lGIOfcb3U2VxoqIDxnlkxSkxKiU-NMZ0b_OV7-C7y4alXAdkRBBok0NKcoSvr1yYQd0sNv-Zd3ejH25AuL_SonYVLmc9sgvpEqL_hdfpSIlYQfjGtHjhPpzJPywkv6a7rYzK70NUgyZJ_EGU8o0FN8Ia-v3C3j-KUWNzNFl0QTyPWf6icKaRidRFGpgMwySPZ1oNALCPLT46i3QUiLY9Nl0XKcqRafuG0VQyPwGCaPxrBHT1a6Nr8k" />
+                        <button
+                            class="absolute top-4 right-4 bg-white/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h4
+                            class="font-bold text-primary dark:text-slate-100 group-hover:text-accent transition-colors">
+                            AeroRunner Max</h4>
+                        <p class="text-sm text-slate-500 mt-1">Lightweight Sportswear</p>
+                        <p class="mt-3 font-black text-primary dark:text-slate-100">$185.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="aspect-square bg-slate-100 dark:bg-slate-800 relative">
+                        <img class="w-full h-full object-cover" data-alt="Minimalist luxury designer watch"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlHCMFubjwN99N_pVLL8Va4b4pl7SK3k7m57wWA8QvGRKOrLqz8IjtSGZC6v5mM85ReS-18fCTfmDpftA5dbolbaFQuNxFe7qxeyJ6xw1K_N4rHiZ6-L2EwoikP7Rj-42J5R_0XfB5MGxvLWiKKIoET5EYLtYkyYQBhiobOi35XUAG_Y87x6__dHrHg8_F_IR7jw373vhLjIClkWqsNuolBLDPm-8oKNuUtdDRnaeRBoWPQcfS1F6Ha_Lh3XGmMwftmOK1kz3cth0" />
+                        <button
+                            class="absolute top-4 right-4 bg-white/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h4
+                            class="font-bold text-primary dark:text-slate-100 group-hover:text-accent transition-colors">
+                            Titan Chrono V2</h4>
+                        <p class="text-sm text-slate-500 mt-1">Precision Timepiece</p>
+                        <p class="mt-3 font-black text-primary dark:text-slate-100">$540.00</p>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div
+                    class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow group">
+                    <div class="aspect-square bg-slate-100 dark:bg-slate-800 relative">
+                        <img class="w-full h-full object-cover" data-alt="Modern athletic black sneakers"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWhbzlfboH0LC8W3sUtyDluJv35pjvZSl741_-8GbNCoJkKNlQZA9LCq3WRUkGUM2HEmYl0sfCGtldg5JagZvlbcaCFuyMMJeCA9fvb6jVoLO5dyRMIf-8bLiGmB1pEwMtS554r3roQEFN0t-wS7wxfqIlnbhmcFikllcb13PbRjymfibpIt4nYTgL5S8Qf2qjyYO4YoGEV8q7Skp8SCWYjz7a8DgdZMxdbQyMESLK30Kcwli5RuCrGNoXburEBU_N2kvG_xfULAU" />
+                        <button
+                            class="absolute top-4 right-4 bg-white/90 p-2 rounded-full text-slate-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h4
+                            class="font-bold text-primary dark:text-slate-100 group-hover:text-accent transition-colors">
+                            SwiftStep Air</h4>
+                        <p class="text-sm text-slate-500 mt-1">Breathable Lifestyle</p>
+                        <p class="mt-3 font-black text-primary dark:text-slate-100">$120.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Support Section -->
+        <section class="mt-24 mb-16 bg-primary rounded-2xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-3xl font-black mb-4">Need help with your order?</h3>
+                <p class="text-slate-300 max-w-xl mx-auto mb-10 text-lg">Our logistics experts are available 24/7 to
+                    help you manage your shipments and resolve any cart issues.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="bg-accent px-10 py-4 rounded-lg font-black hover:bg-accent/90 transition-all uppercase tracking-wide">Contact
+                        Us</button>
+                    <button
+                        class="bg-white/10 backdrop-blur-sm border border-white/20 px-10 py-4 rounded-lg font-black hover:bg-white/20 transition-all uppercase tracking-wide">FAQ</button>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+            <div class="absolute -top-24 -left-24 w-64 h-64 bg-slate-400/10 rounded-full blur-3xl"></div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-primary text-slate-400 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="col-span-2 md:col-span-1 lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="bg-accent p-1 rounded text-white">
+                            <span class="material-symbols-outlined text-xl block">package_2</span>
+                        </div>
+                        <h2 class="text-white text-xl font-black tracking-tight">GoodsShippers</h2>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-6">Simplifying global logistics for businesses and individuals
+                        since 2012.</p>
+                    <div class="flex gap-4">
+                        <a class="hover:text-accent transition-colors" href="#"><span
+                                class="material-symbols-outlined">public</span></a>
+                        <a class="hover:text-accent transition-colors" href="#"><span
+                                class="material-symbols-outlined">alternate_email</span></a>
+                        <a class="hover:text-accent transition-colors" href="#"><span
+                                class="material-symbols-outlined">rss_feed</span></a>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Services</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">Express Shipping</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Sea Freight</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Customs Clearance</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Fulfillment</a></li>
+                    </ul>
+                </div>
+                <!-- Warehouses -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Warehouses</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">North America</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">European Union</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Asia Pacific</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Middle East</a></li>
+                    </ul>
+                </div>
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Track Order</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Shipping Calculator</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Account -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Account</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a class="hover:text-white transition-colors" href="#">Dashboard</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Address Book</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Billing History</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs">© 2024 GoodsShippers International. All rights reserved.</p>
+                <!-- Trust Badges -->
+                <div class="flex items-center gap-6 opacity-60">
+                    <img class="h-4" data-alt="Visa payment provider logo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqGH79X4RJBO8fufuUXLkUDbx9q4eB1IZXw2iqbmGAGl-mLEe-0iyplIXCg4RSEkMTL4zq8QDtph9bT6vKaLpqU1i0yg-5lIwSxxlAXr-JPd_TqeP3KoxQqnHY5lhHYjGP1hx9bRT-VS3Q9BURHxy-SOiH882cungH2wnpwkMAvz3PQjOlHrilHr3-xZzuD4O9Dva-WJgVDj_MBdP3R1S7tU5mPbqamoiOf0PI-11J70XqtIrrvMlYqo-56abp4cR50shG83M1DgU" />
+                    <img class="h-6" data-alt="Mastercard payment provider logo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUXZTbR-RxFzlcPq-UeHOJwylxpg9BWjpDo3WRrhHGi1xzPz826ffeqbtxVxhKbIze1qbG0hu3dEOaxQvMD6vglfR0FGKERNdzK6UBMqkPOIqZ00eQYZUh4-DkTa6XlvO2qQC-r_gGu73IVliuHujeptvBp_rCgtRgyRjBFuQUbCHUpeiCQ1xaQryjnpFgHbbnYl9fx5U4SmVuLG1zvTvMPmAVmg-PIcSiwyJs1QGSBc_aTNYMoUVXA_dxRvKRw4HX7PDUkZJbVKw" />
+                    <img class="h-5" data-alt="PayPal payment provider logo"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQET3PdSGfcZBWPe82vhmXRi77zRdEfp9QMQqAxBHqQTzo4D7Xlxgi8YICMfgACE2arL9juXXsLIZ-R4mo6XGAIPhjwrhrBfXDbG9oC1eIq3DGnXshWy97KbvqywTnoSOG8nMtWZ5-Wpi2UOVVYNwDWddo9MalwF-6_c2AMaXOtk07YqPl9VxGLhe6D2U3Q7ebGMN1_jhQX0i8Ad8JW9OUg9RCARkiyHCXywhoe_5iIVwPp7Z2e87BbyHTemQZKHvQNejjucJ2Beg" />
+                    <div class="flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">lock</span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest">SSL Secured</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

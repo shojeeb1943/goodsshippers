@@ -10,7 +10,7 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="max-w-2xl">
                     <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-bold tracking-wide uppercase mb-4">How It Works</span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6">
                         Shipping International Packages <span class="text-primary">Made Simple</span>
                     </h1>
                     <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -29,9 +29,10 @@
                     <div class="aspect-square bg-slate-200 dark:bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
                         <img alt="Logistics Warehouse" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQuEYWJ1otTT9o0WwQQXfxiJF2K3G1geUfSzRmnmLjBwKgVN7smTSx2QgnxA6azh6ynp_87lt9t0RqhS3y_WxNn-GXHTTQ7SusNuLEw9UiSATnAeR5LcCY8hGvOJVdusOl4LtFtXYhqrPnFLd-YHz9dF7gUFk3bjQ-rIRoPCJ5NipZZr4YOFv9Q0AEK2ZUNL3gTtjQxtKtiDd6n1ScWAR7ue5Vl85iRe-tSmk9x5lZUURdCPmBKxJeAgpvIChJbBgk09ZGgI7TXi4" />
                     </div>
-                    <div class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
-                        <div class="size-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                            <span class="material-symbols-outlined">verified</span>
+                    {{-- Trust badge — now inline below image so it never clips outside its container on mobile --}}
+                    <div class="mt-4 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
+                        <div class="size-10 shrink-0 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                            <span class="material-symbols-outlined text-[20px]">verified</span>
                         </div>
                         <div>
                             <p class="text-xs text-slate-500 font-medium">Safe Delivery</p>

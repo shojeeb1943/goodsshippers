@@ -17,6 +17,8 @@ Route::get('/calculator', [PublicController::class, 'calculator'])->name('calcul
 Route::get('/catalog', [PublicController::class, 'catalog'])->name('catalog');
 Route::get('/track-shipment', [PublicController::class, 'trackShipment'])->name('track-shipment');
 Route::get('/checkout', [PublicController::class, 'checkout'])->name('checkout');
+Route::get('/cart', [PublicController::class, 'cart'])->name('cart');
+Route::get('/cart/empty', [PublicController::class, 'cartEmpty'])->name('cart.empty');
 
 // Warehouse Pages
 Route::get('/warehouses', [PublicController::class, 'warehousesIndex'])->name('warehouses.index');

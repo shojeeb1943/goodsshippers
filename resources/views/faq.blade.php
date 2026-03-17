@@ -4,8 +4,10 @@
 @section('meta_description', 'Find answers to common questions about shipping rates, warehouse addresses, customs duty, and more.')
 
 @section('head')
-<style>
-    .faq-card { @apply bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl p-6 transition-all hover:shadow-lg; }
+<style type="text/tailwindcss">
+    .faq-card {
+        @apply bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl p-6 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1;
+    }
 </style>
 @endsection
 
@@ -28,8 +30,8 @@
     </section>
 
     <!-- Category Cards -->
-    <section class="max-w-7xl mx-auto px-4 -mt-10 mb-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section class="relative z-10 max-w-7xl mx-auto px-4 -mt-10 mb-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <div class="faq-card group cursor-pointer hover:-translate-y-1 shadow-xl">
                 <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4 group-hover:bg-accent group-hover:text-white transition-colors">
                     <span class="material-symbols-outlined">local_shipping</span>

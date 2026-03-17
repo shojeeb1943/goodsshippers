@@ -13,11 +13,11 @@
     </section>
 
     <!-- Filters -->
-    <section class="sticky top-20 z-30 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 py-4">
-        <div class="max-w-7xl mx-auto px-4 flex flex-wrap gap-3 items-center">
-            <span class="text-sm font-bold text-slate-500">Filter by:</span>
+    <section class="sticky top-20 z-30 bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 py-3">
+        <div class="max-w-7xl mx-auto px-4 flex items-center gap-2 overflow-x-auto scrollbar-none pb-0.5">
+            <span class="text-xs font-bold text-slate-500 shrink-0 mr-1">Filter:</span>
             @foreach(['All','Electronics','Fashion','Health & Beauty','Sports','Home','Books'] as $filter)
-            <button class="px-4 py-1.5 rounded-full text-sm font-semibold border {{ $loop->first ? 'bg-primary text-white border-primary' : 'border-slate-200 text-slate-600 hover:border-primary hover:text-primary' }} transition-all">{{ $filter }}</button>
+            <button class="shrink-0 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold border {{ $loop->first ? 'bg-primary text-white border-primary' : 'border-slate-200 text-slate-600 hover:border-primary hover:text-primary' }} transition-all whitespace-nowrap">{{ $filter }}</button>
             @endforeach
         </div>
     </section>

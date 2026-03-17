@@ -15,7 +15,7 @@
     <!-- Calculator -->
     <section class="py-16">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid lg:grid-cols-3 gap-12">
+        <div class="flex flex-col-reverse gap-8 lg:grid lg:grid-cols-3 lg:gap-12">
                 <!-- Form -->
                 <div class="lg:col-span-2">
                     <div class="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-100 dark:border-slate-800 shadow-sm">
@@ -55,7 +55,7 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Dimensions (cm) — for volumetric weight</label>
-                                <div class="grid grid-cols-3 gap-4">
+                                <div class="grid grid-cols-3 gap-2 sm:gap-4">
                                     <div>
                                         <input id="length" class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-accent p-3" placeholder="Length" type="number" min="1" />
                                     </div>

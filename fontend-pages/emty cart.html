@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a355b",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#13181f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Your Cart - GoodsShippers</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+    <div class="relative flex min-h-screen flex-col">
+        <!-- Header -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center gap-2">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+                            <span class="material-symbols-outlined text-xl">local_shipping</span>
+                        </div>
+                        <h2 class="text-xl font-bold tracking-tight text-primary">GoodsShippers</h2>
+                    </div>
+                    <nav class="hidden items-center gap-6 md:flex">
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Store</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Deals</a>
+                        <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tracking</a>
+                    </nav>
+                </div>
+                <div class="flex flex-1 items-center justify-end gap-4">
+                    <div class="relative hidden w-full max-w-xs sm:block">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-12 text-slate-400 text-lg">search</span>
+                        <input
+                            class="h-10 w-full rounded-lg border-none bg-slate-100 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 dark:bg-slate-800"
+                            placeholder="Search global products..." type="text" />
+                    </div>
+                    <button
+                        class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800">
+                        <span class="material-symbols-outlined">person</span>
+                    </button>
+                    <div class="relative">
+                        <button
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                            <span class="material-symbols-outlined">shopping_cart</span>
+                            <span
+                                class="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent-orange text-[10px] font-bold text-white">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+                <!-- Empty State Content -->
+                <div class="flex flex-col items-center text-center">
+                    <div
+                        class="relative mb-8 flex h-48 w-48 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800/50">
+                        <span
+                            class="material-symbols-outlined text-[120px] text-slate-300 dark:text-slate-700">shopping_basket</span>
+                        <div
+                            class="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-lg">
+                            <span class="material-symbols-outlined text-accent-orange">question_mark</span>
+                        </div>
+                    </div>
+                    <h1 class="mb-3 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Your cart is
+                        empty</h1>
+                    <p class="mb-10 max-w-md text-lg text-slate-500 dark:text-slate-400">
+                        Looks like you haven't added any international products yet. Start exploring our global store to
+                        find great deals.
+                    </p>
+                    <a class="inline-flex items-center justify-center rounded-lg bg-accent-orange px-8 py-4 text-lg font-bold text-white shadow-lg shadow-accent-orange/20 hover:bg-orange-600 transition-all active:scale-95"
+                        href="#">
+                        <span class="material-symbols-outlined mr-2">explore</span>
+                        Continue Shopping
+                    </a>
+                </div>
+                <!-- Featured Categories Section -->
+                <div class="mt-24">
+                    <div
+                        class="mb-8 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+                        <h3 class="text-xl font-bold">Explore Popular Categories</h3>
+                        <a class="text-sm font-semibold text-primary hover:underline" href="#">View All</a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                        <!-- Category: Electronics -->
+                        <div
+                            class="group cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                            <div
+                                class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-blue-600 group-hover:bg-primary group-hover:text-white transition-colors dark:bg-blue-900/20">
+                                <span class="material-symbols-outlined">devices</span>
+                            </div>
+                            <h4 class="font-bold">Electronics</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Global Tech</p>
+                        </div>
+                        <!-- Category: Beauty -->
+                        <div
+                            class="group cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                            <div
+                                class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-pink-50 text-pink-600 group-hover:bg-primary group-hover:text-white transition-colors dark:bg-pink-900/20">
+                                <span class="material-symbols-outlined">face_5</span>
+                            </div>
+                            <h4 class="font-bold">Beauty</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Skin &amp; Care</p>
+                        </div>
+                        <!-- Category: Home Decor -->
+                        <div
+                            class="group cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                            <div
+                                class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-amber-50 text-amber-600 group-hover:bg-primary group-hover:text-white transition-colors dark:bg-amber-900/20">
+                                <span class="material-symbols-outlined">chair</span>
+                            </div>
+                            <h4 class="font-bold">Home Decor</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Interior Design</p>
+                        </div>
+                        <!-- Category: Fashion -->
+                        <div
+                            class="group cursor-pointer rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md dark:border-slate-800 dark:bg-slate-900">
+                            <div
+                                class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 group-hover:bg-primary group-hover:text-white transition-colors dark:bg-emerald-900/20">
+                                <span class="material-symbols-outlined">apparel</span>
+                            </div>
+                            <h4 class="font-bold">Fashion</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Trendy Wear</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="mt-auto border-t border-slate-200 bg-white py-12 dark:border-slate-800 dark:bg-background-dark">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+                    <div>
+                        <div class="mb-4 flex items-center gap-2">
+                            <div class="flex h-6 w-6 items-center justify-center rounded bg-primary text-white">
+                                <span class="material-symbols-outlined text-sm">local_shipping</span>
+                            </div>
+                            <h2 class="text-lg font-bold text-primary">GoodsShippers</h2>
+                        </div>
+                        <p class="text-sm text-slate-500">Your gateway to global products, delivered to your doorstep.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="mb-4 font-bold">Shopping</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a class="hover:text-primary" href="#">New Arrivals</a></li>
+                            <li><a class="hover:text-primary" href="#">Featured Brands</a></li>
+                            <li><a class="hover:text-primary" href="#">Sales &amp; Coupons</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mb-4 font-bold">Support</h4>
+                        <ul class="space-y-2 text-sm text-slate-500">
+                            <li><a class="hover:text-primary" href="#">Track Order</a></li>
+                            <li><a class="hover:text-primary" href="#">Shipping Info</a></li>
+                            <li><a class="hover:text-primary" href="#">Returns &amp; Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="mb-4 font-bold">Newsletter</h4>
+                        <div class="flex gap-2">
+                            <input
+                                class="w-full rounded border-slate-200 text-sm focus:ring-primary dark:bg-slate-800 dark:border-slate-700"
+                                placeholder="Your email" type="email" />
+                            <button class="rounded bg-primary px-4 py-2 text-sm font-bold text-white">Join</button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 border-t border-slate-100 pt-8 text-center text-xs text-slate-400 dark:border-slate-800">
+                    © 2024 GoodsShippers International. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

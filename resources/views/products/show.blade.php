@@ -57,7 +57,7 @@
                             <span class="material-symbols-outlined text-accent">local_shipping</span>
                             Shipping Info
                         </h4>
-                        <div class="grid grid-cols-3 gap-4 text-center text-sm">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-sm">
                             <div><p class="text-slate-500">Ship From</p><p class="font-bold mt-1">🇺🇸 USA</p></div>
                             <div><p class="text-slate-500">Air Transit</p><p class="font-bold mt-1">10-15 Days</p></div>
                             <div><p class="text-slate-500">Est. Shipping</p><p class="font-bold mt-1">~$14/kg</p></div>
@@ -66,7 +66,7 @@
 
                     <!-- CTA -->
                     <div class="space-y-3">
-                        <a href="{{ route('register') }}" class="flex items-center justify-center gap-3 w-full py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">
+                        <a href="{{ route('cart') }}" class="flex items-center justify-center gap-3 w-full py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">
                             <span class="material-symbols-outlined">add_shopping_cart</span>
                             Buy & Ship This Product
                         </a>
@@ -81,7 +81,7 @@
             <!-- How to Order -->
             <div class="mt-20 bg-white dark:bg-slate-900 rounded-2xl p-10 border border-slate-100 dark:border-slate-800 shadow-sm">
                 <h2 class="text-2xl font-bold text-primary dark:text-white mb-8 text-center">How to Order This Product</h2>
-                <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                     @foreach(['Register Free','Send Product Link','We Purchase & Ship','You Receive'] as $i => $step)
                     <div>
                         <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-3 shadow-lg">{{ $i+1 }}</div>

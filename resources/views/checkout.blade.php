@@ -6,8 +6,8 @@
 @section('content')
     <section class="py-16">
         <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-3xl font-black text-primary dark:text-white mb-10">Checkout</h1>
-            <div class="grid lg:grid-cols-3 gap-12">
+            <h1 class="text-2xl sm:text-3xl font-black text-primary dark:text-white mb-8">Checkout</h1>
+            <div class="flex flex-col-reverse gap-8 lg:grid lg:grid-cols-3 lg:gap-12">
                 <!-- Form -->
                 <div class="lg:col-span-2 space-y-8">
                     <!-- Delivery Info -->
@@ -125,4 +125,17 @@
             </div>
         </div>
     </section>
+
+    {{-- Mobile sticky checkout bar: price + confirm CTA --}}
+    <div class="fixed bottom-0 inset-x-0 z-40 lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center gap-4 shadow-2xl">
+        <div class="flex-1 min-w-0">
+            <p class="text-xs text-slate-400 font-medium">Total Amount</p>
+            <p class="text-xl font-black text-primary dark:text-accent truncate">$37.50 USD</p>
+        </div>
+        <button class="shrink-0 px-6 py-3 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 text-sm">
+            Confirm Order
+        </button>
+    </div>
+    {{-- Bottom padding so content isn't hidden under sticky bar on mobile --}}
+    <div class="h-20 lg:hidden"></div>
 @endsection

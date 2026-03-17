@@ -14,10 +14,10 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-24 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
-        <div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section class="relative pt-10 sm:pt-16 md:pt-20 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
             <div>
-                <h1 class="text-6xl font-extrabold text-primary leading-[1.1] mb-6">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-[1.1] mb-5">
                     Shop Globally,<br />Ship Seamlessly
                 </h1>
                 <p class="text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
@@ -27,9 +27,9 @@
                     <a href="{{ route('calculator') }}" class="bg-accent text-white font-bold px-8 py-4 rounded-lg shadow-lg shadow-orange-200 hover:-translate-y-0.5 transition-all">Get a Quote</a>
                     <a href="{{ route('track-shipment') }}" class="border-2 border-primary text-primary font-bold px-8 py-4 rounded-lg hover:bg-primary hover:text-white transition-all">Track Shipment</a>
                 </div>
-                <div class="flex items-center gap-6">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Global Warehouses</span>
-                    <div class="flex gap-4">
+                <div class="flex flex-wrap items-center gap-3">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest shrink-0">Global Warehouses</span>
+                    <div class="flex flex-wrap gap-2">
                         <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
                             <span class="text-xs font-semibold">🇺🇸 USA</span>
                         </div>
