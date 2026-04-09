@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="pt-4 flex justify-end">
-                        <button type="submit" class="inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-black rounded-xl shadow-lg shadow-indigo-100 text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all hover:-translate-y-0.5">
+                        <button type="submit" class="inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-black rounded-xl shadow-lg shadow-accent/30 text-white bg-accent hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all hover:-translate-y-0.5">
                             Create Ticket
                             <svg class="ml-2 -mr-1 w-5 h-5 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </button>

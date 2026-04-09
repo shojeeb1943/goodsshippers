@@ -78,7 +78,7 @@
                         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                             @foreach($parcel->photos as $photo)
                                 <div class="group relative aspect-square bg-gray-100 rounded-xl overflow-hidden cursor-pointer shadow-sm border border-gray-200"
-                                     @click="imgModal = true; imgSrc = '{{ asset('storage/' . $photo->file_path) }}'; imgDesc = '{{ addslashes($photo->caption) }}'">
+                                     @click="imgModal = true; imgSrc = '{{ asset('storage/' . $photo->file_path) }}'; imgDesc = {{ json_encode($photo->caption) }}">
                                     <img src="{{ asset('storage/' . $photo->file_path) }}" alt="{{ $photo->caption }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>

@@ -19,7 +19,14 @@ class TicketsTable
                 TextColumn::make('subject')
                     ->searchable(),
                 TextColumn::make('status')
-                    ->badge(),
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'open' => 'info',
+                        'in_progress' => 'warning',
+                        'resolved' => 'success',
+                        'closed' => 'gray',
+                        default => 'gray',
+                    }),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

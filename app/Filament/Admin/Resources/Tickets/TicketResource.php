@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\Tickets;
 use App\Filament\Admin\Resources\Tickets\Pages\CreateTicket;
 use App\Filament\Admin\Resources\Tickets\Pages\EditTicket;
 use App\Filament\Admin\Resources\Tickets\Pages\ListTickets;
+use App\Filament\Admin\Resources\Tickets\RelationManagers\MessagesRelationManager;
 use App\Filament\Admin\Resources\Tickets\Schemas\TicketForm;
 use App\Filament\Admin\Resources\Tickets\Tables\TicketsTable;
 use App\Models\Ticket;
@@ -18,7 +19,7 @@ class TicketResource extends Resource
 {
     protected static ?string $model = Ticket::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeft;
 
     public static function form(Schema $schema): Schema
     {
@@ -33,7 +34,7 @@ class TicketResource extends Resource
     public static function getRelations(): array
     {
         return [
-            \App\Filament\Admin\Resources\Tickets\RelationManagers\MessagesRelationManager::class,
+            MessagesRelationManager::class,
         ];
     }
 

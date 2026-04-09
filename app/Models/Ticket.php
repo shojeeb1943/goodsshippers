@@ -14,14 +14,38 @@ class Ticket extends Model
     protected $fillable = [
         'user_id',
         'subject',
+        'description',
+        'category',
+        'priority',
         'status',
     ];
 
+    protected $casts = [
+        'category' => 'string',
+        'priority' => 'string',
+    ];
+
     public const STATUSES = [
-        'open'        => 'Open',
+        'open' => 'Open',
         'in_progress' => 'In Progress',
-        'resolved'    => 'Resolved',
-        'closed'      => 'Closed',
+        'resolved' => 'Resolved',
+        'closed' => 'Closed',
+    ];
+
+    public const CATEGORIES = [
+        'general' => 'General Inquiry',
+        'shipping' => 'Shipping',
+        'billing' => 'Billing',
+        'technical' => 'Technical Support',
+        'complaint' => 'Complaint',
+        'other' => 'Other',
+    ];
+
+    public const PRIORITIES = [
+        'low' => 'Low',
+        'medium' => 'Medium',
+        'high' => 'High',
+        'urgent' => 'Urgent',
     ];
 
     public function user(): BelongsTo

@@ -39,7 +39,7 @@
                 </div>
                 <h3 class="text-xl font-bold text-primary dark:text-white mb-2">Live Chat</h3>
                 <p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Available during business hours for quick chat.</p>
-                <button class="bg-primary text-white px-6 py-2 rounded-lg font-bold hover:bg-primary/90 transition-all">Start Chat</button>
+                <button class="bg-accent text-white px-6 py-2 rounded-lg font-bold hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">Start Chat</button>
             </div>
         </div>
     </section>
@@ -49,7 +49,7 @@
         <div class="grid lg:grid-cols-2 gap-16">
             <div>
                 <h2 class="text-3xl font-bold text-primary dark:text-white mb-8">Send Us a Message</h2>
-                <form class="space-y-6" action="#" method="POST">
+                <form class="space-y-6" action="{{ route('contact.submit') }}" method="POST">
                     @csrf
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-2">

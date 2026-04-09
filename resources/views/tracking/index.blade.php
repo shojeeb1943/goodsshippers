@@ -31,7 +31,7 @@
                         <a href="{{ route('dashboard') }}" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm font-bold text-slate-600 hover:text-indigo-600 transition-colors">Login</a>
-                        <a href="{{ route('register') }}" class="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-xl shadow-lg shadow-indigo-200 transition-all hover:-translate-y-0.5">Get Suite ID</a>
+                        <a href="{{ route('register') }}" class="inline-flex items-center px-5 py-2.5 bg-accent hover:bg-accent/90 text-white text-sm font-bold rounded-xl shadow-lg shadow-accent/30 transition-all hover:-translate-y-0.5">Get Suite ID</a>
                     @endauth
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <form action="{{ route('tracking.search') }}" method="GET" class="relative max-w-2xl mx-auto group">
                     <input type="text" name="tracking_number" value="{{ request('tracking_number') }}" placeholder="SH-BD-XXXX or Carrier Tracking #" required
                            class="w-full pl-6 pr-32 py-5 bg-white border-2 border-slate-200 rounded-2xl text-slate-900 font-bold placeholder:text-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-50/50 transition-all shadow-xl shadow-slate-100">
-                    <button type="submit" class="absolute right-3 top-3 bottom-3 px-8 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-200 flex items-center gap-2">
+                    <button type="submit" class="absolute right-3 top-3 bottom-3 px-8 bg-accent hover:bg-accent/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-accent/30 flex items-center gap-2">
                         <span>Track</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>

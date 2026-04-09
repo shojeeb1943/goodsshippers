@@ -7,9 +7,24 @@ use Illuminate\Http\Request;
 
 class ParcelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $parcels = auth()->user()->parcels()->with('warehouse')->latest()->paginate(10);
+        $query = auth()->user()->parcels()->with('warehouse');
+
+        if ($request->has('status') && $request->status) {
+            $query->where('status', $request->status);
+        }
+
+        if ($request->has('search') && $request->search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('tracking_number', 'like', '%'.$request->search.'%')
+                    ->orWhere('description', 'like', '%'.$request->search.'%')
+                    ->orWhere('courier', 'like', '%'.$request->search.'%');
+            });
+        }
+
+        $parcels = $query->latest()->paginate(10);
+
         return view('parcels.index', compact('parcels'));
     }
 
@@ -20,6 +35,7 @@ class ParcelController extends Controller
         }
 
         $parcel->load('warehouse', 'photos', 'statusLogs.actor');
+
         return view('parcels.show', compact('parcel'));
     }
 }

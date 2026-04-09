@@ -6,7 +6,6 @@ use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\Shipment;
 use Illuminate\Support\Facades\DB;
-// use App\Notifications\InvoiceGeneratedNotification; // To be implemented
 
 class GenerateInvoice
 {
@@ -24,14 +23,14 @@ class GenerateInvoice
             ]);
 
             $invoice->update([
-                'invoice_number' => 'INV-' . str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
+                'invoice_number' => 'INV-'.str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
             ]);
 
             $total = 0;
             if (empty($lineItems)) {
                 // Default placeholder items
                 $lineItems = [
-                    ['description' => 'Freight Charges (Chargeable Weight: ' . $shipment->chargeable_weight . ' kg)', 'quantity' => 1, 'unit_price' => 0],
+                    ['description' => 'Freight Charges (Chargeable Weight: '.$shipment->chargeable_weight.' kg)', 'quantity' => 1, 'unit_price' => 0],
                     ['description' => 'Handling Fee', 'quantity' => 1, 'unit_price' => 0],
                 ];
             }
@@ -48,6 +47,8 @@ class GenerateInvoice
             }
 
             $invoice->update(['total_amount' => $total]);
+
+            $invoice->user->notify(new InvoiceGeneratedNotification($invoice));
 
             return $invoice;
         });
@@ -67,7 +68,7 @@ class GenerateInvoice
             ]);
 
             $invoice->update([
-                'invoice_number' => 'INV-' . str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
+                'invoice_number' => 'INV-'.str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
             ]);
 
             $total = 0;
@@ -91,6 +92,8 @@ class GenerateInvoice
             ]);
 
             $invoice->update(['total_amount' => $total]);
+
+            $invoice->user->notify(new InvoiceGeneratedNotification($invoice));
 
             return $invoice;
         });

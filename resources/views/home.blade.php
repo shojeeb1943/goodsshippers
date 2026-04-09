@@ -46,13 +46,13 @@
             <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden flex flex-col" style="height:430px">
                 <!-- Tab Bar -->
                 <div class="flex border-b border-gray-100 shrink-0">
-                    <button data-tab="ship" class="tab-btn flex-1 py-4 font-bold text-sm text-primary border-b-2 border-primary transition-colors">Ship</button>
-                    <button data-tab="shop" class="tab-btn flex-1 py-4 font-bold text-sm text-slate-400 border-b-2 border-transparent hover:text-primary transition-colors">Shop</button>
+                    <button data-tab="shop" class="tab-btn flex-1 py-4 font-bold text-sm text-primary border-b-2 border-primary transition-colors">Shop</button>
+                    <button data-tab="ship" class="tab-btn flex-1 py-4 font-bold text-sm text-slate-400 border-b-2 border-transparent hover:text-primary transition-colors">Ship</button>
                     <button data-tab="track" class="tab-btn flex-1 py-4 font-bold text-sm text-slate-400 border-b-2 border-transparent hover:text-primary transition-colors">Track</button>
                 </div>
 
                 <!-- ── Ship Tab ── -->
-                <div id="tab-ship" class="tab-panel flex-1 flex flex-col justify-between p-7">
+                <div id="tab-ship" class="tab-panel hidden flex-1 flex flex-col justify-between p-7">
                     <div class="space-y-4">
                         <div>
                             <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">From (Warehouse)</label>
@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- ── Shop Tab ── -->
-                <div id="tab-shop" class="tab-panel hidden flex-1 flex flex-col justify-between p-7">
+                <div id="tab-shop" class="tab-panel flex-1 flex flex-col justify-between p-7">
                     <div class="space-y-4">
                         <div>
                             <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Paste Product Link</label>
@@ -109,14 +109,14 @@
                         <div class="flex justify-between gap-2">
                             @foreach(['Send Link','We Buy','We Ship','Delivered'] as $i => $s)
                             <div class="flex-1 text-center">
-                                <div class="w-7 h-7 rounded-full bg-yellow-100 text-yellow-700 font-extrabold text-xs flex items-center justify-center mx-auto mb-1">{{ $i+1 }}</div>
+                                <div class="w-7 h-7 rounded-full bg-accent/10 text-accent font-extrabold text-xs flex items-center justify-center mx-auto mb-1">{{ $i+1 }}</div>
                                 <span class="text-[10px] font-semibold text-slate-500 leading-tight">{{ $s }}</span>
                             </div>
                             @endforeach
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <a href="{{ route('services') }}" class="flex items-center justify-center gap-2 w-full bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold py-3.5 rounded-lg transition-all shadow-sm text-base">
+                        <a href="{{ route('services') }}" class="flex items-center justify-center gap-2 w-full bg-accent hover:bg-accent/90 text-white font-extrabold py-3.5 rounded-lg transition-all shadow-lg shadow-accent/30 text-base">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                             SHOP FOR ME
                         </a>
@@ -143,7 +143,7 @@
                                     </span>
                                     <input id="hero-track-input" class="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:ring-primary focus:border-primary placeholder-slate-400 font-medium" placeholder="e.g. GS-8823-X920" type="text" />
                                 </div>
-                                <a id="hero-track-btn" href="{{ route('track-shipment') }}" class="px-5 py-2.5 bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-extrabold rounded-lg whitespace-nowrap transition-all text-sm">Track Now</a>
+                                <a id="hero-track-btn" href="{{ route('track-shipment') }}" class="px-5 py-2.5 bg-accent hover:bg-accent/90 text-white font-extrabold rounded-lg whitespace-nowrap transition-all shadow-lg shadow-accent/30 text-sm">Track Now</a>
                             </div>
                         </div>
                         <!-- Example tracking IDs — fills vertical space + signals how ID looks -->
@@ -182,26 +182,25 @@
                     <h2 class="text-3xl font-bold text-primary">Popular in Global Stores</h2>
                     <p class="text-slate-500 mt-2">Recommended items from USA and UK marketplaces</p>
                 </div>
-                <a class="text-primary font-bold flex items-center gap-2" href="{{ route('catalog') }}">View All Stores
+                <a class="text-primary font-bold flex items-center gap-2" href="{{ route('shop') }}">View All Stores
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                @foreach([
-                    ['Smartphone Pro X', '$999.00', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBrJ4kQpD_Uc1aV2WJns2c_hvGUMxu5HfdiwauUQY_YC_-NszXosavpC-Kqhh7R6dlD6YDvPlTcMuG4t2hC8Sp9llVqv-Hf9VppuRJI6OQMB7uwtbsASN4FVHHl2nEHCztbfrQG9FJnK7Q7X0hxLWnvZBwNPbgPqJfZBGC7wbyMEx5-kC6XlxcroZRgEEkyF-g8yRcPIMN22_Qup2qlnye7Wuko5tsxs4WnATNSoMRcMjV5ckSmGTb3U5hFeoCYCKaoYt29lfjR5q8', 'smartphone-pro-x'],
-                    ['Vitality Multi-Vitamins', '$45.50', 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6bVVrqyRUKhuRrv8FhKGy_2FgfVZJnXPleyglo4LWBVFNUhuOhKljX0MuClnMU9yzBPb777tVi6m2nR47KxWUWG0RLi_jqmdM85UI-9dOYGIPsLl9fhCwdkRdhsGKpqWxgqorxsbCiPEOEYX7tsCfs1KwFU_qPa1oSD2MkmwQfsmNAIDSrQm9HOw6dwmtBq50xwnnmN6e0xwSGi9W49aIO2pdFvD-D5Z2_Az3eAExsNB4c-B7x0DjzoEYftni-WivtygcnO9oiq0', 'vitality-multi-vitamins'],
-                    ['SonicWave Elite', '$129.99', 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0ZKoTVvlGGOY5Y5NeLREgt662mEJ4TdxkV1ydVGICGoFTcr89EJDYFOleM4n1iBWn9nOIEK3J14cyN93TgmMjtyHajuMcku-nGmGe4iKBkG61vKuEwSmefFsjjOY87M8-gFawqoaiw54rauWvrRBuCgrAtZkSgW_RG228DCS_Mta0kB3bC97jiyfYvcxSAyV2QyCBehZF3yg4QOZObyfjC5JdblJD41Q-PoATv7np2utzfyAXuWj_bZLdefYmeolJm_nK_nKEvtQ', 'sonicwave-elite'],
-                    ['AeroRunner Max', '$160.00', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCKsM0tMq4_qWif1WrKsSibjgIGBgn6Mrv0WTh4E57YcQpURv3kwnepI2axduIcdgMKp93sHLCAepGBE48An4r6CQxsnJ9aro82shDTQM0vGszn_t9aeD9MVuHcSe8QvvI3a3216q20Q7CMUrTuMC_cFjJk0AqbTEBXzJAIMqt45_LE5zNGw_X8dfO3JTlTcOYt1ge_LhR6FfwzeNIQZxe_n6f-zTFlcFHTJ34-RglME2grKN0kr-F4S0i6GziWgpobXwnccKsj2pc', 'aerorunner-max'],
-                ] as $product)
+                @forelse($featuredProducts as $product)
                 <div class="bg-white p-4 rounded-xl border border-gray-100 hover:shadow-xl transition-shadow group">
                     <div class="h-48 rounded-lg bg-gray-50 mb-4 overflow-hidden">
-                        <img alt="{{ $product[0] }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="{{ $product[2] }}" />
+                        <img alt="{{ $product->name }}" class="w-full h-full object-contain group-hover:scale-110 transition-transform" src="{{ $product->image_url }}" />
                     </div>
-                    <h3 class="font-bold text-slate-800">{{ $product[0] }}</h3>
-                    <p class="text-primary font-bold text-xl mt-1">{{ $product[1] }}</p>
-                    <a href="{{ route('products.show', $product[3]) }}" class="block w-full mt-4 py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors text-center">Shop Now</a>
+                    <h3 class="font-bold text-slate-800">{{ $product->name }}</h3>
+                    <p class="text-primary font-bold text-xl mt-1">${{ number_format($product->price, 2) }}</p>
+                    <a href="{{ route('products.show', $product->slug) }}" class="block w-full mt-4 py-2 border border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-colors text-center">Shop Now</a>
                 </div>
-                @endforeach
+                @empty
+                <div class="col-span-4 text-center py-8 text-slate-500">
+                    <p>No featured products available at the moment.</p>
+                </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -344,7 +343,7 @@
         <div class="max-w-[1280px] mx-auto px-6 text-center">
             <h2 class="text-4xl font-extrabold text-primary mb-6">Ready to Start Importing?</h2>
             <p class="text-slate-600 text-lg mb-10 max-w-2xl mx-auto">Join 50,000+ shoppers who trust GoodsShippers for their international logistics needs.</p>
-            <a href="{{ route('register') }}" class="inline-block bg-primary text-white font-extrabold px-10 py-5 rounded-lg text-lg shadow-xl hover:scale-105 transition-all">Create Free Account Today</a>
+            <a href="{{ route('register') }}" class="inline-block bg-accent text-white font-extrabold px-10 py-5 rounded-lg text-lg shadow-xl shadow-accent/30 hover:bg-accent/90 hover:-translate-y-0.5 transition-all">Create Free Account Today</a>
         </div>
     </section>
 @endsection

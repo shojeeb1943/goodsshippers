@@ -14,6 +14,8 @@ class PaymentController extends Controller
      */
     public function initiate(Invoice $invoice)
     {
+        abort_if($invoice->user_id !== auth()->id(), 403);
+
         if ($invoice->status === 'paid') {
             return redirect()->route('dashboard')->with('error', 'This invoice is already paid.');
         }

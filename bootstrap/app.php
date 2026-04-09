@@ -17,6 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'payment/cancel',
             'payment/ipn',
         ]);
+
+        // Custom admin middleware removed - Filament handles admin authentication
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

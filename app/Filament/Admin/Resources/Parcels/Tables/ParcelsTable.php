@@ -7,6 +7,7 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
@@ -26,7 +27,7 @@ class ParcelsTable
                     ->sortable(),
                 TextColumn::make('tracking_number')
                     ->searchable(),
-                \Filament\Tables\Columns\ImageColumn::make('photos.file_path')
+                ImageColumn::make('photos.file_path')
                     ->label('Photos')
                     ->circular()
                     ->stacked()
@@ -37,12 +38,14 @@ class ParcelsTable
                     ->sortable(),
                 TextColumn::make('status')
                     ->badge()
-                    ->colors([
-                        'primary' => 'arrived',
-                        'success' => 'shipped',
-                        'warning' => 'stored',
-                        'danger' => 'delivered',
-                    ]),
+                    ->color(fn (string $state): string => match ($state) {
+                        'arrived' => 'info',
+                        'stored' => 'warning',
+                        'ready_for_shipment' => 'primary',
+                        'shipped' => 'indigo',
+                        'delivered' => 'success',
+                        default => 'gray',
+                    }),
                 TextColumn::make('arrival_date')
                     ->date()
                     ->sortable(),

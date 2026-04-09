@@ -38,7 +38,7 @@
                             </p>
                         </div>
                     </div>
-                    <a href="{{ route('invoices.show', $invoice) }}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors w-full sm:w-auto">
+                    <a href="{{ route('invoices.show', $invoice) }}" class="inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm text-sm font-bold rounded-lg text-white bg-accent hover:bg-accent/90 transition-colors w-full sm:w-auto">
                         @if(in_array($invoice->status, ['draft', 'sent']))
                             Pay Now
                         @else

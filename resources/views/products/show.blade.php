@@ -10,7 +10,7 @@
             <nav class="mb-8 text-sm text-slate-500">
                 <a href="{{ route('home') }}" class="hover:text-accent">Home</a>
                 <span class="mx-2">/</span>
-                <a href="{{ route('catalog') }}" class="hover:text-accent">Catalog</a>
+                <a href="{{ route('shop') }}" class="hover:text-accent">Catalog</a>
                 <span class="mx-2">/</span>
                 <span class="text-slate-800 dark:text-white font-medium">{{ $product['name'] }}</span>
             </nav>

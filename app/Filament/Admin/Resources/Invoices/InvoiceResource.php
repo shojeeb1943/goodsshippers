@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\Invoices;
 use App\Filament\Admin\Resources\Invoices\Pages\CreateInvoice;
 use App\Filament\Admin\Resources\Invoices\Pages\EditInvoice;
 use App\Filament\Admin\Resources\Invoices\Pages\ListInvoices;
+use App\Filament\Admin\Resources\Invoices\RelationManagers\InvoiceItemsRelationManager;
 use App\Filament\Admin\Resources\Invoices\Schemas\InvoiceForm;
 use App\Filament\Admin\Resources\Invoices\Tables\InvoicesTable;
 use App\Models\Invoice;
@@ -20,7 +21,7 @@ class InvoiceResource extends Resource
 {
     protected static ?string $model = Invoice::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
     public static function getGloballySearchableAttributes(): array
     {
@@ -40,7 +41,7 @@ class InvoiceResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            InvoiceItemsRelationManager::class,
         ];
     }
 

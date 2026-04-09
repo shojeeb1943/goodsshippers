@@ -27,12 +27,12 @@
                             <span class="material-symbols-outlined text-2xl">{{ $service[1] }}</span>
                         </div>
                         <h2 class="text-2xl font-black text-primary dark:text-white mb-2">{{ $service[0] }}</h2>
-                        <p class="text-xs font-bold text-accent uppercase tracking-widest">{{ $service[4] }}</p>
+                        <p class="text-xs font-bold text-accent uppercase tracking-widest">{{ $service[3] }}</p>
                     </div>
                     <div class="p-8 flex-1 flex flex-col">
                         <p class="text-slate-600 dark:text-slate-400 mb-6">{{ $service[2] }}</p>
                         <div class="space-y-3 mb-8 flex-1">
-                            @foreach($service[3] as $i => $step)
+                            @foreach($service[4] as $i => $step)
                             <div class="flex items-start gap-3">
                                 <span class="size-6 rounded-full bg-primary/10 text-primary text-xs flex items-center justify-center font-bold shrink-0 mt-0.5">{{ $i+1 }}</span>
                                 <span class="text-sm text-slate-700 dark:text-slate-300">{{ $step }}</span>

@@ -8,6 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
@@ -22,13 +23,13 @@ class OrdersTable
                 TextColumn::make('status')
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
-                        'pending' => 'gray',
-                        'processing' => 'info',
+                        'product_requested' => 'info',
                         'quote_sent' => 'warning',
-                        'approved' => 'success',
-                        'purchased' => 'indigo',
+                        'quote_approved' => 'success',
+                        'quote_rejected' => 'danger',
+                        'order_purchased' => 'indigo',
                         'delivered' => 'success',
-                        'cancelled', 'rejected' => 'danger',
+                        'cancelled' => 'danger',
                         default => 'gray',
                     }),
                 TextColumn::make('created_at')
@@ -45,16 +46,15 @@ class OrdersTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                \Filament\Tables\Filters\SelectFilter::make('status')
+                SelectFilter::make('status')
                     ->options([
-                        'pending' => 'Pending',
-                        'processing' => 'Processing',
+                        'product_requested' => 'Product Requested',
                         'quote_sent' => 'Quote Sent',
-                        'approved' => 'Approved',
-                        'purchased' => 'Purchased',
+                        'quote_approved' => 'Quote Approved',
+                        'quote_rejected' => 'Quote Rejected',
+                        'order_purchased' => 'Order Purchased',
                         'delivered' => 'Delivered',
                         'cancelled' => 'Cancelled',
-                        'rejected' => 'Rejected',
                     ]),
                 TrashedFilter::make(),
             ])

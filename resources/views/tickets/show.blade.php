@@ -68,7 +68,7 @@
                             <p class="text-[10px] text-gray-400 mt-1 sm:ml-1">Max 10MB (Img, PDF)</p>
                         </div>
                         
-                        <button type="submit" class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-2.5 border border-transparent text-sm font-black rounded-xl shadow-md shadow-indigo-100 text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none transition-all">
+                        <button type="submit" class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-2.5 border border-transparent text-sm font-black rounded-xl shadow-md shadow-accent/30 text-white bg-accent hover:bg-accent/90 focus:outline-none transition-all">
                             Send Reply
                         </button>
                     </div>

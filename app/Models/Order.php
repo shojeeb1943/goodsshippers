@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
@@ -22,14 +23,13 @@ class Order extends Model
     ];
 
     public const STATUSES = [
-        'pending'    => 'Pending',
-        'processing' => 'Processing',
-        'quote_sent' => 'Quote Sent',
-        'approved'   => 'Approved',
-        'purchased'  => 'Purchased',
-        'delivered'  => 'Delivered',
-        'cancelled'  => 'Cancelled',
-        'rejected'   => 'Rejected',
+        'product_requested' => 'Product Requested',
+        'quote_sent'        => 'Quote Sent',
+        'quote_approved'    => 'Quote Approved',
+        'quote_rejected'    => 'Quote Rejected',
+        'order_purchased'   => 'Order Purchased',
+        'delivered'         => 'Delivered',
+        'cancelled'         => 'Cancelled',
     ];
 
     // Relationships
@@ -44,9 +44,9 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    public function invoice(): HasMany
+    public function invoice(): HasOne
     {
-        return $this->hasMany(Invoice::class);
+        return $this->hasOne(Invoice::class);
     }
 
     public function statusLogs(): MorphMany

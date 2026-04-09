@@ -13,7 +13,7 @@
             <nav class="flex items-center gap-1.5 text-sm text-slate-400 mb-8">
                 <a href="{{ route('home') }}" class="hover:text-accent transition-colors">Home</a>
                 <span class="material-symbols-outlined text-xs">chevron_right</span>
-                <a href="{{ route('catalog') }}" class="hover:text-accent transition-colors">Products</a>
+                <a href="{{ route('shop') }}" class="hover:text-accent transition-colors">Products</a>
                 <span class="material-symbols-outlined text-xs">chevron_right</span>
                 <span class="text-slate-700 dark:text-slate-200 font-medium">Cart</span>
             </nav>
@@ -24,7 +24,7 @@
                     <h1 class="text-3xl sm:text-4xl font-black text-primary dark:text-white tracking-tight">Your Cart</h1>
                     <p class="text-slate-500 mt-1">Review your items before checking out.</p>
                 </div>
-                <a href="{{ route('catalog') }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent transition-colors">
+                <a href="{{ route('shop') }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-accent transition-colors">
                     <span class="material-symbols-outlined text-[18px]">arrow_back</span> Continue Shopping
                 </a>
             </div>
@@ -36,7 +36,7 @@
                 </div>
                 <h2 class="text-2xl font-bold text-primary dark:text-white mb-2">Your cart is empty</h2>
                 <p class="text-slate-500 max-w-sm mb-8">You haven't added any products yet. Explore our global catalog to find great deals.</p>
-                <a href="{{ route('catalog') }}" class="btn-primary px-8 py-3.5">
+                <a href="{{ route('shop') }}" class="btn-primary px-8 py-3.5">
                     <span class="material-symbols-outlined text-[18px]">explore</span>
                     Browse Products
                 </a>
@@ -46,7 +46,7 @@
                     <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Popular Categories</p>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         @foreach([['devices','Electronics','Global Tech','blue'],['face_5','Beauty','Skin & Care','pink'],['chair','Home Decor','Interior','amber'],['apparel','Fashion','Trendy Wear','emerald']] as $cat)
-                        <a href="{{ route('catalog') }}" class="group card p-5 text-center hover:border-primary/30 card-hover cursor-pointer">
+                        <a href="{{ route('shop') }}" class="group card p-5 text-center hover:border-primary/30 card-hover cursor-pointer">
                             <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-{{ $cat[3] }}-50 dark:bg-{{ $cat[3] }}-900/20 text-{{ $cat[3] }}-600 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                                 <span class="material-symbols-outlined text-[20px]">{{ $cat[0] }}</span>
                             </div>

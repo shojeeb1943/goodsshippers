@@ -120,29 +120,46 @@
 
 @section('scripts')
 <script>
-    const rates = {
-        usa: { air: 14, sea: 4.5, currency: 'USD' },
-        uk: { air: 11, sea: 3.5, currency: 'GBP' },
-        malaysia: { air: 35, sea: 12, currency: 'MYR' },
-    };
-
-    document.getElementById('calculate-btn').addEventListener('click', () => {
+    document.getElementById('calculate-btn').addEventListener('click', async () => {
         const warehouse = document.getElementById('warehouse').value;
         const method = document.getElementById('method').value;
         const weight = parseFloat(document.getElementById('weight').value) || 0;
-        const l = parseFloat(document.getElementById('length').value) || 0;
-        const w = parseFloat(document.getElementById('width').value) || 0;
-        const h = parseFloat(document.getElementById('height').value) || 0;
+        const length = parseFloat(document.getElementById('length').value) || 0;
+        const width = parseFloat(document.getElementById('width').value) || 0;
+        const height = parseFloat(document.getElementById('height').value) || 0;
 
-        const volumetric = (l * w * h) / 5000;
-        const chargeable = Math.max(weight, volumetric) || 0;
-        const rate = rates[warehouse][method];
-        const total = (chargeable * rate).toFixed(2);
+        if (!weight) {
+            alert('Please enter at least the actual weight.');
+            return;
+        }
 
-        document.getElementById('result-card').classList.remove('hidden');
-        document.getElementById('result-price').textContent = `${rates[warehouse].currency} ${total}`;
-        document.getElementById('chargeable-weight').textContent = chargeable.toFixed(2) + ' kg';
-        document.getElementById('rate-per-kg').textContent = `${rates[warehouse].currency} ${rate}`;
+        const btn = document.getElementById('calculate-btn');
+        btn.disabled = true;
+        btn.textContent = 'Calculating...';
+
+        try {
+            const response = await fetch('{{ route("api.calculator") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ warehouse, method, weight, length, width, height })
+            });
+
+            const data = await response.json();
+
+            document.getElementById('result-card').classList.remove('hidden');
+            document.getElementById('result-price').textContent = `${data.currency} ${data.total}`;
+            document.getElementById('chargeable-weight').textContent = data.chargeable_weight + ' kg';
+            document.getElementById('rate-per-kg').textContent = `${data.currency} ${data.rate}`;
+        } catch (error) {
+            console.error('Calculation error:', error);
+            alert('Failed to calculate. Please try again.');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Calculate Shipping Cost';
+        }
     });
 </script>
 @endsection

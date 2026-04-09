@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\DB;
 
 class CalculateStorageFeesJob implements ShouldQueue
 {
@@ -25,42 +26,47 @@ class CalculateStorageFeesJob implements ShouldQueue
             $fee = $feeService->calculateFee($parcel);
 
             if ($fee > 0) {
-                // Find an open, standalone draft invoice for the user
-                $invoice = \App\Models\Invoice::firstOrCreate(
-                    [
-                        'user_id' => $parcel->user_id,
-                        'status' => 'draft',
+                DB::transaction(function () use ($parcel, $fee) {
+                    // Lock the row to prevent concurrent invoice creation for same user
+                    $invoice = \App\Models\Invoice::where([
+                        'user_id'     => $parcel->user_id,
+                        'status'      => 'draft',
                         'shipment_id' => null,
-                        'order_id' => null,
-                    ],
-                    [
-                        'invoice_number' => 'TMP', // Will be updated below
-                        'total_amount' => 0,
-                    ]
-                );
+                        'order_id'    => null,
+                    ])->lockForUpdate()->first();
 
-                if ($invoice->invoice_number === 'TMP') {
+                    if (! $invoice) {
+                        $invoice = \App\Models\Invoice::create([
+                            'user_id'        => $parcel->user_id,
+                            'status'         => 'draft',
+                            'shipment_id'    => null,
+                            'order_id'       => null,
+                            'invoice_number' => 'TMP',
+                            'total_amount'   => 0,
+                        ]);
+
+                        $invoice->update([
+                            'invoice_number' => 'INV-' . str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
+                        ]);
+                    }
+
+                    // Upsert the line item for this specific parcel
+                    $invoice->items()->updateOrCreate(
+                        [
+                            'description' => 'Storage Fee for Parcel Tracking #' . $parcel->tracking_number,
+                        ],
+                        [
+                            'quantity'   => 1,
+                            'unit_price' => $fee,
+                            'total'      => $fee,
+                        ]
+                    );
+
+                    // Update the invoice total amount
                     $invoice->update([
-                        'invoice_number' => 'INV-' . str_pad($invoice->id, 6, '0', STR_PAD_LEFT),
+                        'total_amount' => $invoice->items()->sum('total'),
                     ]);
-                }
-
-                // Upsert the line item for this specific parcel
-                $invoice->items()->updateOrCreate(
-                    [
-                        'description' => 'Storage Fee for Parcel Tracking #' . $parcel->tracking_number,
-                    ],
-                    [
-                        'quantity' => 1,
-                        'unit_price' => $fee,
-                        'total' => $fee,
-                    ]
-                );
-
-                // Update the invoice total amount
-                $invoice->update([
-                    'total_amount' => $invoice->items()->sum('total')
-                ]);
+                });
             }
         }
     }

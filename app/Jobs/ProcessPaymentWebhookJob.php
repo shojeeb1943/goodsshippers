@@ -56,7 +56,7 @@ class ProcessPaymentWebhookJob implements ShouldQueue
                 ? 'https://securepay.sslcommerz.com/validator/api/validationserverAPI.php' 
                 : 'https://sandbox.sslcommerz.com/validator/api/validationserverAPI.php';
 
-            $response = Http::get($url, [
+            $response = Http::timeout(10)->retry(2, 100)->get($url, [
                 'val_id' => $valId,
                 'store_id' => $storeId,
                 'store_passwd' => $storePassword,

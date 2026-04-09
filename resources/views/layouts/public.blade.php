@@ -97,6 +97,8 @@
             {{-- Desktop Nav --}}
             <nav class="hidden lg:flex items-center gap-8">
                 <a class="nav-link {{ request()->routeIs('home') ? 'text-accent' : '' }}" href="{{ route('home') }}">Home</a>
+                
+                <a class="nav-link {{ request()->routeIs('shop') ? 'text-accent' : '' }}" href="{{ route('shop') }}">Shop</a>
 
                 {{-- Shipping Dropdown --}}
                 <div class="relative group h-20 flex items-center">
@@ -129,7 +131,7 @@
                     </div>
                 </div>
 
-                <a class="nav-link {{ request()->routeIs('catalog') ? 'text-accent' : '' }}" href="{{ route('catalog') }}">Products</a>
+
                 <a class="nav-link {{ request()->routeIs('warehouses.*') ? 'text-accent' : '' }}" href="{{ route('warehouses.index') }}">Warehouse</a>
                 <a class="nav-link {{ request()->routeIs('about') ? 'text-accent' : '' }}" href="{{ route('about') }}">About Us</a>
                 <a class="nav-link {{ request()->routeIs('contact') ? 'text-accent' : '' }}" href="{{ route('contact') }}">Contact Us</a>
@@ -176,7 +178,7 @@
                 <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.usa') }}">🇺🇸 USA Warehouse</a>
                 <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.uk') }}">🇬🇧 UK Warehouse</a>
                 <a @click="mobileOpen = false" class="flex items-center gap-3 pl-6 pr-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('warehouses.malaysia') }}">🇲🇾 Malaysia Warehouse</a>
-                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('catalog') }}">
+                <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('shop') }}">
                     <span class="material-symbols-outlined text-[18px] shrink-0">storefront</span> Products
                 </a>
                 <a @click="mobileOpen = false" class="flex items-center gap-3 px-3 py-2.5 text-sm font-semibold text-primary dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-accent rounded-lg transition-colors" href="{{ route('about') }}">
@@ -227,7 +229,7 @@
                 <div class="space-y-6">
                     <h4 class="font-bold text-lg">Services</h4>
                     <ul class="space-y-4 text-slate-400 text-sm">
-                        <li><a class="hover:text-accent transition-colors" href="{{ route('catalog') }}">Shop</a></li>
+                        <li><a class="hover:text-accent transition-colors" href="{{ route('shop') }}">Shop</a></li>
                         <li><a class="hover:text-accent transition-colors" href="{{ route('calculator') }}">Shipping Calculator</a></li>
                         <li><a class="hover:text-accent transition-colors" href="{{ route('services') }}">Pricing</a></li>
                     </ul>

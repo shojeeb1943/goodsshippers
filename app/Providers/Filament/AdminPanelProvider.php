@@ -2,6 +2,14 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Admin\Resources\Invoices\InvoiceResource;
+use App\Filament\Admin\Resources\Orders\OrderResource;
+use App\Filament\Admin\Resources\Parcels\ParcelResource;
+use App\Filament\Admin\Resources\Shipments\ShipmentResource;
+use App\Filament\Admin\Resources\ShippingModes\ShippingModeResource;
+use App\Filament\Admin\Resources\Tickets\TicketResource;
+use App\Filament\Admin\Resources\Users\UserResource;
+use App\Filament\Admin\Resources\Warehouses\WarehouseResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -25,11 +33,22 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->id('admin')
+            ->default()
             ->path('admin')
+            ->login()
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Admin/Resources'), for: 'App\Filament\Admin\Resources')
+            ->resources([
+                UserResource::class,
+                OrderResource::class,
+                ParcelResource::class,
+                ShipmentResource::class,
+                InvoiceResource::class,
+                TicketResource::class,
+                WarehouseResource::class,
+                ShippingModeResource::class,
+            ])
             ->discoverPages(in: app_path('Filament/Admin/Pages'), for: 'App\Filament\Admin\Pages')
             ->pages([
                 Dashboard::class,
@@ -50,6 +69,7 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->authGuard('web')
             ->authMiddleware([
                 Authenticate::class,
             ]);

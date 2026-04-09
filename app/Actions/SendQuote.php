@@ -3,9 +3,9 @@
 namespace App\Actions;
 
 use App\Models\Order;
+use App\Notifications\QuoteSentNotification;
 use Exception;
 use Illuminate\Support\Facades\DB;
-// use App\Notifications\QuoteSentNotification; // To be implemented
 
 class SendQuote
 {
@@ -15,7 +15,7 @@ class SendQuote
     public function execute(Order $order, array $quotedItems): Order
     {
         if ($order->status !== 'pending') {
-            throw new Exception("Only pending orders can receive a quote.");
+            throw new Exception('Only pending orders can receive a quote.');
         }
 
         return DB::transaction(function () use ($order, $quotedItems) {
@@ -25,10 +25,7 @@ class SendQuote
 
             $order->update(['status' => 'quote_sent']);
 
-            // Status Log will be handled by the Observer
-
-            // TODO: Dispatch QuoteSentNotification
-            // $order->user->notify(new QuoteSentNotification($order));
+            $order->user->notify(new QuoteSentNotification($order));
 
             return $order->fresh();
         });

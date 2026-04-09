@@ -18,7 +18,7 @@ class ShippingModeResource extends Resource
 {
     protected static ?string $model = ShippingMode::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPaperAirplane;
 
     public static function form(Schema $schema): Schema
     {

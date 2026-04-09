@@ -38,8 +38,8 @@
                 </div>
             </div>
             <div class="mt-8 relative z-10">
-                <a href="#" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors group-hover:underline decoration-indigo-300 underline-offset-4">
-                    View Parcels 
+                <a href="{{ route('parcels.index') }}" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors group-hover:underline decoration-indigo-300 underline-offset-4">
+                    View Parcels
                     <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 </a>
             </div>
@@ -58,8 +58,8 @@
                 </div>
             </div>
             <div class="mt-8 relative z-10">
-                <a href="#" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors group-hover:underline decoration-emerald-300 underline-offset-4">
-                    Track Shipments 
+                <a href="{{ route('shipments.index') }}" class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800 transition-colors group-hover:underline decoration-emerald-300 underline-offset-4">
+                    Track Shipments
                     <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 </a>
             </div>
@@ -78,8 +78,8 @@
                 </div>
             </div>
             <div class="mt-6 relative z-10">
-                <a href="#" class="inline-flex items-center text-sm font-semibold text-rose-600 hover:text-rose-800 transition-colors group-hover:underline decoration-rose-300 underline-offset-4">
-                    Pay Now 
+                <a href="{{ route('invoices.index') }}" class="inline-flex items-center text-sm font-semibold text-rose-600 hover:text-rose-800 transition-colors group-hover:underline decoration-rose-300 underline-offset-4">
+                    Pay Now
                     <svg class="ml-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 </a>
             </div>

@@ -6,7 +6,7 @@
             <h3 class="text-lg font-bold text-gray-900 tracking-tight">Your Purchase Requests</h3>
             <p class="text-sm text-gray-500 mt-1">Manage and track your Shop For Me requests.</p>
         </div>
-        <a href="{{ route('orders.create') }}" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 shadow-sm shadow-indigo-200 transition-colors">
+        <a href="{{ route('orders.create') }}" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent font-bold rounded-lg text-white bg-accent hover:bg-accent/90 shadow-sm shadow-accent/30 transition-colors">
             <svg class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
             New Request
         </a>
@@ -73,7 +73,7 @@
                 <h3 class="text-xl font-bold text-gray-900">No requests yet</h3>
                 <p class="mt-2 text-base text-gray-500 max-w-sm mx-auto">You haven't submitted any Shop For Me requests. We'll buy products from overseas on your behalf.</p>
                 <div class="mt-8">
-                    <a href="{{ route('orders.create') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-sm shadow-indigo-200 text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 transition-colors">
+                    <a href="{{ route('orders.create') }}" class="inline-flex items-center px-5 py-3 border border-transparent shadow-sm shadow-accent/30 text-sm font-bold rounded-lg text-white bg-accent hover:bg-accent/90 transition-colors">
                         Create your first request
                     </a>
                 </div>

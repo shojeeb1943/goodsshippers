@@ -17,7 +17,7 @@
             You haven't added any products yet. Explore our global catalog to find great deals.
         </p>
 
-        <a href="{{ route('catalog') }}" class="btn-primary px-8 py-4 text-base">
+        <a href="{{ route('shop') }}" class="btn-primary px-8 py-4 text-base">
             <span class="material-symbols-outlined">explore</span>
             Browse Products
         </a>
@@ -32,7 +32,7 @@
                     ['chair',    'Home Decor',   'Interior Design', 'amber'],
                     ['apparel',  'Fashion',      'Trendy Wear',     'emerald'],
                 ] as $cat)
-                <a href="{{ route('catalog') }}" class="group card p-5 text-center card-hover">
+                <a href="{{ route('shop') }}" class="group card p-5 text-center card-hover">
                     <div class="w-10 h-10 mx-auto mb-3 rounded-lg bg-{{ $cat[3] }}-50 dark:bg-{{ $cat[3] }}-900/20 text-{{ $cat[3] }}-600 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                         <span class="material-symbols-outlined text-[20px]">{{ $cat[0] }}</span>
                     </div>

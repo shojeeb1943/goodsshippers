@@ -20,7 +20,7 @@ class ParcelResource extends Resource
 {
     protected static ?string $model = Parcel::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCube;
 
     public static function getGloballySearchableAttributes(): array
     {
